@@ -1,1 +1,7 @@
-{ "version": 3 }
+{ 
+"version": 3,
+"settings":{
+        "layout": {
+            "contentSize": "1000px"
+        }}
+}
