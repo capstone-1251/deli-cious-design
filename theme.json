@@ -1,7 +1,153 @@
-{ 
-"version": 3,
-"settings":{
-        "layout": {
-            "contentSize": "1000px"
-        }}
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"settings": {
+		"layout": {
+			"contentSize": "650px",
+			"wideSize": "1280px",
+			"allowEditing": true
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "300",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfMZ1rib2Bg-4.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZ1rib2Bg-4.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZ1rib2Bg-4.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZ1rib2Bg-4.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZ1rib2Bg-4.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "800",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZ1rib2Bg-4.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYMZ1rib2Bg-4.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "italic",
+							"fontWeight": "600",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTcB9xhiJ-Ek-7MeA.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "italic",
+							"fontWeight": "900",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTccNxhiJ-Ek-7MeA.woff2"
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "italic",
+							"fontWeight": "500",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/UcCM3FwrK3iLTcvneQg7Ca725JhhKnNqk4j1ebLhAm8SrXTc69thiJ-Ek-7MeA.woff2"
+						}
+					],
+					"fontFamily": "Inter, sans-serif",
+					"name": "Inter",
+					"slug": "inter"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "\"Crimson Text\"",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/wlp2gwHKFkZgtmSR3NB0oRJvbQJSA_JN3Q.woff2"
+						},
+						{
+							"fontFamily": "\"Crimson Text\"",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/wlppgwHKFkZgtmSR3NB0oRJXsCx2DtlR1LFffg.woff2"
+						},
+						{
+							"fontFamily": "\"Crimson Text\"",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": "http://patricia-street-deli.local/wp-content/uploads/fonts/wlppgwHKFkZgtmSR3NB0oRJX1C12DtlR1LFffg.woff2"
+						}
+					],
+					"fontFamily": "\"Crimson Text\", serif",
+					"name": "Crimson Text",
+					"slug": "crimson-text"
+				}
+			]
+			},"color": {
+			"palette": [
+				{
+					"slug": "primary-red",
+					"color": "#C1121F",
+					"name": "primary-red"
+				},
+				{
+					"slug": "secondary-red",
+					"color": "#780000",
+					"name": "secondary-red"
+				},
+				{
+					"slug": "placeholder-grey",
+					"color": "#696969",
+					"name": "placeholder-grey"
+				},
+				{
+					"slug": "white-off",
+					"color": "#FFFDFA",
+					"name": "white-off"
+				},
+				{
+					"slug": "black-off",
+					"color": "#251A1A",
+					"name": "black-off"
+				}
+			],"spacing": {
+				"margin": true,
+				"padding": true
+			},"styles": {
+			"spacing": {
+					"margin": {
+						"top": "0px",
+						"right": "0px",
+						"bottom": "60px",
+						"left": "0px"
+					},
+					"padding": {
+						"top": "100px",
+						"right": "0px",
+						"bottom": "0px",
+						"left": "0px"
+					}
+				}
+			}
+		},
+		"version": 3
+	}
 }
