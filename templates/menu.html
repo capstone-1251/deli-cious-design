@@ -1,4 +1,4 @@
-<!-- wp:template-part {"slug":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"style"} /-->
 
 <!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"metadata":{"name":"banner"},"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"textColor":"black-off","layout":{"type":"constrained","contentSize":"800px"}} -->
@@ -30,7 +30,8 @@
 <hr class="wp-block-separator has-alpha-channel-opacity" style="margin-top:50px;margin-bottom:50px"/>
 <!-- /wp:separator -->
 
-<!-- wp:heading {"textAlign":"left","className":"wp-block-heading has-crimson-text-font-family has-h2-bold-font-size","style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"h1-small","fontFamily":"crimson-text"} -->
+<!-- wp:query {"queryId":9,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[7]}}} -->
+<div class="wp-block-query"><!-- wp:heading {"textAlign":"left","className":"wp-block-heading has-crimson-text-font-family has-h2-bold-font-size","style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"h1-small","fontFamily":"crimson-text"} -->
 <h2 class="wp-block-heading has-text-align-left has-crimson-text-font-family has-h2-bold-font-size has-h-1-small-font-size" style="font-style:normal;font-weight:700">Category</h2>
 <!-- /wp:heading -->
 
@@ -38,67 +39,22 @@
 <p class="has-inter-font-family has-paragraph-font-size">Ready-made favorites for when you’re on the move and when u are on the crave</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"metadata":{"name":"menu item"},"style":{"spacing":{"padding":{"left":"2rem","right":"2rem","top":"1rem","bottom":"1rem"},"margin":{"top":"1rem","bottom":"1rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group" style="margin-top:1rem;margin-bottom:1rem;padding-top:1rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:group {"metadata":{"name":"menu-item-description"},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading">heading 2</h2>
-<!-- /wp:heading -->
+<!-- wp:post-template {"layout":{"type":"grid","columnCount":1}} -->
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:post-title {"level":3} /-->
 
-<!-- wp:paragraph -->
-<p>paragraph</p>
-<!-- /wp:paragraph -->
+<!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":" menu_item_name","fieldSettings":{},"tagName":"h4"} /-->
 
-<!-- wp:paragraph -->
-<p>prargraph</p>
-<!-- /wp:paragraph --></div>
+<!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","fieldSettings":{}} /-->
+
+<!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","fieldSettings":{},"prefix":"$","displayLayout":"inline-block","tagName":"p"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:image {"width":"293px","height":"auto","sizeSlug":"large"} -->
-<figure class="wp-block-image size-large is-resized"><img src="https://aharvey.com/wp-content/uploads/2018/03/bg-placeholder.jpg" alt="" style="width:293px;height:auto"/></figure>
-<!-- /wp:image --></div>
+<!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_image","fieldSettings":{}} /--></div>
 <!-- /wp:group -->
-
-<!-- wp:group {"metadata":{"name":"menu item"},"style":{"spacing":{"padding":{"left":"2rem","right":"2rem","top":"1rem","bottom":"1rem"},"margin":{"top":"1rem","bottom":"1rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group" style="margin-top:1rem;margin-bottom:1rem;padding-top:1rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:group {"metadata":{"name":"menu-item-description"},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading">heading 2</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>paragraph</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>prargraph</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:image {"width":"293px","height":"auto","sizeSlug":"large"} -->
-<figure class="wp-block-image size-large is-resized"><img src="https://aharvey.com/wp-content/uploads/2018/03/bg-placeholder.jpg" alt="" style="width:293px;height:auto"/></figure>
-<!-- /wp:image --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"metadata":{"name":"menu item"},"style":{"spacing":{"padding":{"left":"2rem","right":"2rem","top":"1rem","bottom":"1rem"},"margin":{"top":"1rem","bottom":"1rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group" style="margin-top:1rem;margin-bottom:1rem;padding-top:1rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:group {"metadata":{"name":"menu-item-description"},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading">heading 2</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>paragraph</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>prargraph</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:image {"width":"293px","height":"auto","sizeSlug":"large"} -->
-<figure class="wp-block-image size-large is-resized"><img src="https://aharvey.com/wp-content/uploads/2018/03/bg-placeholder.jpg" alt="" style="width:293px;height:auto"/></figure>
-<!-- /wp:image --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query -->
 
 <!-- wp:separator {"style":{"spacing":{"margin":{"top":"50px","bottom":"50px"}}}} -->
 <hr class="wp-block-separator has-alpha-channel-opacity" style="margin-top:50px;margin-bottom:50px"/>
@@ -204,4 +160,4 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"style"} /-->
