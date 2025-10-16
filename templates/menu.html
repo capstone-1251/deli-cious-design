@@ -2,91 +2,99 @@
   <!-- wp:template-part {"slug":"header"} /-->
 </header>
 <main>
-  <div>
+  <section>
     <h1>Menu</h1>
-  </div>
+  
 
-  <div>
-    <a href="#grab-and-go">Grab & Go</a>
-    <a href="#build-your-own">Build Your Own</a>
-    <a href="#cat3">Ingredients</a>
-  </div>
-  <a href="#">Order Now</a>
-
-  <div id="grab-and-go">
-    <h2>Grab & Go</h2>
-    <p>paragraph</p>
     <div>
-<!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug","terms":["grab-and-go"]},"category":[7]}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1rem","right":"1rem"}},"border":{"width":"1px","style":"solid","color":"#ddd"},"radius":"10px"},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-border-color" style="border-color:#ddd;border-style:solid;border-width:1px;padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
-
-<!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
-
-<!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /--></div>
-<!-- /wp:group -->
-
-<!-- wp:post-featured-image /--></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
-<!-- /wp:post-template --></div>
-<!-- /wp:query -->
+      <a href="#grab-and-go">Grab & Go</a>
+      <a href="#build-your-own">Build Your Own</a>
+      <a href="#cat3">Ingredients</a>
     </div>
-  </div>
+    <a href="#">Order Now</a>
 
-<hr>
-  <div  id="build-your-own">
-    <h2>Build Your Own</h2>
-    <p>paragraph</p>
-    <h3>subheading</h3>
-    <p>paragraph</p>
-    <h3>subheading</h3>
-    <p>paragraph</p>
-    <h3>subheading</h3>
-    <p>paragraph</p>
-  </div>
-<hr>
-  <div>
-    <h2>Meats</h2>
-    <p>paragpraph</p>
-    <div>
-      <h3>subheading</h3>
+    <section id="grab-and-go">
+      <h2>Grab & Go</h2>
       <p>paragraph</p>
-      <h3>subheading</h3>
+      <div>
+        <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug","terms":["grab-and-go"]},"category":[7]}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-query">
+          <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+          <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1rem","right":"1rem"}},"border":{"width":"1px","style":"solid","color":"#ddd"},"radius":"10px"},"layout":{"type":"constrained"}} -->
+          <div class="wp-block-group has-border-color" style="border-color:#ddd;border-style:solid;border-width:1px;padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem">
+            <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+            <div class="wp-block-group alignwide">
+              <!-- wp:group {"layout":{"type":"constrained"}} -->
+              <div class="wp-block-group">
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
+
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /--></div>
+              <!-- /wp:group -->
+
+              <!-- wp:post-featured-image /-->
+            </div>
+            <!-- /wp:group -->
+          </div>
+          <!-- /wp:group -->
+          <!-- /wp:post-template -->
+        </div>
+        <!-- /wp:query -->
+      </div>
+    </section>
+
+  <hr>
+    <section  id="build-your-own">
+      <h2>Build Your Own</h2>
       <p>paragraph</p>
-      <h3>subheading</h3>
-      <p>paragraph</p>
-    </div>
-  </div>
-<hr>
-  <div>
-    <h2>Sauces</h2>
-    <p>paragpraph</p>
-    <div>
-      <h3>subheading</h3>
-      <p>paragraph</p>
-      <h3>subheading</h3>
-      <p>paragraph</p>
-      <h3>subheading</h3>
-      <p>paragraph</p>
-    </div>
-  </div>
-<hr>
-  <div>
-    <h2>Drinks</h2>
-    <p>paragpraph</p>
-    <div>
       <h3>subheading</h3>
       <p>paragraph</p>
       <h3>subheading</h3>
       <p>paragraph</p>
       <h3>subheading</h3>
       <p>paragraph</p>
-    </div>
-  </div>
+    </section>
+  <hr>
+    <section>
+      <h2>Meats</h2>
+      <p>paragpraph</p>
+      <div>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+      </div>
+    </section>
+  <hr>
+    <section>
+      <h2>Sauces</h2>
+      <p>paragpraph</p>
+      <div>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+      </div>
+    </section>
+  <hr>
+    <section>
+      <h2>Drinks</h2>
+      <p>paragpraph</p>
+      <div>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+        <h3>subheading</h3>
+        <p>paragraph</p>
+      </div>
+    </section>
+  </section>
 </main>
 
 <footer>
