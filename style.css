@@ -1,4 +1,434 @@
 /*
 Theme Name: deli-cious design
-Version: 1.1.5
+Version: 1.2.0
 */
+
+/* -------------------- */
+/* Global Styles        */
+/* -------------------- */
+:root {
+    /* Colors */
+    --color-placeholder-grey: #777;
+    --color-white-off: #f5f5f5;
+    --color-primary: #979797;
+    --color-primary-hover: #888;
+    --color-outline-hover: #e0e0e0;
+
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --border-radius: 0.5rem;
+
+    /* Layout */
+    --max-width: 600px;
+
+    /* Typography sizes */
+    --h1-size: 3rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --h4-size: 1rem;
+    --p-size: 1rem;
+    --btn-font-size: 1rem;
+
+    /* Typography line-heights */
+    --line-height-base: 1.5;
+    --line-height-heading: 1.2;
+
+    /* Typography weights */
+    --font-weight-normal: 400;
+    --font-weight-bold: 600;
+
+    /* Typography fonts */
+    --font-family-base: 'Arial', sans-serif;
+    --font-family-h1: 'PlayFair Display', serif;
+    --font-family-h2: 'Caveat', sans-serif;
+    --font-family-h3: 'Lato', sans-serif;
+    --font-family-h4: 'Arial', sans-serif;
+    --font-family-p: 'Lato', sans-serif;
+    --font-family-btn: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-family-base);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: var(--line-height-base);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+.home-about,
+.home-menu,
+.home-toast,
+.home-catering,
+.home-merch{
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) auto;
+    border-bottom: 1px solid black; 
+    max-width: var(--max-width);
+}
+.home-toast,
+.home-catering,
+.home-merch,
+.home-testimonial{
+    text-align: center;
+}
+
+
+/* -------------------- */
+/* Typography           */
+/* -------------------- */
+h1 {
+    font-family: var(--font-family-h1);
+    font-size: var(--h1-size);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+}
+
+h2 {
+    font-family: var(--font-family-h2);
+    font-size: var(--h2-size);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+h3 {
+    font-family: var(--font-family-h3);
+    font-size: var(--h3-size);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+h4 {
+    font-family: var(--font-family-h4);
+    font-size: var(--h4-size);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    font-family: var(--font-family-p);
+    font-size: var(--p-size);
+    line-height: var(--line-height-base);
+    margin-bottom: var(--spacing-sm);
+}
+
+button,
+.btn {
+    font-family: var(--font-family-btn);
+    font-size: var(--btn-font-size);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--color-placeholder-grey);
+    color: var(--color-white-off);
+    padding:var(--spacing-sm) var(--spacing-md);
+    margin: var(--spacing-lg) auto;
+    display: block;
+    text-align: center;
+    width: fit-content;
+    
+}
+/* ---------------------------
+HEADER 
+----------------------------*/
+.site-header {
+    padding: 1rem;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navigation list */
+.header-nav ul {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ---------------------------
+HAMBURGER BUTTON
+----------------------------*/
+.wp-block-navigation__responsive-container-open {
+    display: block;
+    font-size: 0;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Bars */
+.wp-block-navigation__responsive-container-open::before,
+.wp-block-navigation__responsive-container-open::after,
+.wp-block-navigation__responsive-container-open span {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #000;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* bar positions */
+.wp-block-navigation__responsive-container-open::before { top: 6px; }
+.wp-block-navigation__responsive-container-open span { top: 15px; }
+.wp-block-navigation__responsive-container-open::after { top: 24px; }
+
+/* ---------------------------
+MOBILE NAV
+----------------------------*/
+@media (min-width: 960px) {
+
+    /* hide WP menu by default */
+    .wp-block-navigation__container {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #ddd;
+        z-index: 999;
+        text-align: center;
+    }
+
+    /* show when WP toggles this class */
+    .is-menu-open .wp-block-navigation__container {
+        display: flex !important;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .header-nav a {
+        font-size: 1.4rem;
+    }
+}
+
+/* -------------------- */
+/* Banner Section       */
+/* -------------------- */
+.banner {
+    padding: var(--spacing-md);
+    background-color: var(--color-placeholder-grey);
+    color: var(--color-white-off);
+}
+
+.banner-title {
+    margin: var(--spacing-sm) 0;
+    font-size: var(--h1-size);
+}
+
+.banner-text {
+    margin: var(--spacing-sm) 0 var(--spacing-md);
+}
+
+.banner-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.banner-buttons .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: var(--btn-font-size);
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.banner-buttons .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white-off);
+}
+
+.banner-buttons .btn-outline {
+    background-color: var(--color-white-off);
+    color: var(--color-placeholder-grey);
+    border: 2px solid var(--color-placeholder-grey);
+}
+
+/* -------------------- */
+/* Home About Section   */
+/* -------------------- */
+
+.home-about img {
+    margin: var(--spacing-md) auto;
+}
+
+
+/* -------------------- */
+/* Home Menu Section   */
+/* -------------------- */
+
+.mfb-meta-field-block[data-field-name="menu_item_name"] {
+    font-weight: bold;
+}
+
+
+/* -------------------- */
+/* Home Order Section   */
+/* -------------------- */
+
+
+/* -------------------- */
+/* Home Catering Section   */
+/* -------------------- */
+
+
+/* -------------------- */
+/* Home Featured Merch Section   */
+/* -------------------- */
+
+
+/* -------------------- */
+/* Home Featured Testimonial Section   */
+/* -------------------- */
+
+/* -------------------- */
+/* ABOUT PAGE */
+/* About Section        */
+/* -------------------- */
+
+/* Banner Title */
+.home-about > h1 {
+    background-color: var(--color-placeholder-grey);
+    color: var(--color-white-off);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    font-size: var(--h1-size);
+}
+
+/* Story Section */
+.home-about-story img {
+    max-width: 100%;
+    display: block;
+    margin: var(--spacing-md) auto;
+    border-radius: var(--border-radius);
+}
+
+.home-about-story p {
+    margin: var(--spacing-sm) 0;
+}
+
+/* Timeline Section */
+.home-about-timeline {
+    margin-top: var(--spacing-lg);
+}
+
+.home-about-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.home-about-timeline .timeline-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    gap: 1rem;
+}
+
+.home-about-timeline .timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+
+
+/* Kickstarter Section */
+.home-about-kickstarter img {
+    display: block;
+    margin: var(--spacing-md) auto;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.home-about-kickstarter p {
+    margin: var(--spacing-sm) 0;
+}
+
+/* Our Family Section */
+.home-about-family img {
+    display: block;
+    margin: var(--spacing-md) auto;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.family-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.family-member img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Join Our Family */
+.home-about-join {
+    text-align: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.home-about-join .btn {
+    margin-top: var(--spacing-sm);
+}
+
+/* Testimonials */
+.home-testimonial .testimonial-item {
+    background-color: var(--color-white-off);
+    border: 1px solid var(--color-outline-hover);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+.home-testimonial .testimonial-item p:last-child {
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--spacing-sm);
+}

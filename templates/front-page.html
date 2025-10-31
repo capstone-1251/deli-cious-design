@@ -1,92 +1,100 @@
 <header>
   <!-- wp:template-part {"slug":"header"} /-->
 </header>
-<div>
-  <section>
-    <h1>Handcrafted Sandwiches, made with heart</h1>
-    <p>From Jasper to Edmonton, rebuilding together, one great sandwich at a time.</p>
-    <div>
-      <a href="/about/" style="border-radius:1rem;font-size:1rem">Our story</a>
-      <a href="/menu/" style="border-radius:1rem;font-size:1rem">Our menu</a>
-    </div>
+<main>
+  <section class="banner">
+    <section class="container">
+      <h1 class="banner-title">Patricia Street Deli</h1>
+      <p class="banner-text">From Jasper to Edmonton, rebuilding together, one great sandwich at a time.</p>
+      <div class="banner-buttons">
+        <a href="/about/" class="btn btn-primary">Our story</a>
+        <a href="/menu/" class="btn btn-outline">Our menu</a>
+      </div>
+    </section>
   </section>
-
-
-
-  <section>
-    <h2>About Us</h2>
-    <img src="https://placehold.co/100" alt="place holder image">
-    <p>parapragh 1</p>
-    <div>
+  
+  <section class="home-about container">
+      <h2>About Us</h2>
       <img src="https://placehold.co/100" alt="place holder image">
-      <p>parapragh 2</p>
-    </div>
-    <a href="https://patricia-street-deli.local/about/">Meet Our Family</a>
+      <p>paragraph 1</p>
+      <a href="/about/" class=" btn btn-primary">Read More About Our Family</a>
   </section>
-  <hr>
-  <section>
+
+  
+  <section class="home-menu container">
     <h2>Featured Menu</h2>
     <div>
       <h3>Grab & Go Sandwiches</h3>
       <p>paragraph</p>
-      <div>
-        <h4>menu item name</h4>
-        <p>menu item description</p>
-        <img src="https://placehold.co/100" alt="">
+      <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"menu-item","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug","terms":["grab-and-go"]},"category":[7]}},"layout":{"type":"constrained"}} -->
+      <div class="wp-block-query">
+        <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+        <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1rem","right":"1rem"}},"radius":"10px"},"layout":{"type":"constrained"}} -->
+        <div 
+          style="padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem">
+          <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+          <div class="wp-block-group alignwide">
+            <!-- wp:group {"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+              <strong><!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /--></strong>
+
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:post-featured-image /-->
+          </div>
+          <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+        <!-- /wp:post-template -->
       </div>
-      <div>
-        <h4>menu item name</h4>
-        <p>menu item description</p>
-        <img src="https://placehold.co/100" alt="">
-      </div>
-      <div>
-        <h4>menu item name</h4>
-        <p>menu item description</p>
-        <img src="https://placehold.co/100" alt="">
-      </div>
+      <!-- /wp:query -->
     </div>
     <div>
       <h3>Build Your Own Sandwich</h3>
-      <p>paragraph</p>
+      <p>We offer a range of variaties of ingredients that can be used to make your own delicious sandwich.</p>
     </div>
 
-    <a href="/menu/">View Our Full Menu</a>
+    <a href="/menu/" class="btn btn-primary">View Our Full Menu</a>
+    </div>
   </section>
 
-  <hr>
-
-  <section>
-    <h2>Order With Toast</h2>
-    <p>pragraph</p>
-    <a href="/order/" style="border-radius:1rem;">Order Now</a>
-  </section>
-
-  <hr>
-
-  <section>
-    <h2>Catering</h2>
-    <p>pragraph</p>
-    <a href="/catering/" style="border-radius:1rem;">Inquire About Catering</a>
-  </section>
-
-  <hr>  
   
-  <section>
+
+  <section class="home-toast container">
+    <h2>Order With Toast</h2>
+    <p>Place an odrer for your sandwich via our toast delivery system/app</p>
+    <a href="/order/" class="btn btn-primary">Order Now</a>
+  </section>
+
+  
+
+  <section class="home-catering container">
+    <h2>Catering</h2>
+    <p>We offer the best catering options. Contact us to know more.</p>
+    <a href="/catering/" class="btn btn-primary">Inquire About Catering</a>
+  </section>
+
+  
+
+  <section class="home-merch container">
     <h2>Featured Merch</h2>
     <img src="https://placehold.co/100" alt="">
-    <p>pragraph<span>price</span></p>
-    <a href="/merch/">View All Merch</a>
+    <p>paragraph <span>price</span></p>
+    <a href="/merch/" class="btn btn-primary">View All Merch</a>
   </section>
 
-  <hr>
+  
 
-  <section>
+  <section class="home-testimonial container">
     <h2>Featured Testimonial</h2>
-    <p>paragpraph</p>
-    <p>price</p>
-    
+    <p>"Patricia Street Deli has always been a must-stop..."</p>
+    <p>- Mr. Someone</p>
   </section>
-
+</main>
 
   <footer>
     <!-- wp:template-part {"slug":"footer"} /-->

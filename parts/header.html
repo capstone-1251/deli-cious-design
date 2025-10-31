@@ -1,5 +1,16 @@
-<!-- wp:group {"metadata":{"name":"Header"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","top":"2rem","bottom":"2rem"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group" style="padding-top:2rem;padding-right:var(--wp--preset--spacing--40);padding-bottom:2rem;padding-left:var(--wp--preset--spacing--40)"><!-- wp:site-logo {"width":50,"linkTarget":"_blank","shouldSyncIcon":true,"style":{"layout":{"selfStretch":"fill","flexSize":null}}} /-->
+<!-- wp:group {"tagName":"header","className":"site-header","layout":{"type":"constrained"}} -->
+<header class="site-header">
+    <div class="header-container">
 
-<!-- wp:navigation {"ref":4,"icon":"menu","style":{"layout":{"selfStretch":"fill","flexSize":null},"typography":{"fontSize":"1.5rem"}},"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} /--></div>
+        <!-- Logo -->
+        <div class="header-logo">
+            <!-- wp:site-logo {"width":60} /-->
+        </div>
+
+        <nav class="header-nav">
+            <!-- wp:navigation {"ref":4,"overlayMenu":"mobile"} /-->
+        </nav>
+
+    </div>
+</header>
 <!-- /wp:group -->
