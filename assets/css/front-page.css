@@ -1,0 +1,37 @@
+
+/* -------------------- */
+/* Home About Section   */
+/* -------------------- */
+
+.home-about img {
+    margin: var(--spacing-md) auto;
+}
+
+
+/* -------------------- */
+/* Home Menu Section   */
+/* -------------------- */
+
+.mfb-meta-field-block[data-field-name="menu_item_name"] {
+    font-weight: bold;
+}
+
+
+/* -------------------- */
+/* Home Order Section   */
+/* -------------------- */
+
+
+/* -------------------- */
+/* Home Catering Section   */
+/* -------------------- */
+
+
+/* -------------------- */
+/* Home Featured Merch Section   */
+/* -------------------- */
+
+
+/* -------------------- */
+/* Home Featured Testimonial Section   */
+/* -------------------- */
