@@ -1,0 +1,87 @@
+// sass/pages/_catering.scss
+
+/* -------------------- */
+/* Catering Page */
+/* -------------------- */
+.catering-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Top grey banner */
+  .catering-banner {
+    background: var(--color-placeholder-grey);
+    color: var(--color-white-off);
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+  }
+
+  /* White card container */
+  .catering-wrapper {
+    width: 90%;
+    max-width: 600px;
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-md) auto;
+
+    h2 {
+      font-family: var(--font-family-h2);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+      margin-bottom: var(--spacing-lg);
+    }
+  }
+
+  /* Form container */
+  .catering-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+
+    label {
+      font-family: var(--font-family-p);
+      font-weight: var(--font-weight-bold);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: var(--spacing-sm);
+      border: 1px solid #ccc;
+      font-family: var(--font-family-p);
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        border-color: var(--color-placeholder-grey);
+        outline: none;
+      }
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background: var(--color-placeholder-grey);
+      color: var(--color-white-off);
+      border: none;
+      padding: var(--spacing-md);
+      font-family: var(--font-family-btn);
+      font-weight: var(--font-weight-bold);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+  }
+}

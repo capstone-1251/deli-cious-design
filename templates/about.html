@@ -3,7 +3,7 @@
 </header>
 
 <main>
-  
+
   <section class="banner banner-about">
     <h1>About</h1>
   </section>
@@ -71,13 +71,24 @@
     <img src="https://placehold.co/600x240" alt="Family Image">
     <p>Longer paragraph here</p>
 
-    <h3>[Loop the below out ]</h3>
+    <div class="family-member"></div>
+      <!-- wp:query {"queryId":13,"query":{"perPage":10,"pages":0,"offset":0,"postType":"team-member","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[],"taxQuery":{"category":[27],"post_tag":[28]}}} -->
+      <div class="wp-block-query"><!-- wp:post-template -->
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
+          <div class="wp-block-group">
+            <strong><!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"member_name","prefix":""} /--></strong>
 
-    <div class="family-member">
-      <h3>Wendy & Glen</h3>
-      <img src="https://placehold.co/120" alt="Wendy & Glen">
-      <p>Short bio text for Wendy & Glen.</p>
-    </div>
+            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"picture_of_the_member","prefix":""} /-->
+          </div>
+          <!-- /wp:group -->
+
+          <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"member_description","prefix":""} /-->
+        </div>
+        <!-- /wp:group -->
+        <!-- /wp:post-template -->
+      </div>
+      <!-- /wp:query -->
   </section>
 
   <hr class="section-divider">
@@ -92,26 +103,26 @@
   <hr class="section-divider">
 
   <!-- Testimonials -->
-<section class="testimonial container">
-  <h2>Testimonials</h2>
+  <section class="testimonial container">
+    <h2>Testimonials</h2>
 
-  <div class="testimonial-scroll">
-    <div class="testimonial-item">
-      <p>"Paragraph — testimonial text goes here."</p>
-      <p>- Name</p>
-    </div>
+    <div class="testimonial-scroll">
+      <div class="testimonial-item">
+        <p>"Paragraph — testimonial text goes here."</p>
+        <p>- Name</p>
+      </div>
 
-    <div class="testimonial-item">
-      <p>"Paragraph — testimonial text goes here."</p>
-      <p>- Name</p>
-    </div>
+      <div class="testimonial-item">
+        <p>"Paragraph — testimonial text goes here."</p>
+        <p>- Name</p>
+      </div>
 
-    <div class="testimonial-item">
-      <p>"Paragraph — testimonial text goes here."</p>
-      <p>- Name</p>
+      <div class="testimonial-item">
+        <p>"Paragraph — testimonial text goes here."</p>
+        <p>- Name</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 </main>

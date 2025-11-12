@@ -1,0 +1,88 @@
+// sass/pages/_contact.scss
+
+/* -------------------- */
+/* Contact Page Styles  */
+/* -------------------- */
+
+.contact-page {
+  max-width: 100%;
+
+  /* Banner */
+  .contact-banner {
+    background: var(--color-placeholder-grey);
+    color: var(--color-white-off);
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+  }
+
+  /* Wrapper card (info or form) */
+  .contact-wrapper {
+    background: #fff;
+    width: 100%;
+    max-width: 600px;
+    margin: var(--spacing-md) auto;
+    padding: 1rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    h2 {
+      font-family: var(--font-family-h2);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+      font-family: var(--font-family-p);
+      margin-bottom: var(--spacing-sm);
+
+      b {
+        font-weight: var(--font-weight-bold);
+      }
+    }
+  }
+
+  /* Form container */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+
+    label {
+      font-family: var(--font-family-p);
+      font-weight: var(--font-weight-bold);
+      font-size: 0.9rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      max-width: 100%;
+      padding: var(--spacing-sm);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: var(--font-family-p);
+      box-sizing: border-box;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Button (commented out as in original CSS) */
+    // button {
+    //   background: var(--color-placeholder-grey);
+    //   color: var(--color-white-off);
+    //   border: none;
+    //   padding: var(--spacing-md);
+    //   border-radius: 4px;
+    //   font-family: var(--font-family-btn);
+    //   font-weight: var(--font-weight-bold);
+    //   cursor: pointer;
+    //   transition: background 0.3s ease;
+    // }
+  }
+}
