@@ -3,14 +3,34 @@
 /* --------------------------- */
 /* HEADER                      */
 /* --------------------------- */
+header {
+  background: url('assets/svg/banner-bulletin-board.svg') repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 4rem 1rem;
+
+  // constrain inner content to max-width
+  .header-container {
+    max-width: 780px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 .site-header {
   padding: 1rem;
   background: #fff;
   border-bottom: 1px solid #e5e5e5;
 
   .header-container {
-    max-width: 680px;
+    max-width: 780px;
     margin: 0 auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,6 +39,7 @@
   .header-nav-main {
     display: flex;
     align-items: center;
+    gap: 1rem;
   }
 
   .header-nav {
@@ -50,7 +71,7 @@
 }
 
 /* --------------------------- */
-/* BOLDER HAMBURGER BUTTON     */
+/* HAMBURGER BUTTON (CUSTOM SVG) */
 /* --------------------------- */
 .wp-block-navigation__responsive-container-open {
   display: block;
@@ -66,55 +87,56 @@
   &::before,
   &::after,
   span {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: #111;
-    border-radius: 4px;
-    transition: 0.3s ease;
+    display: none !important;
   }
 
-  &::before {
-    top: 6px;
+  img.menu-svg {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
   }
 
-  span {
-    top: 15px;
-  }
-
-  &::after {
-    top: 24px;
+  &.is-open img.menu-svg {
+    transform: rotate(90deg);
   }
 }
 
-// ---------------------------
-// RESPONSIVE NAV BEHAVIOR
-// ---------------------------
-@media (max-width: 650px) {
-  // Hamburger button
+/* --------------------------- */
+/* RESPONSIVE NAV BEHAVIOR     */
+/* --------------------------- */
+@media (max-width: 700px) {
   .wp-block-navigation__responsive-container-open {
     display: block !important;
   }
 
-  // Hide nav links when menu is closed
   .wp-block-navigation__responsive-container ul {
     display: none;
-    flex-direction: column; // stack vertically
+    flex-direction: column;
     gap: var(--spacing-md);
     list-style: none;
-    padding: 0;
+    padding: var(--spacing-md);
     margin: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: #fff;
   }
 
-  // Show nav links when menu is open
   .wp-block-navigation__responsive-container.is-menu-open ul {
     display: flex !important;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (min-width: 651px) {
+@media (min-width: 701px) {
   .wp-block-navigation__responsive-container-open {
     display: none !important;
   }
@@ -123,4 +145,59 @@
     display: flex !important;
     gap: 1.2rem;
   }
+}
+
+/* --------------------------- */
+/* GENERIC BANNERS             */
+/* --------------------------- */
+.banner,
+.banner-about,
+.catering-banner,
+.contact-banner {
+  background-color: #fff; // white overlay behind content
+  position: relative;
+  color: #000;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+
+  // inner content wrapper
+  .banner-content {
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.banner h1,
+.banner-about h1,
+.catering-banner h1,
+.contact-banner h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.banner p,
+.banner-about p,
+.catering-banner p,
+.contact-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
 }

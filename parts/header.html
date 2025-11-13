@@ -1,24 +1,40 @@
 <!-- wp:group {"tagName":"header","className":"site-header","layout":{"type":"constrained"}} -->
-
 <header class="site-header">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
     <div class="header-container">
 
         <!-- Logo -->
         <div class="header-logo">
             <!-- wp:site-logo {"width":60} /-->
         </div>
+
         <div class="header-nav-main">
-            <!-- wp:woocommerce/cart-link /-->
+
+            <!-- Custom cart icon -->
+            <a class="cart-link" href="/cart">
+                <img src="/wp-content/themes/style/assets/svg/icon-cart.svg" alt="Cart" class="cart-icon" />
+            </a>
+
             <nav class="header-nav">
                 <!-- wp:navigation {"ref":4,"overlayMenu":"mobile"} /-->
             </nav>
+
         </div>
 
     </div>
 
-
 </header>
 <!-- /wp:group -->
+
+
+<!-- Replace WP hamburger with inline SVG -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".wp-block-navigation__responsive-container-open");
+    if (btn) {
+        btn.innerHTML = `
+            <img src="/wp-content/themes/style/assets/svg/icon-menu.svg" alt="Menu" class="menu-svg" />
+        `;
+    }
+});
+</script>
