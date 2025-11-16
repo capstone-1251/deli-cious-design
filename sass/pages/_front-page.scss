@@ -4,9 +4,24 @@
 /* Home About Section   */
 /* -------------------- */
 .home-about {
-  img {
+  margin: 0 auto;
+  .about-image{
+    display: flex;
+    flex-direction: column;
     margin: var(--spacing-md) auto;
+    padding: 3rem 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    img:nth-child(1){
+      max-width: unset;
+    }
+    img:nth-child(2){
+      max-width: 60%;
+      margin-top: 1rem;
   }
+}
+a.btn{
+  width: fit-content;
+}
 }
 
 /* -------------------- */
@@ -15,23 +30,45 @@
 .mfb-meta-field-block[data-field-name="menu_item_name"] {
   font-weight: bold;
 }
+.home-menu{
+  background-color: var(--color-primary);
+  color: var(--color-white-off);
+  min-width: 100%;
+  padding: unset;
+}
 
 /* -------------------- */
 /* Home Order Section   */
 /* -------------------- */
-/* Add styles here in the future */
-
+.home-toast{
+  text-align: left;
+}
 /* -------------------- */
 /* Home Catering Section   */
 /* -------------------- */
-/* Add styles here in the future */
+.home-catering{
+  text-align: left;
+
+  background-color: var(--color-primary);
+  color: var(--color-white-off);
+  min-width: 100%;
+  padding: unset;
+}
 
 /* -------------------- */
 /* Home Featured Merch Section   */
 /* -------------------- */
-/* Add styles here in the future */
+.home-merch{
+  text-align: left;
+}
 
 /* -------------------- */
 /* Home Featured Testimonial Section   */
 /* -------------------- */
-/* Add styles here in the future */
+.home-testimonial{
+  text-align: left;
+  background-color: var(--color-primary);
+  color: var(--color-white-off);
+  min-width: 100%;
+  padding: unset;
+}
