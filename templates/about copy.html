@@ -1,0 +1,134 @@
+<header>
+  <div class="header-content">
+    <!-- wp:template-part {"slug":"header"} /-->
+    <section class="banner banner-about">
+      <h1>About</h1>
+    </section>
+  </div>
+</header>
+
+<main>
+
+
+  <!-- Story -->
+  <section class="about-story">
+    <h2>Story</h2>
+    <img src="https://placehold.co/600x300" alt="Story Image">
+    <p>Paragraph one—intro text goes here. Short and friendly.</p>
+    <p>Paragraph two—more detail, small paragraphs for readable mobile layout.</p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Timeline -->
+  <section class="about-timeline">
+    <h2>Timeline</h2>
+
+    <div class="timeline-item">
+      <img src="https://placehold.co/80" alt="Timeline Image">
+      <p class="timeline-text">Event 1 description.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img src="https://placehold.co/80" alt="Timeline Image">
+      <p class="timeline-text">Event 2 description.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img src="https://placehold.co/80" alt="Timeline Image">
+      <p class="timeline-text">Event 3 description.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img src="https://placehold.co/80" alt="Timeline Image">
+      <p class="timeline-text">Event 4 description.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img src="https://placehold.co/80" alt="Timeline Image">
+      <p class="timeline-text">Event 5 description.</p>
+    </div>
+
+    <div class="timeline-item">
+      <img src="https://placehold.co/80" alt="Timeline Image">
+      <p class="timeline-text">Event 6 description.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Kickstarter -->
+  <section class="about-kickstarter">
+    <h2>Kickstarter</h2>
+    <img src="https://placehold.co/600x320" alt="Kickstarter Image">
+    <p>Short intro about the campaign.</p>
+    <p>Longer paragraph below the image if needed.</p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Our Family -->
+  <section class="about-family">
+    <h2>Our Family</h2>
+    <img src="https://placehold.co/600x240" alt="Family Image">
+    <p>Longer paragraph here</p>
+
+    <div class="family-member"></div>
+      <!-- wp:query {"queryId":13,"query":{"perPage":10,"pages":0,"offset":0,"postType":"team-member","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[],"taxQuery":{"category":[27],"post_tag":[28]}}} -->
+      <div class="wp-block-query"><!-- wp:post-template -->
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
+          <div class="wp-block-group">
+            <strong><!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"member_name","prefix":""} /--></strong>
+
+            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"picture_of_the_member","prefix":""} /-->
+          </div>
+          <!-- /wp:group -->
+
+          <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"member_description","prefix":""} /-->
+        </div>
+        <!-- /wp:group -->
+        <!-- /wp:post-template -->
+      </div>
+      <!-- /wp:query -->
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Join -->
+  <section class="about-join">
+    <h2>Join Our Family</h2>
+    <p>Interested in joining? We’d love to hear from you.</p>
+    <a href="/contact/" class="btn btn-primary">Apply Now</a>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Testimonials -->
+  <section class="testimonial container">
+    <h2>Testimonials</h2>
+
+    <div class="testimonial-scroll">
+      <div class="testimonial-item">
+        <p>"Paragraph — testimonial text goes here."</p>
+        <p>- Name</p>
+      </div>
+
+      <div class="testimonial-item">
+        <p>"Paragraph — testimonial text goes here."</p>
+        <p>- Name</p>
+      </div>
+
+      <div class="testimonial-item">
+        <p>"Paragraph — testimonial text goes here."</p>
+        <p>- Name</p>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  <!-- wp:template-part {"slug":"footer"} /-->
+</footer>

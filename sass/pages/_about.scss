@@ -19,8 +19,8 @@ body {
   }
 }
 
-/* Story Section */
-.about-story {
+/* About */
+.about {
   padding: var(--spacing-md);
   max-width: 680px;
   margin: var(--spacing-sm) auto;
@@ -32,76 +32,9 @@ body {
   }
 }
 
-/* Timeline Section */
-.about-timeline {
-  margin: var(--spacing-lg) auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 680px;
-
-  .timeline-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-    max-width: 680px;
-    gap: 1rem;
-
-    &:nth-child(odd) {
-      flex-direction: row-reverse;
-    }
-  }
-}
-
-/* Kickstarter Section */
-.about-kickstarter {
-  max-width: 680px;
-  margin: var(--spacing-md) auto;
-  padding: var(--spacing-md);
-
-  img {
-    margin: var(--spacing-md) auto;
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  p {
-    margin: var(--spacing-sm) 0;
-  }
-}
-
-/* Our Family Section */
-.about-family {
-  max-width: 680px;
-  padding: var(--spacing-md);
-  margin: var(--spacing-md) auto;
-
-  img {
-    display: block;
-    margin: var(--spacing-md) auto;
-    max-width: 100%;
-    border-radius: var(--border-radius);
-  }
-
-  .family-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-
-    img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: var(--spacing-sm);
-    }
-  }
+/* Humble Beginnings */
+.about.humble-beginnings {
+  background: #05e13c !important;
 }
 
 /* Join Our Family */
