@@ -21,20 +21,34 @@ body {
 
 /* About */
 .about {
-  padding: var(--spacing-md);
-  max-width: 680px;
-  margin: var(--spacing-sm) auto;
-
-  img {
-    max-width: 100%;
-    display: block;
-    margin: var(--spacing-md) auto;
-  }
+  padding: var(--section-padding);
 }
 
 /* Humble Beginnings */
 .about.humble-beginnings {
-  background: #05e13c !important;
+  background: var(--color-white-off);
+}
+
+/* Our Growth and Success in Jasper */
+.about.growth-success {
+  background: var(--color-primary);
+  color: var(--color-white-off);
+}
+
+/* The Fire */
+.about.fire {
+  background: var(--color-white-off);
+}
+
+/* Why Edmonton */
+.about.why-edmonton {
+  background: var(--color-primary);
+  color: var(--color-white-off);
+}
+
+/* The Next Generation: Dustin & Jaimie */
+.about.next-generation {
+  background: var(--color-white-off);
 }
 
 /* Join Our Family */
