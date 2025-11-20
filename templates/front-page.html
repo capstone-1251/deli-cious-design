@@ -2,7 +2,7 @@
   <div class="header-content">
     <!-- wp:template-part {"slug":"header"} /-->
      <img src="http://patricia-street-deli.local/wp-content/themes/style/assets/img/hero-img.png" alt="Group of perople eating sandwiches" class="front-banner-image">
-    <section class="banner">
+    <section class="banner home-banner">
       <section class="container">
         <h1 class="banner-title">Patricia Street Deli</h1>
         <p class="banner-text">From Jasper to Edmonton, rebuilding together, one great sandwich at a time.</p>
@@ -41,7 +41,7 @@
       <h2 class="underline-doodle-secondary">Featured Menu</h2>
       <div>
         <h3>Grab & Go Sandwiches</h3>
-        <p>paragraph</p>
+        <p>Made fresh daily, our grab & go sandwiches are perfect for when you’re short on time but still want something handcrafted.</p>
         <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"menu-item","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug","terms":["grab-and-go"]},"category":[7]}},"layout":{"type":"constrained"}} -->
         <div class="wp-block-query">
           <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
@@ -57,7 +57,8 @@
                 <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
               </div>
               <!-- /wp:group -->
-              <!-- wp:post-featured-image /-->
+              <!-- wp:mfb/meta-field-block {"className":"home-menu-image","fieldType":"acf","fieldName":"menu_item_image"} /-->
+              
             </div>
             <!-- /wp:group -->
           </div>

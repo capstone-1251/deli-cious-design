@@ -35,6 +35,12 @@ a.btn{
   color: var(--color-white-off);
   min-width: 100%;
   padding: unset;
+
+   .home-menu-image img {
+    min-width: 150px;
+
+    display: block;
+  }
 }
 
 /* -------------------- */
