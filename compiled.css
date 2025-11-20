@@ -139,6 +139,25 @@ p {
   background-size: contain;
 }
 
+/* Underline Doodle Secondary */
+.underline-doodle-secondary {
+  position: relative;
+  display: block;
+  padding-bottom: 1.2rem;
+}
+.underline-doodle-secondary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 12px;
+  background-image: url("assets/svg/heading-chalk-secondary.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+}
+
 /* --------------------------- */
 /* HEADER                      */
 /* --------------------------- */
@@ -877,6 +896,60 @@ body {
 .home-merch {
   text-align: left;
 }
+.home-merch .woocommerce ul.products li.product {
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  margin: 0 auto 2rem;
+  max-width: 320px;
+}
+.home-merch .woocommerce ul.products li.product a img {
+  max-width: 350px;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.home-merch .woocommerce ul.products li.product .woocommerce-loop-product__title {
+  font-family: var(--font-family-p);
+  font-size: var(--p-size);
+  margin-top: 1rem;
+  text-align: left;
+}
+.home-merch .woocommerce ul.products li.product .price {
+  font-family: var(--font-family-p);
+  font-size: var(--p-size);
+  font-weight: normal;
+  float: right;
+  margin-top: -1.5rem;
+}
+.home-merch .woocommerce ul.products li.product .button {
+  display: none !important;
+}
+.home-merch .woocommerce ul.products li.product {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.home-merch .woocommerce ul.products li.product .product-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.home-merch .woocommerce ul.products li.product .woocommerce-loop-product__title {
+  flex: 0 0 70%;
+  margin: 0;
+}
+.home-merch .woocommerce ul.products li.product .info-spacer {
+  flex: 0 0 10%;
+}
+.home-merch .woocommerce ul.products li.product .price {
+  flex: 0 0 20%;
+  text-align: right;
+  margin: 0;
+}
 
 /* -------------------- */
 /* Home Featured Testimonial Section   */
@@ -887,6 +960,26 @@ body {
   color: var(--color-white-off);
   min-width: 100%;
   padding: unset;
+}
+
+.feedback-text {
+  font-family: var(--font-family-p);
+  font-size: var(--p-size);
+}
+
+.feedback-author {
+  font-family: var(--font-family-h4);
+  font-size: var(--h4-size);
+  font-weight: var(--font-weight-bold);
+}
+.feedback-author ::before {
+  content: "- ";
+}
+
+.testominoial-content {
+  background-color: var(--color-white-off);
+  color: var(--color-black);
+  padding: var(--spacing-md);
 }
 
 /* --------------------------- */

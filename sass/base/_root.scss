@@ -150,6 +150,26 @@ p {
   }
 }
 
+/* Underline Doodle Secondary */
+
+.underline-doodle-secondary {
+  position: relative;
+  display: block;           // make it a block element
+  padding-bottom: 1.2rem;   // space for the underline
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 12px;           // adjust height if needed
+    background-image: url('assets/svg/heading-chalk-secondary.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+  }
+}
 
 
 
