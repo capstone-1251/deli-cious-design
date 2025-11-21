@@ -1,34 +1,24 @@
-<!-- Top Notice Bar -->
-<div class="top-notice">
-  <div class="top-notice-content">
-    <span class="notice-left">Store Hours: 9 AM – 9 PM</span>
-    <span class="notice-right">Call Us: 566-654-5567</span>
-  </div>
-</div>
-
 <!-- wp:group {"tagName":"header","className":"site-header","layout":{"type":"constrained"}} -->
-<header class="site-header">
+<header class="site-header navigation">
 
-    <div class="header-container">
+    <div class="nav-container">
 
         <!-- Logo -->
-        <div class="header-logo">
+        <div class="logo">
             <!-- wp:site-logo {"width":60} /-->
         </div>
 
-        <div class="header-nav-main">
+        <div class="nav-main">
 
             <!-- Custom cart icon -->
             <a class="cart-link" href="/cart">
                 <img src="/wp-content/themes/style/assets/svg/icon-cart.svg" alt="Cart" class="cart-icon" />
             </a>
 
-            <nav class="header-nav">
+            <nav class="nav">
                 <!-- wp:navigation {"ref":4,"overlayMenu":"mobile"} /-->
             </nav>
-
         </div>
-
     </div>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,11 +31,29 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
     const btn = document.querySelector(".wp-block-navigation__responsive-container-open");
-    if (btn) {
-        btn.innerHTML = `
-            <img src="/wp-content/themes/style/assets/svg/icon-menu.svg" alt="Menu" class="menu-svg" />
-        `;
-    }
+    const container = document.querySelector(".wp-block-navigation__responsive-container");
+
+    if (!btn || !container) return;
+
+    // Replace WP default button content with your SVG
+    btn.innerHTML = `
+        <img src="/wp-content/themes/style/assets/svg/icon-menu.svg" 
+             alt="Menu" 
+             class="menu-svg" />
+    `;
+
+    // Toggle button "is-open" class when menu opens/closes
+    const observer = new MutationObserver(() => {
+        if (container.classList.contains("is-menu-open")) {
+            btn.classList.add("is-open");
+        } else {
+            btn.classList.remove("is-open");
+        }
+    });
+
+    observer.observe(container, { attributes: true });
 });
 </script>
+
