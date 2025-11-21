@@ -3,13 +3,13 @@
 // Root / global styles
 @use "base/root" as *;
 
+// Header/Footer partials
+@use "parts/header" as *;
+@use "parts/footer" as *;
+
 // Page-specific styles
 @use "pages/about" as *;
 @use "pages/menu" as *;
 @use "pages/catering" as *;
 @use "pages/contact" as *;
 @use "pages/front-page" as *;
-
-// Header/Footer partials
-@use "parts/header" as *;
-@use "parts/footer" as *;
