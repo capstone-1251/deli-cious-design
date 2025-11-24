@@ -45,7 +45,7 @@
 /* Home Banner                 */
 /* --------------------------- */
 .home-banner {
-  background: url('assets/svg/banner-bulletin-board.svg') repeat center center;
+  background: url('../assets/svg/banner-bulletin-board.svg') repeat center center;
   background-size: cover;
   padding: var(--section-padding);
   padding-top: 10rem;
@@ -135,6 +135,11 @@
 .merch .underline {
   width: 240px;
 }
+.woocommerce ul.products li.product .button{
+  max-width: 0;
+  max-height: 0;
+  display: none;
+}
 
 /* -------------------- */
 /* Testimonial          */
@@ -147,4 +152,16 @@
 
 .testimonial .underline-2 {
   width: 310px;
+}
+
+// .feedback-text,.feedback-author{
+//   color: var(--color-black)
+// }
+.testimonial .polaroid-frame {
+  color: var(--color-black);
+}
+.feedback-author{
+  ::before{
+    content: "- ";
+  }
 }

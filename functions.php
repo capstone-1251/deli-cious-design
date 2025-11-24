@@ -6,7 +6,7 @@ add_action( 'wp_enqueue_scripts', function() {
     // Enqueue the compiled Sass file
     wp_enqueue_style(
         'theme-compiled',
-        get_template_directory_uri() . '/compiled.css',
+        get_template_directory_uri() . '/sass/compiled.css',
         array(),
         '1.0'
     );
