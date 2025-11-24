@@ -58,126 +58,103 @@
       <div class="build-your-own-grid">
 
         <!-- Meats -->
-        <div class="wp-block-group">
-          <!-- wp:heading {"level":3} -->
-          <h3 class="wp-block-heading">Meats</h3>
-          <!-- /wp:heading -->
-
-          <!-- wp:query {"queryId":13,"query":{"perPage":10,"pages":0,"offset":0,"postType":"meat","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]}} -->
-          <div class="wp-block-query"><!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"meats","prefix":""} /-->
-            <!-- /wp:post-template -->
-          </div>
-          <!-- /wp:query -->
-
-        </div>
-        <p> <!-- Vegan Meats --></p>
         <div>
-
-          <!-- wp:heading {"level":3} -->
-          <h3 class="wp-block-heading">Vegan meat</h3>
-          <!-- /wp:heading -->
-
-          <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"postType":"vegan-meat","order":"desc","orderBy":"date","taxQuery":{"category":[8],"post_tag":[21]},"sticky":"","parents":[],"format":[]},"layout":{"type":"constrained"}} -->
-          <div class="wp-block-query"><!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"meats","prefix":""} /-->
+          <h3>Meats</h3>
+          <!-- wp:query {"queryId":0,"query":{"perPage":50,"postType":"meat","order":"asc"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template -->
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
             <!-- /wp:post-template -->
           </div>
           <!-- /wp:query -->
-
         </div>
-        <p> <!-- Vegetables --></p>
+
+        <!-- Vegan Meat -->
         <div>
-
-          <!-- wp:heading {"level":3} -->
-          <h3 class="wp-block-heading">Veggies</h3>
-          <!-- /wp:heading -->
-
-          <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"postType":"veggi","order":"desc","orderBy":"date","sticky":"","parents":[],"format":[]}} -->
-          <div class="wp-block-query"><!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"veggies","prefix":""} /-->
+          <h3>Vegan Meat</h3>
+          <!-- wp:query {"queryId":1,"query":{"perPage":50,"postType":"vegan-meat","order":"asc"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template -->
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
             <!-- /wp:post-template -->
           </div>
           <!-- /wp:query -->
-
         </div>
+
+        <!-- Veggies -->
+        <div>
+          <h3>Veggies</h3>
+          <!-- wp:query {"queryId":2,"query":{"perPage":50,"postType":"veggi","order":"asc"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template -->
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+            <!-- /wp:post-template -->
+          </div>
+          <!-- /wp:query -->
+        </div>
+
         <!-- Cheese -->
-
         <div>
-          <!-- wp:heading {"level":3} -->
-          <h3 class="wp-block-heading">Cheese</h3>
-          <!-- /wp:heading -->
-
-           <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"postType":"cheese","order":"desc","orderBy":"date","sticky":"","parents":[],"format":[]}} -->
-          <div class="wp-block-query"><!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"cheese","prefix":""} /-->
+          <h3>Cheese</h3>
+          <!-- wp:query {"queryId":3,"query":{"perPage":50,"postType":"cheese","order":"asc"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template -->
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
             <!-- /wp:post-template -->
           </div>
           <!-- /wp:query -->
-
         </div>
 
         <!-- Sauces -->
         <div>
-          <!-- wp:heading {"level":3} -->
-          <h3 class="wp-block-heading">Sauce</h3>
-          <!-- /wp:heading -->
-
-         <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"postType":"sauce","order":"desc","orderBy":"date","sticky":"","parents":[],"format":[]}} -->
-          <div class="wp-block-query"><!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"sauces","prefix":""} /-->
+          <h3>Sauces</h3>
+          <!-- wp:query {"queryId":4,"query":{"perPage":50,"postType":"sauce","order":"asc"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template -->
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
             <!-- /wp:post-template -->
           </div>
           <!-- /wp:query -->
-
         </div>
 
         <!-- Desserts -->
         <div>
-          <!-- wp:heading {"level":3} -->
-          <h3 class="wp-block-heading">Desserts</h3>
-          <!-- /wp:heading -->
-
-          <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"postType":"dessert","order":"desc","orderBy":"date","sticky":"","parents":[],"format":[]}} -->
-          <div class="wp-block-query"><!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"desserts","prefix":""} /-->
+          <h3>Desserts</h3>
+          <!-- wp:query {"queryId":5,"query":{"perPage":50,"postType":"dessert","order":"asc"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template -->
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
             <!-- /wp:post-template -->
           </div>
           <!-- /wp:query -->
-
         </div>
 
         <!-- Frozen Retail -->
         <div>
-          <!-- wp:heading {"level":3} -->
-          <h3 class="wp-block-heading">Frozen Retail</h3>
-          <!-- /wp:heading -->
-
-           <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"postType":"frozen-retail","order":"desc","orderBy":"date","sticky":"","parents":[],"format":[]}} -->
-          <div class="wp-block-query"><!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"frozen_retail","prefix":""} /-->
+          <h3>Frozen Retail</h3>
+          <!-- wp:query {"queryId":6,"query":{"perPage":50,"postType":"frozen-retail","order":"asc"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template -->
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
             <!-- /wp:post-template -->
           </div>
           <!-- /wp:query -->
-
         </div>
 
         <!-- Salads -->
         <div>
-          <!-- wp:heading {"level":3} -->
-          <h3 class="wp-block-heading">Salads</h3>
-          <!-- /wp:heading -->
-
-           <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"postType":"salad","order":"desc","orderBy":"date","sticky":"","parents":[],"format":[]}} -->
-          <div class="wp-block-query"><!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"salads","prefix":""} /-->
+          <h3>Salads</h3>
+          <!-- wp:query {"queryId":7,"query":{"perPage":50,"postType":"salad","order":"asc"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template -->
+              <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
             <!-- /wp:post-template -->
           </div>
           <!-- /wp:query -->
-
         </div>
 
       </div>
+
     </section>
     <hr>
     <section>
