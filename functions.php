@@ -10,6 +10,40 @@ add_action( 'wp_enqueue_scripts', function() {
         array(),
         '1.0'
     );
+});
+
+/* ---------------------------
+   Disable all Gutenberg blocks
+   for specific post types
+----------------------------- */
+
+add_filter( 'allowed_block_types_all', function( $allowed_blocks, $editor_context ) {
+
+    if ( empty( $editor_context->post ) ) {
+        return $allowed_blocks;
+    }
+
+    $post_type = $editor_context->post->post_type;
+
+    // Post types you want to lock to: Title + ACF only
+    $disabled_post_types = [
+		'build-your-own',
+        'dessert',
+		'frozen-retail',
+		'menu-item',
+		'team-members',
+		'testominoial'
+    ];
+
+    // If the current post type is one of these → allow no blocks
+    if ( in_array( $post_type, $disabled_post_types, true ) ) {
+        return []; // disables all blocks
+    }
+
+    return $allowed_blocks;
+
+}, 10, 2 );
+
 
     /*
     // Page-specific styles (now handled in Sass)
@@ -48,4 +82,3 @@ add_action( 'wp_enqueue_scripts', function() {
         );
     }
     */
-});
