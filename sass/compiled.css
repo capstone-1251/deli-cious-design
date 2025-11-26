@@ -640,64 +640,120 @@ p {
 /* -------------------- */
 /* ABOUT PAGE           */
 /* -------------------- */
-/* About */
 .about {
   padding: var(--section-padding);
 }
 
-/* Humble Beginnings */
+/* -------------------- */
+/* Timeline            */
+/* -------------------- */
+.about.timeline {
+  background: var(--color-white-off);
+}
+
+.about.timeline .polaroid-frame {
+  position: relative;
+  max-width: 70%;
+  margin: 1rem 0;
+  z-index: 1;
+}
+
+/* Left side items */
+.about.timeline .timeline-1,
+.about.timeline .timeline-3,
+.about.timeline .timeline-5 {
+  margin-right: 30%;
+  /* push them away from right side, toward left */
+}
+
+/* Right side items */
+.about.timeline .timeline-2,
+.about.timeline .timeline-4 {
+  margin-left: 30%;
+  /* push them away from left side, toward right */
+  margin-right: 0;
+}
+
+/* Arrow in the center of the section */
+.about.timeline .timeline-arrow {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* -------------------- */
+/* Humble Beginnings           */
+/* -------------------- */
 .about.humble-beginnings {
-  background: var(--color-white-off);
+  background: var(--color-primary);
+  color: var(--color-white-off);
 }
 
-/* Our Growth and Success in Jasper */
+/* -------------------- */
+/* Our Growth and Success in Jasper           */
+/* -------------------- */
 .about.growth-success {
-  background: var(--color-primary);
-  color: var(--color-white-off);
+  background: var(--color-white-off);
 }
 
-/* The Fire */
+/* -------------------- */
+/* The Fire           */
+/* -------------------- */
 .about.fire {
-  background: var(--color-white-off);
-}
-
-/* Why Edmonton */
-.about.why-edmonton {
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-/* The Next Generation: Dustin & Jaimie */
-.about.next-generation {
+/* -------------------- */
+/* Why Edmonton           */
+/* -------------------- */
+.about.why-edmonton {
   background: var(--color-white-off);
 }
 
-/* Join Our Family */
-.about-join {
-  text-align: center;
-  margin: var(--spacing-lg) 0;
-}
-.about-join .btn {
-  margin-top: var(--spacing-sm);
+/* -------------------- */
+/* The Next Generation: Dustin & Jaimie           */
+/* -------------------- */
+.about.next-generation {
+  background: var(--color-primary);
+  color: var(--color-white-off);
 }
 
-/* Testimonials */
-.testimonial-scroll {
+/* -------------------- */
+/* Meet Our Family           */
+/* -------------------- */
+.about.meet-our-family {
+  background: var(--color-white-off);
+}
+
+.meet-our-family .family-member {
   display: flex;
-  gap: var(--spacing-lg);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: var(--spacing-md);
+  gap: 1rem;
 }
-.testimonial-scroll::-webkit-scrollbar {
-  display: none;
+
+.meet-our-family .family-member-image {
+  width: 33%;
 }
-.testimonial-scroll {
-  scrollbar-width: none;
+
+/* -------------------- */
+/* Join Our Family           */
+/* -------------------- */
+.about.join-our-family {
+  background: var(--color-primary);
+  color: var(--color-white-off);
 }
-.testimonial-scroll .testimonial-item {
-  flex: 0 0 70%;
-  scroll-snap-align: start;
+
+/* -------------------- */
+/* Testimonials           */
+/* -------------------- */
+.about.testimonials {
+  background: var(--color-white-off);
 }
 
 /* -------------------- */
