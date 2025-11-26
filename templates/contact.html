@@ -1,5 +1,5 @@
 <header>
-    <!-- wp:template-part {"slug":"header"} /-->
+  <!-- wp:template-part {"slug":"header"} /-->
 </header>
 
 <main>
@@ -11,64 +11,57 @@
     </div>
   </section>
 
-  <section class="contact-page">
+  <section class="contact">
 
 
-    <!-- Info Card -->
-    <div class="contact-wrapper">
-      <h2>Contact Information</h2>
-      <p>paragraph</p>
-      <p><b>Hours and location:</b> 123-12343-1240413024-4-144</p>
-      <p><b>Phone Number:</b> 3024-4-144</p>
-      <p><b>Email:</b> something@example.com</p>
-    </div>
+    <div class="container">
 
-    <!-- Form Card -->
-    <div class="contact-wrapper">
-      <h2>How Can We Help You</h2>
-      <p>paragraph</p>
+      <!-- Contact Information -->
+      <div class="contact-information">
+        <h2>Contact Information</h2>
+        <h3>Patricia Street Deli</h3>
+        <p class="address">10567 111 Street<br>Edmonton, Alberta</p>
+        <p><span>Hours: </span>Mon - Sat 7am - 11pm</p>
+        <p><span>Phone: </span><a href="tel: 587-525-8907">587-525-8907</a></p>
+        <p><span>Email: </span><a href="mailto: jenna@patriciastreet.com">jenna@patriciastreet.com</a></p>
+      </div>
 
+      <!-- How Can We Help You? -->
       <form action="#" method="post" class="contact-form">
+        <h2>How Can We Help You?</h2>
+        <p>Let us know if you have any questions about catering or anything in general. We do our best to reply as soon
+          as possible.</p>
 
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name">
-        </div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-        <div>
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="Your Email">
-        </div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-        <div>
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="Your Phone">
-        </div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
 
-        <div>
-          <label for="how-did-you-hear">How Did You Hear About Us</label>
-          <input type="text" id="how-did-you-hear" name="how-did-you-hear" placeholder="Where did you hear about us?">
-        </div>
+        <label for="referral">How Did You Hear About Us</label>
+        <select id="referral" name="referral">
+          <option value="">Select an option</option>
+          <option value="social">Social Media</option>
+          <option value="friend">Friend / Family</option>
+          <option value="google">Google / Search</option>
+          <option value="other">Other</option>
+        </select>
 
-        <div>
-          <label for="referral">What would you like to talk about?</label>
-          <select id="referral" name="referral">
-            <option value="">Select an option</option>
-            <option value="social">Social Media</option>
-            <option value="friend">Friend / Family</option>
-            <option value="google">Google / Search</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+        <label for="topic">What would you like to talk about?</label>
+        <select id="topic" name="topic" required>
+          <option value="">Select an option</option>
+          <option value="catering">Catering</option>
+          <option value="apply">Apply</option>
+          <option value="general">General</option>
+        </select>
 
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your Message"></textarea>
-        </div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-        <div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+        <button type="submit" class="button-solid">Submit</button>
 
       </form>
     </div>
