@@ -66,16 +66,16 @@
 /* -------------------- */
 /* About                */
 /* -------------------- */
-.about {
+.home .about {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.about .underline {
+.home .about .underline {
   width: 145px;
 }
 
-.about .polaroid-frame{
+.home .about .polaroid-frame{
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -85,57 +85,57 @@
 /* -------------------- */
 /* Menu                 */
 /* -------------------- */
-.mfb-meta-field-block[data-field-name="menu_item_name"] {
+.home .mfb-meta-field-block[data-field-name="menu_item_name"] {
   font-weight: bold;
 }
 
-.menu {
+.home .menu {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.menu .underline-2 {
+.home .menu .underline-2 {
   width: 225px;
 }
 
 /* -------------------- */
 /* Order                */
 /* -------------------- */
-.order {
+.home .order {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.order .underline {
+.home .order .underline {
   width: 260px;
 }
 
 /* -------------------- */
 /* Catering             */
 /* -------------------- */
-.catering {
+.home .catering {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.catering .underline-2 {
+.home .catering .underline-2 {
   width: 140px;
 }
 
 /* -------------------- */
 /* Merch                */
 /* -------------------- */
-.merch {
+.home .merch {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.merch .underline {
+.home .merch .underline {
   width: 240px;
 }
-.woocommerce ul.products li.product .button{
+.home .woocommerce ul.products li.product .button{
   max-width: 0;
   max-height: 0;
   display: none;
@@ -144,23 +144,24 @@
 /* -------------------- */
 /* Testimonial          */
 /* -------------------- */
-.testimonial {
+.home .testimonial {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.testimonial .underline-2 {
+.home .testimonial .underline-2 {
   width: 310px;
 }
 
 // .feedback-text,.feedback-author{
 //   color: var(--color-black)
 // }
-.testimonial .polaroid-frame {
+.home .testimonial .polaroid-frame {
   color: var(--color-black);
 }
-.feedback-author{
+
+.home .feedback-author{
   ::before{
     content: "- ";
   }

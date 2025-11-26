@@ -156,15 +156,6 @@ p {
 }
 
 /* --------------------------- */
-/* Frame                      */
-/* --------------------------- */
-.polaroid-frame {
-  background-color: #fff;
-  padding: 1rem;
-  box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
-}
-
-/* --------------------------- */
 /* Underline                   */
 /* --------------------------- */
 .underline {
@@ -340,6 +331,45 @@ p {
   background-size: cover;
   padding: var(--section-padding);
   padding-top: 8rem;
+}
+
+/* --------------------------- */
+/* Frame                      */
+/* --------------------------- */
+.polaroid-frame {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
+}
+
+/* --------------------------- */
+/* Forms                      */
+/* --------------------------- */
+form label {
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+form input, form select, form textarea {
+  font-size: 1rem;
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid #B4B2C7;
+  border-radius: 0.5rem;
+  transition: border 0.3s;
+}
+
+form textarea {
+  padding: 1rem;
+  height: 7rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-family-p);
 }
 
 /* --------------------------- */
@@ -541,16 +571,16 @@ p {
 /* -------------------- */
 /* About                */
 /* -------------------- */
-.about {
+.home .about {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.about .underline {
+.home .about .underline {
   width: 145px;
 }
 
-.about .polaroid-frame {
+.home .about .polaroid-frame {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -560,58 +590,58 @@ p {
 /* -------------------- */
 /* Menu                 */
 /* -------------------- */
-.mfb-meta-field-block[data-field-name=menu_item_name] {
+.home .mfb-meta-field-block[data-field-name=menu_item_name] {
   font-weight: bold;
 }
 
-.menu {
+.home .menu {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.menu .underline-2 {
+.home .menu .underline-2 {
   width: 225px;
 }
 
 /* -------------------- */
 /* Order                */
 /* -------------------- */
-.order {
+.home .order {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.order .underline {
+.home .order .underline {
   width: 260px;
 }
 
 /* -------------------- */
 /* Catering             */
 /* -------------------- */
-.catering {
+.home .catering {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.catering .underline-2 {
+.home .catering .underline-2 {
   width: 140px;
 }
 
 /* -------------------- */
 /* Merch                */
 /* -------------------- */
-.merch {
+.home .merch {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.merch .underline {
+.home .merch .underline {
   width: 240px;
 }
 
-.woocommerce ul.products li.product .button {
+.home .woocommerce ul.products li.product .button {
   max-width: 0;
   max-height: 0;
   display: none;
@@ -620,21 +650,21 @@ p {
 /* -------------------- */
 /* Testimonial          */
 /* -------------------- */
-.testimonial {
+.home .testimonial {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.testimonial .underline-2 {
+.home .testimonial .underline-2 {
   width: 310px;
 }
 
-.testimonial .polaroid-frame {
+.home .testimonial .polaroid-frame {
   color: var(--color-black);
 }
 
-.feedback-author ::before {
+.home .feedback-author ::before {
   content: "- ";
 }
 
@@ -901,85 +931,10 @@ p {
 }
 
 /* -------------------- */
-/* Catering Page */
+/* Contact Page*/
 /* -------------------- */
-.catering-page {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Top grey banner */
-}
-.catering-page .catering-banner {
-  background: var(--color-placeholder-grey);
-  color: var(--color-white-off);
-  width: 100%;
-  text-align: center;
-  padding: var(--spacing-lg) 0;
-}
-.catering-page {
-  /* White card container */
-}
-.catering-page .catering-wrapper {
-  width: 90%;
-  max-width: 600px;
-  padding: var(--spacing-lg) var(--spacing-md);
-  margin: var(--spacing-md) auto;
-}
-.catering-page .catering-wrapper h2 {
-  font-family: var(--font-family-h2);
-  margin-bottom: var(--spacing-sm);
-}
-.catering-page .catering-wrapper p {
-  margin-bottom: var(--spacing-lg);
-}
-.catering-page {
-  /* Form container */
-}
-.catering-page .catering-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-  width: 100%;
-}
-.catering-page .catering-form label {
-  font-family: var(--font-family-p);
-  font-weight: var(--font-weight-bold);
-  font-size: 0.9rem;
-  margin-bottom: 0.25rem;
-  display: block;
-}
-.catering-page .catering-form input,
-.catering-page .catering-form select,
-.catering-page .catering-form textarea {
-  width: 100%;
-  padding: var(--spacing-sm);
-  border: 1px solid #ccc;
-  font-family: var(--font-family-p);
-  font-size: 1rem;
-  box-sizing: border-box;
-  transition: border-color 0.2s ease;
-}
-.catering-page .catering-form input:focus,
-.catering-page .catering-form select:focus,
-.catering-page .catering-form textarea:focus {
-  border-color: var(--color-placeholder-grey);
-  outline: none;
-}
-.catering-page .catering-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-.catering-page .catering-form button {
-  background: var(--color-placeholder-grey);
-  color: var(--color-white-off);
-  border: none;
-  padding: var(--spacing-md);
-  font-family: var(--font-family-btn);
-  font-weight: var(--font-weight-bold);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s ease;
+.catering {
+  padding: var(--section-padding);
 }
 
 /* -------------------- */
@@ -999,36 +954,6 @@ p {
 .contact .contact-information span {
   font-weight: bold;
   color: var(--color-primary);
-}
-
-/* -------------------- */
-/* Contact Form */
-/* -------------------- */
-.contact label {
-  line-height: 1.5;
-  font-weight: 700;
-  margin: 1.5rem 0 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.contact input, .contact select, .contact textarea {
-  font-size: 1rem;
-  width: 100%;
-  height: 3rem;
-  padding: 0 1rem;
-  border: 1px solid #B4B2C7;
-  border-radius: 0.5rem;
-  transition: border 0.3s;
-}
-
-.contact textarea {
-  padding: 1rem;
-  height: 7rem;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-family-p);
 }
 
 /*# sourceMappingURL=compiled.css.map */

@@ -5,61 +5,61 @@
 
 <main>
 
-  <!-- Banner -->
+  <!-- ----------------------- -->
+  <!-- Banner                  -->
+  <!-- ----------------------- -->
   <section class="banner">
     <div class="container polaroid-frame">
       <h1>Catering</h1>
     </div>
   </section>
 
-  <section class="catering-page">
+  <!-- ----------------------- -->
+  <!-- Catering                  -->
+  <!-- ----------------------- -->
+  <section class="catering">
+    <div class="container">
 
-
-    <div class="catering-wrapper">
-      <h2>Inquire About Our Catering</h2>
-      <p>paragraph</p>
-
-      <form action="#" method="post" class="catering-form">
-
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name">
-        </div>
-
-        <div>
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="Your Email">
-        </div>
-
-        <div>
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="Your Phone">
-        </div>
-
-        <div>
-          <label for="referral">Catering Options</label>
-          <select id="referral" name="referral">
-            <option value="">Select an option</option>
-            <option value="social">option 1</option>
-            <option value="friend">option 2</option>
-            <option value="google">option 3</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="additonal-notes">Message</label>
-          <textarea id="additonal-notes" name="additonal-notes" placeholder="Additonal Notes"></textarea>
-        </div>
-
-        <div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-
-      </form>
-
+      <!-- Catering Image -->
+      <div class="polaroid-frame">
+      <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about.png"
+        alt="Glen and Wendy Leitch together inside the old patricia street deli store in jasper">
+      <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about-text.png"
+        alt="Text that says Wendy and Glen with a smily face next to it">
     </div>
 
+      <!-- Inquire About Our Catering -->
+      <form action="#" method="post" class="contact-form">
+        <h2>Inquire About Our Catering</h2>
+        <p>Let us know if you have any questions about catering. We do our best to reply as soon
+          as possible.</p>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+
+        <!-- CHANGE OPTIONS -->
+        <label for="referral">Catering Options</label>
+        <select id="referral" name="referral">
+          <option value="">Select an option</option>
+          <option value="social">Social Media</option>
+          <option value="friend">Friend / Family</option>
+          <option value="google">Google / Search</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="button-solid">Submit</button>
+
+      </form>
+    </div>
   </section>
 
 </main>
