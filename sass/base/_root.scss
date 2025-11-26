@@ -352,3 +352,10 @@ p {
 /* -------------------- */
 /* Banner Section       */
 /* -------------------- */
+
+.banner {
+    background: url('../assets/svg/banner-bulletin-board.svg') repeat center center;
+  background-size: cover;
+  padding: var(--section-padding);
+  padding-top: 8rem;
+}

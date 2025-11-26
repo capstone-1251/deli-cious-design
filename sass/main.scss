@@ -8,8 +8,8 @@
 @use "parts/footer" as *;
 
 // Page-specific styles
+@use "pages/front-page" as *;
 @use "pages/about" as *;
 @use "pages/menu" as *;
 @use "pages/catering" as *;
 @use "pages/contact" as *;
-@use "pages/front-page" as *;
