@@ -7,3 +7,9 @@
 .catering {
   padding: var(--section-padding);
 }
+
+.catering .container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}

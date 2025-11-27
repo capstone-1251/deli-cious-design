@@ -116,9 +116,6 @@ a {
     width: 100%;
     max-width: 80rem;
     margin: 0 auto;
-    display: flex;
-  gap: 2rem;
-  flex-direction: column;
   position: relative;
 }
 
@@ -350,7 +347,13 @@ p {
     background: url('../assets/svg/banner-bulletin-board.svg') repeat center center;
   background-size: cover;
   padding: var(--section-padding);
-  padding-top: 8rem;
+  padding-top: 7.5rem;
+}
+
+.banner .container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
 }
 
 /* --------------------------- */

@@ -8,6 +8,12 @@
   padding: var(--section-padding);
 }
 
+.about .container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
 /* -------------------- */
 /* Timeline            */
 /* -------------------- */

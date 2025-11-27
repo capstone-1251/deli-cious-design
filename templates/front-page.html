@@ -1,3 +1,85 @@
+<!-- ----------------------- -->
+<!-- Header Nav              -->
+<!-- ----------------------- -->
+
+<header class="home header-navigation">
+  <div class="container">
+    <!--Nav Logo-->
+    <a href="/" class="logo">
+      <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/uploads/2025/09/deli-logo.png" alt="PSD Logo"
+        decoding="async">
+    </a>
+    <!--Navigation List-->
+    <nav class="nav">
+      <!--Cart Nav Toggle-->
+      <button class="cart">
+        <a href="/cart/"><img
+            src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/icon-cart.svg"
+            alt="Cart icon"></a>
+      </button>
+
+      <!--Mobile Nav Toggle-->
+      <button class="toggle">
+        <span class="menu-icon">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </span>
+      </button>
+
+      <div class="ul-wrapper">
+        <ul id="expanded" class="ul">
+          <li class="li">
+            <a href="/" class="li-link active">Home</a>
+          </li>
+          <li class="li">
+            <a href="/about/" class="li-link">About</a>
+          </li>
+          <li class="li">
+            <a href="/menu/" class="li-link">Menu</a>
+          </li>
+          <li class="li">
+            <a href="/catering/" class="li-link">Catering</a>
+          </li>
+          <li class="li">
+            <a href="/merch/" class="li-link">Merch</a>
+          </li>
+          <li class="li">
+            <a href="/contact/" class="li-link">Contact</a>
+          </li>
+          <li class="li order-link">
+            <a href="/" class="li-link">Order</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <a href="/" class="button-solid nav-button">Order</a>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const body = document.body;
+    const navigation = document.querySelector('.header-navigation');
+    const toggleButton = document.querySelector('.header-navigation .toggle');
+
+    if (toggleButton && navigation) {
+      toggleButton.addEventListener('click', function () {
+        toggleButton.classList.toggle('active');
+        navigation.classList.toggle('active');
+        body.classList.toggle('open');
+        toggleAriaExpanded();
+      });
+    }
+
+    document.querySelectorAll('#navigation .dropdown').forEach(function (dropdownItem) {
+      dropdownItem.addEventListener('click', function () {
+        dropdownItem.classList.toggle('active');
+      });
+    });
+  });
+</script>
+
 <main class="home">
 
   <!-- ----------------------- -->
@@ -13,9 +95,6 @@
         <span class="notice-right">Call Us: 566-654-5567</span>
       </div>
     </div>
-
-    <!-- Header Navigation -->
-    <!-- wp:template-part {"slug":"header"} /-->
 
     <div class="container">
       <img class="polaroid-frame"
@@ -155,11 +234,11 @@
     <div class="container">
       <h2>Featured Testimonial<span class="underline-2"></span></h2>
       <div class="polaroid-frame">
-<!-- wp:query {"queryId":12,"query":{"perPage":1,"pages":0,"offset":0,"postType":"testominoial","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]}} -->
+        <!-- wp:query {"queryId":12,"query":{"perPage":1,"pages":0,"offset":0,"postType":"testominoial","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]}} -->
         <div class="wp-block-query">
           <!-- wp:post-template -->
-            <!-- wp:mfb/meta-field-block {"className":"feedback-text","fieldType":"acf","fieldName":"feedback","fieldSettings":{}} /-->
-            <!-- wp:mfb/meta-field-block {"className":"feedback-author","fieldType":"acf","fieldName":"name","fieldSettings":{}} /-->
+          <!-- wp:mfb/meta-field-block {"className":"feedback-text","fieldType":"acf","fieldName":"feedback","fieldSettings":{}} /-->
+          <!-- wp:mfb/meta-field-block {"className":"feedback-author","fieldType":"acf","fieldName":"name","fieldSettings":{}} /-->
           <!-- /wp:post-template -->
         </div>
         <!-- /wp:query -->

@@ -1,64 +1,79 @@
-<!-- wp:group {"tagName":"header","className":"site-header","layout":{"type":"constrained"}} -->
-<header class="site-header navigation">
+<header class="header-navigation">
+    <div class="container">
+        <!--Nav Logo-->
+        <a href="/" class="logo">
+            <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/uploads/2025/09/deli-logo.png" alt="PSD Logo"
+                decoding="async">
+        </a>
+        <!--Navigation List-->
+        <nav class="nav">
+            <!--Cart Nav Toggle-->
+            <button class="cart">
+                <a href="/cart/"><img
+                        src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/icon-cart.svg"
+                        alt="Cart icon"></a>
+            </button>
 
-    <div class="nav-container">
+            <!--Mobile Nav Toggle-->
+            <button class="toggle">
+                <span class="menu-icon">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </span>
+            </button>
 
-        <!-- Logo -->
-        <div class="logo">
-            <!-- wp:site-logo {"width":60} /-->
-        </div>
-
-        <div class="nav-main">
-
-            <!-- Custom cart icon -->
-            <a class="cart-link" href="/cart">
-                <img src="/wp-content/themes/style/assets/svg/icon-cart.svg" alt="Cart" class="cart-icon" />
-            </a>
-
-            <nav class="nav">
-                <!-- wp:navigation {"ref":4,"overlayMenu":"mobile"} /-->
-            </nav>
-        </div>
+            <div class="ul-wrapper">
+                <ul id="expanded" class="ul">
+                    <li class="li">
+                        <a href="/" class="li-link active">Home</a>
+                    </li>
+                    <li class="li">
+                        <a href="/about/" class="li-link">About</a>
+                    </li>
+                    <li class="li">
+                        <a href="/menu/" class="li-link">Menu</a>
+                    </li>
+                    <li class="li">
+                        <a href="/catering/" class="li-link">Catering</a>
+                    </li>
+                    <li class="li">
+                        <a href="/merch/" class="li-link">Merch</a>
+                    </li>
+                    <li class="li">
+                        <a href="/contact/" class="li-link">Contact</a>
+                    </li>
+                    <li class="li order-link">
+                        <a href="/" class="li-link">Order</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <a href="/" class="button-solid nav-button">Order</a>
     </div>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-
-
-
-
 </header>
 
 <!-- /wp:group -->
 
-
-
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener('DOMContentLoaded', function () {
+        const body = document.body;
+        const navigation = document.querySelector('.header-navigation');
+        const toggleButton = document.querySelector('.header-navigation .toggle');
 
-        const btn = document.querySelector(".wp-block-navigation__responsive-container-open");
-        const container = document.querySelector(".wp-block-navigation__responsive-container");
+        if (toggleButton && navigation) {
+            toggleButton.addEventListener('click', function () {
+                toggleButton.classList.toggle('active');
+                navigation.classList.toggle('active');
+                body.classList.toggle('open');
+                toggleAriaExpanded();
+            });
+        }
 
-        if (!btn || !container) return;
-
-        // Replace WP default button content with your SVG
-        btn.innerHTML = `
-        <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/icon-menu.svg" 
-             alt="Menu" 
-             class="menu-svg" />
-    `;
-
-        // Toggle button "is-open" class when menu opens/closes
-        const observer = new MutationObserver(() => {
-            if (container.classList.contains("is-menu-open")) {
-                btn.classList.add("is-open");
-            } else {
-                btn.classList.remove("is-open");
-            }
+        document.querySelectorAll('#navigation .dropdown').forEach(function (dropdownItem) {
+            dropdownItem.addEventListener('click', function () {
+                dropdownItem.classList.toggle('active');
+            });
         });
-
-        observer.observe(container, { attributes: true });
     });
 </script>

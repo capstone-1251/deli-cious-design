@@ -1,5 +1,11 @@
 // sass/pages/_front-page.scss
 
+.home .container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
 /* --------------------------- */
 /* TOP NOTICE BAR (STICKY)     */
 /* --------------------------- */
@@ -35,11 +41,28 @@
 /* Header Navigation           */
 /* --------------------------- */
 
-.site-header {
-  position: fixed;
-  z-index: 10000;
-  top: calc(1rem + 31px);
-}
+.home .header-navigation {
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
+    position: fixed;
+    z-index: 10000;
+
+    top: 3rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home .header-navigation .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 /* --------------------------- */
 /* Home Banner                 */
@@ -48,7 +71,12 @@
   background: url('../assets/svg/banner-bulletin-board.svg') repeat center center;
   background-size: cover;
   padding: var(--section-padding);
-  padding-top: 10rem;
+  // how far it pushes it below the nav bar
+  padding-top: 9.5rem;
+}
+
+.home-banner .container {
+  gap: 1.5rem;
 }
 
 .home-banner .polaroid-frame {
