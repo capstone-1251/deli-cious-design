@@ -21,8 +21,11 @@
         </div>
     </div>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
 
 
 
@@ -33,30 +36,29 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
-    const btn = document.querySelector(".wp-block-navigation__responsive-container-open");
-    const container = document.querySelector(".wp-block-navigation__responsive-container");
+        const btn = document.querySelector(".wp-block-navigation__responsive-container-open");
+        const container = document.querySelector(".wp-block-navigation__responsive-container");
 
-    if (!btn || !container) return;
+        if (!btn || !container) return;
 
-    // Replace WP default button content with your SVG
-    btn.innerHTML = `
+        // Replace WP default button content with your SVG
+        btn.innerHTML = `
         <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/icon-menu.svg" 
              alt="Menu" 
              class="menu-svg" />
     `;
 
-    // Toggle button "is-open" class when menu opens/closes
-    const observer = new MutationObserver(() => {
-        if (container.classList.contains("is-menu-open")) {
-            btn.classList.add("is-open");
-        } else {
-            btn.classList.remove("is-open");
-        }
+        // Toggle button "is-open" class when menu opens/closes
+        const observer = new MutationObserver(() => {
+            if (container.classList.contains("is-menu-open")) {
+                btn.classList.add("is-open");
+            } else {
+                btn.classList.remove("is-open");
+            }
+        });
+
+        observer.observe(container, { attributes: true });
     });
-
-    observer.observe(container, { attributes: true });
-});
 </script>
-

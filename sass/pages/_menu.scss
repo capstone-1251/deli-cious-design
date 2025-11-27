@@ -21,33 +21,77 @@
   }
 
   /* Menu navigation links */
-  > div:nth-child(2) {
+  .menu-links {
     display: flex;
+    align-items: center;
+    flex-direction: row;
     gap: var(--spacing-md);
-    justify-content: center;
-    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    background: var(--color-white-off);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-md) auto;
+    width: 100%;
 
     a {
       font-family: var(--font-family-p);
       text-decoration: none;
-      color: var(--color-primary);
-      font-weight: var(--font-weight-bold);
-      transition: color 0.3s ease;
+      color: var(--color-dark);
+      font-weight: 700;
+      transition: color 0.3s ease, transform 0.2s ease;
 
-      &:hover {
-        color: var(--color-primary-hover);
-      }
+
     }
   }
 
+  /* Order Now Button*/
+  .order-now-btn {
+    position: fixed;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+
+    background-color: var(--color-primary);
+    color: var(--color-white-off);
+    font-family: var(--font-family-h3);
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-white-off);
+      color: var(--color-primary);
+      transform: translateX(-50%) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  @media (max-width: 400px) {
+    .order-now-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+
+
   /* Section styling */
   section {
-    margin: var(--spacing-lg) 0;
+    max-width: none;
 
     h2 {
       font-family: var(--font-family-h2);
       font-size: var(--h2-size);
-      font-weight: var(--font-weight-bold);
+      font-weight: 700;
       margin-bottom: var(--spacing-sm);
     }
 
@@ -56,20 +100,22 @@
       margin-bottom: var(--spacing-md);
     }
 
-    hr {
-      margin: var(--spacing-lg) 0;
-      border: none;
-      border-top: 1px solid #ddd;
-    }
 
     /* Grab & Go items */
+    .grab-and-go{
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--spacing-sm);
+    }
     .wp-block-query {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: var(--spacing-md);
 
       .wp-block-group {
-        border: 1px solid #ddd;
         border-radius: var(--border-radius);
         padding: var(--spacing-md);
 
@@ -84,72 +130,78 @@
           }
 
           img {
-            max-width: 100%;
+            min-width: 100%;
             height: auto;
             border-radius: var(--border-radius);
           }
         }
       }
     }
+  }
+}
+.build-your-own-group {
+  background-color: var(--color-primary);
+  color: var(--color-white-off);
+  padding: var(--section-padding);
+  border-radius: var(--border-radius);
 
-    /* Build Your Own Grid */
-    .build-your-own-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--spacing-md);
+  h2,
+  p {
+    color: var(--color-white-off);
+    margin-bottom: var(--spacing-md);
+  }
 
+  .build-your-own-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+    align-items: stretch; // ensure all items in the row have same height
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      height: 100%; // stretch to row height
+    }
+    > div {
       h3 {
         font-family: var(--font-family-h3);
         font-weight: var(--font-weight-bold);
         margin-bottom: var(--spacing-sm);
-      }
-
-      p {
-        font-family: var(--font-family-p);
+        color: var(--color-white-off);
       }
 
       .wp-block-query {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-sm);
+
+        [data-field-name="name_of_the_ingredient"] {
+          font-family: var(--font-family-p);
+          font-size: var(--p-size);
+          color: var(--color-white-off);
+          margin: 0;
+        }
+      }
+
+      // SVG divider after each category except the last one
+      &:not(:last-child)::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 24px; // adjust as needed
+        margin: var(--spacing-md) 0;
+        background-image: url('https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/heading-chalk-secondary.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
       }
     }
-  }
 
-  /* -------------------- */
-  /* Sticky Order Now Button - Mobile First */
-  /* -------------------- */
-  > a {
-    position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
-    display: block;
-    text-align: center;
-    padding: 0.75rem 1.25rem;
-    font-family: var(--font-family-btn);
-    font-weight: var(--font-weight-bold);
-    background-color: var(--color-placeholder-grey);
-    color: var(--color-white-off);
-    width: fit-content;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: background 0.3s ease, transform 0.2s ease;
-
-    &:hover,
-    &:active {
-      background-color: var(--color-primary);
-      color: var(--color-white-off);
-      transform: translateX(-50%) scale(1.05);
-    }
-  }
-
-  /* Optional: smaller button on very narrow screens */
-  @media (max-width: 400px) {
-    > a {
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
     }
   }
 }
