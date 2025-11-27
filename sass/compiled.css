@@ -502,9 +502,22 @@ form textarea {
   gap: 1.5rem;
 }
 
-.footer-links {
+.footer h3 {
+  font-family: var(--font-family-h1);
+}
+
+.footer .address, .footer .quick-links {
+  margin-bottom: 1.5rem;
+}
+
+.footer .contact-information span {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.footer .social-media {
+  margin-top: 1rem;
   display: flex;
-  flex-direction: column;
   gap: 1rem;
 }
 
