@@ -9,15 +9,18 @@
 /* -------------------- */
 
 .menu-nav {
-<<<<<<< HEAD
- position: sticky;
+  position: sticky;
   top: 7.5rem; // where it'll start and stop
-=======
-  position: relative;
->>>>>>> parent of d53e198 (edited nav bars and button hovers)
   margin: 1rem 1rem 0;
+
+  z-index: 10;
+
   display: flex;
   gap: 1rem;
+  max-width: 80rem;
+  align-items: center;
+
+  transition: top 0.3s ease;
 }
 
 .menu-nav svg {
@@ -30,7 +33,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: nowrap;
-// scroll
+// horizontal scroll
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -39,7 +42,6 @@
   display: none;
 }
 
-<<<<<<< HEAD
 /* active state */
 .menu-nav a {
   position: relative;
@@ -81,18 +83,11 @@
   .menu-nav {
   margin: 1rem auto 0;
 
-  top: 7.5rem;
-    left: 50%;
-    transform: translateX(-50%);
+  top: 9.5rem;
     max-width: 80rem;
 }
-
-  body.scroll .menu-nav {
-    top: calc(7.5rem - 31px);
-  }
 }
-=======
->>>>>>> parent of d53e198 (edited nav bars and button hovers)
+
 /* -------------------- */
 /* Order Button     */
 /* -------------------- */
