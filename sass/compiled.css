@@ -1069,6 +1069,51 @@ body.scroll .home.header-navigation {
 /* -------------------- */
 /* About Page          */
 /* -------------------- */
+.about-page .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media only screen and (min-width: 64rem) {
+  .humble-beginnings .container,
+  .growth-success .container,
+  .fire .container,
+  .why-edmonton .container,
+  .next-generation .container {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+    column-gap: 2.5rem;
+    align-items: start;
+  }
+  /* left */
+  .humble-beginnings h2,
+  .growth-success h2,
+  .fire h2,
+  .why-edmonton h2,
+  .next-generation h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .humble-beginnings .content,
+  .growth-success .content,
+  .fire .content,
+  .why-edmonton .content,
+  .next-generation .content {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  /* right */
+  .humble-beginnings .polaroid-frame,
+  .growth-success .polaroid-frame,
+  .fire .polaroid-frame,
+  .why-edmonton .polaroid-frame,
+  .next-generation .polaroid-frame {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+  }
+}
 /* -------------------- */
 /* Timeline            */
 /* -------------------- */
@@ -1095,23 +1140,21 @@ body.scroll .home.header-navigation {
   z-index: 1;
 }
 
-/* Left side items */
+/* left */
 .timeline .timeline-1,
 .timeline .timeline-3,
 .timeline .timeline-5 {
   margin-right: 30%;
-  /* push them away from right side, toward left */
 }
 
-/* Right side items */
+/* right */
 .timeline .timeline-2,
 .timeline .timeline-4 {
   margin-left: 30%;
-  /* push them away from left side, toward right */
   margin-right: 0;
 }
 
-/* Arrow in the center of the section */
+/* arrow */
 .timeline .timeline-arrow {
   position: absolute;
   top: 30px;
@@ -1124,9 +1167,6 @@ body.scroll .home.header-navigation {
   pointer-events: none;
 }
 
-/* -------------------- */
-/* Timeline - Desktop           */
-/* -------------------- */
 @media only screen and (min-width: 64rem) {
   .timeline .container {
     position: relative;
