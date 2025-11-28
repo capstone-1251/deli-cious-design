@@ -15,3 +15,28 @@
 .catering h2 {
   margin-bottom: 1.5rem;
 }
+
+// 
+// Catering - Desktop
+// 
+
+@media only screen and (min-width: 64rem) {
+  .catering .container {
+  flex-direction: row;
+  gap: 4rem;
+}
+
+.catering .polaroid-frame {
+  order: 1;
+  padding-bottom: 3.5rem;
+}
+
+.catering .contact-form {
+  order: 0;
+}
+
+.catering .polaroid-frame,
+  .catering .contact-form {
+    flex: 1 1 50%;
+  }
+}

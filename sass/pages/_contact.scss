@@ -28,3 +28,27 @@
   font-weight: bold;
   color: var(--color-primary);
 }
+
+// 
+// Contact - Desktop
+// 
+
+@media only screen and (min-width: 64rem) {
+  .contact .container {
+  flex-direction: row;
+  gap: 4rem;
+}
+
+.contact .contact-information {
+  order: 1;
+}
+
+.contact .contact-form {
+  order: 0;
+}
+
+.contact .contact-information,
+  .contact .contact-form {
+    flex: 1 1 50%;
+  }
+}
