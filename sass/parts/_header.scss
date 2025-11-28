@@ -4,6 +4,13 @@
 /* Navigation           */
 /* -------------------- */
 
+.header-navigation {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 100%;
+  z-index: 10000;
+}
+
 .header-navigation .logo img {
   height: 50px;
   width: 50px;

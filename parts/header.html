@@ -5,9 +5,24 @@
             <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/uploads/2025/09/deli-logo.png" alt="PSD Logo"
                 decoding="async">
         </a>
-
         <!--Navigation List-->
         <nav class="nav">
+            <!--Cart Nav Toggle-->
+            <button class="cart">
+                <a href="/cart/"><img
+                        src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/icon-cart.svg"
+                        alt="Cart icon"></a>
+            </button>
+
+            <!--Mobile Nav Toggle-->
+            <button class="toggle">
+                <span class="menu-icon">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </span>
+            </button>
+
             <div class="ul-wrapper">
                 <ul id="expanded" class="ul">
                     <li class="li">
@@ -32,6 +47,7 @@
                         <a href="https://patriciastreetdeli.ca/dev/team1/" class="li-link">Order</a>
                     </li>
                 </ul>
+<<<<<<< HEAD
 
                 <!--Cart Nav Toggle-->
                 <button class="cart">
@@ -52,8 +68,11 @@
                     </span>
                 </button>
 
+=======
+            </div>
+>>>>>>> parent of d53e198 (edited nav bars and button hovers)
         </nav>
-
+        <a href="/" class="button-solid nav-button">Order</a>
     </div>
 </header>
 
@@ -85,23 +104,23 @@
     // active state
     document.addEventListener('DOMContentLoaded', function () {
 
-        const currentPath = window.location.pathname.replace(/\/$/, "");
-        const links = document.querySelectorAll('.header-navigation .li-link');
+    const currentPath = window.location.pathname.replace(/\/$/, ""); 
+    const links = document.querySelectorAll('.header-navigation .li-link');
 
-        links.forEach(link => {
-            let linkPath = link.getAttribute('href').replace(/\/$/, "");
+    links.forEach(link => {
+        let linkPath = link.getAttribute('href').replace(/\/$/, "");
 
-            // Special case: homepage
-            if (linkPath === "" || linkPath === "/") {
-                if (currentPath === "" || currentPath === "/") {
-                    link.classList.add('active');
-                }
-            } else {
-                if (currentPath === linkPath) {
-                    link.classList.add('active');
-                }
+        // Special case: homepage
+        if (linkPath === "" || linkPath === "/") {
+            if (currentPath === "" || currentPath === "/") {
+                link.classList.add('active');
             }
-        });
+        } else {
+            if (currentPath === linkPath) {
+                link.classList.add('active');
+            }
+        }
     });
+});
 
 </script>

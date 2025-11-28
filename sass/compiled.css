@@ -290,6 +290,13 @@ form textarea {
 /* -------------------- */
 /* Navigation           */
 /* -------------------- */
+.header-navigation {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 100%;
+  z-index: 10000;
+}
+
 .header-navigation .logo img {
   height: 50px;
   width: 50px;
@@ -770,7 +777,10 @@ body.open {
 
 body.scroll .home.header-navigation {
   top: calc(4rem - 31px);
+<<<<<<< HEAD
   top: calc(3rem - 31px);
+=======
+>>>>>>> parent of d53e198 (edited nav bars and button hovers)
 }
 
 .home.header-navigation .container {
@@ -794,9 +804,6 @@ body.scroll .home.header-navigation {
     width: 100%;
     max-width: 80rem;
     padding-right: 2rem;
-  }
-  body.scroll .home.header-navigation {
-    top: calc(3.5rem - 31px);
   }
 }
 /* --------------------------- */
@@ -1412,17 +1419,10 @@ body.scroll .home.header-navigation {
 /* Menu Nav     */
 /* -------------------- */
 .menu-nav {
-  position: sticky;
-  top: 7.5rem;
+  position: relative;
   margin: 1rem 1rem 0;
-  left: 1rem;
-  right: 1rem;
-  z-index: 10;
   display: flex;
   gap: 1rem;
-  max-width: 80rem;
-  align-items: center;
-  transition: top 0.3s ease;
 }
 
 .menu-nav svg {
@@ -1443,51 +1443,6 @@ body.scroll .home.header-navigation {
   display: none;
 }
 
-/* active state */
-.menu-nav a {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 4px;
-  color: inherit;
-  text-decoration: none;
-}
-
-.menu-nav a:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width 0.3s;
-}
-
-.menu-nav a:hover:before {
-  width: 100%;
-}
-
-.menu-nav a.active:before {
-  width: 100%;
-}
-
-.menu-nav a.active {
-  font-weight: bold;
-  color: var(--color-primary);
-}
-
-@media only screen and (min-width: 64rem) {
-  .menu-nav {
-    margin: 1rem auto 0;
-    top: 7.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 80rem;
-  }
-  body.scroll .menu-nav {
-    top: calc(7.5rem - 31px);
-  }
-}
 /* -------------------- */
 /* Order Button     */
 /* -------------------- */
