@@ -1,150 +1,157 @@
 <header>
-    <!-- wp:template-part {"slug":"header","theme":"style"} /-->
+    <!-- wp:template-part {"slug":"header"} /-->
 </header>
 
-<main>
-    <!-- Banner -->
+<main class="menu-page">
+    <!-- ----------------------- -->
+    <!-- Banner                  -->
+    <!-- ----------------------- -->
     <section class="banner">
         <div class="container polaroid-frame">
             <h1>Menu</h1>
         </div>
     </section>
 
-    <section class="menu-page">
-        <div class="menu-links  container">
-            <a href="#grab-and-go">Grab & Go</a><br />
-            <a href="#build-your-own">Build Your Own</a><br />
-        </div>
-        <a href="/order/" class="order-now-btn">Order Now</a>
+    <!-- ----------------------- -->
+    <!-- Grab & Go                  -->
+    <!-- ----------------------- -->
+    <div class="menu-links container">
+        <a href="#grab-and-go">Grab & Go</a><br />
+        <a href="#build-your-own">Build Your Own</a><br />
+    </div>
 
-        <section id="grab-and-go" class=" container">
-            <div class="grab-and-go">
-                <h2>Grab & Go</h2>
-                <p>Made fresh daily, our grab & go sandwiches are perfect for when you’re short on time but still want
-                    something handcrafted.</p>
-                <div>
-                    <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"menu-item","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug","terms":["grab-and-go"]},"category":[7]}},"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-query">
-                        <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
-                        <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1rem","right":"1rem"}},"radius":"10px"},"layout":{"type":"constrained"}} -->
-                        <div style="padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem">
-                            <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-                            <div class="wp-block-group alignwide">
-                                <!-- wp:group {"layout":{"type":"constrained"}} -->
-                                <div class="wp-block-group">
-                                    <strong><!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /--></strong>
-                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
-                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
-                                </div>
-                                <!-- /wp:group -->
-                                <!-- wp:mfb/meta-field-block {"className":"home-menu-image","fieldType":"acf","fieldName":"menu_item_image"} /-->
+    <a href="/order/" class="button-solid menu-button-solid">Order Now</a>
+
+    <section class="grab-and-go" id="grab-and-go">
+        <div class="container">
+            <h2>Grab & Go</h2>
+            <p>Made fresh daily, our grab & go sandwiches are perfect for when you’re short on time but still want
+                something handcrafted.</p>
+            <div>
+                <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"menu-item","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug","terms":["grab-and-go"]},"category":[7]}},"layout":{"type":"constrained"}} -->
+                <div class="wp-block-query">
+                    <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+                    <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1rem","right":"1rem"}},"radius":"10px"},"layout":{"type":"constrained"}} -->
+                    <div style="padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem">
+                        <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+                        <div class="wp-block-group alignwide">
+                            <!-- wp:group {"layout":{"type":"constrained"}} -->
+                            <div class="wp-block-group">
+                                <strong><!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /--></strong>
+                                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+                                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
                             </div>
                             <!-- /wp:group -->
+                            <!-- wp:mfb/meta-field-block {"className":"home-menu-image","fieldType":"acf","fieldName":"menu_item_image"} /-->
                         </div>
                         <!-- /wp:group -->
-                        <!-- /wp:post-template -->
                     </div>
-                    <!-- /wp:query -->
+                    <!-- /wp:group -->
+                    <!-- /wp:post-template -->
                 </div>
+                <!-- /wp:query -->
             </div>
-        </section>
-        <hr>
-        <section id="build-your-own" class="build-your-own-group">
-            <div class="container">
-                <h2>Build Your Own</h2>
-                <p>Create your perfect bite, just the way you like it. Choose your bread, meats, veggies, cheeses, and
-                    sauces, and we’ll craft it fresh to order.</p>
-                <div class="build-your-own-grid">
-                    <!-- Meats -->
-                    <div>
-                        <h3>Meats</h3>
-                        <!-- wp:query {"queryId":10,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"meat","compare":"="}],"sticky":"","parents":[],"format":[],"search":"meat"}} -->
-                        <div class="wp-block-query"> <!-- wp:post-template -->
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
-                            <!-- /wp:post-template -->
-                        </div> <!-- /wp:query -->
-                    </div>
-                    <!-- Vegan Meat -->
-                    <div>
-                        <h3>Vegan Meat</h3>
-                        <!-- wp:query {"queryId":11,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"vegan_meat","compare":"="}],"sticky":"","parents":[],"format":[],"search":"meat vegan"}} -->
-                        <div class="wp-block-query"> <!-- wp:post-template -->
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
-                            <!-- /wp:post-template -->
-                        </div> <!-- /wp:query -->
-                    </div>
-                    <!-- Veggies -->
-                    <div>
-                        <h3>Veggies</h3>
-                        <!-- wp:query {"queryId":12,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"veggies","compare":"="}],"sticky":"","parents":[],"format":[],"search":"veggies"}} -->
-                        <div class="wp-block-query"> <!-- wp:post-template -->
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
-                            <!-- /wp:post-template -->
-                        </div> <!-- /wp:query -->
-                    </div>
-                    <!-- Cheese -->
-                    <div>
-                        <h3>Cheese</h3>
-                        <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"cheese"}} -->
-                        <div class="wp-block-query"> <!-- wp:post-template -->
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
-                            <!-- /wp:post-template -->
-                        </div> <!-- /wp:query -->
-                    </div>
-                    <!-- Sauces -->
-                    <div>
-                        <h3>Sauces</h3>
-                        <!-- wp:query {"queryId":14,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"sauce","compare":"="}],"sticky":"","parents":[],"format":[],"search":"sauce"}} -->
-                        <div class="wp-block-query"> <!-- wp:post-template -->
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
-                            <!-- /wp:post-template -->
-                        </div> <!-- /wp:query -->
-                    </div>
-                    <!-- Salads -->
-                    <div>
-                        <h3>Salads</h3>
-                        <!-- wp:query {"queryId":15,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"salads","compare":"="}],"sticky":"","parents":[],"format":[],"search":"salads"}} -->
-                        <div class="wp-block-query"> <!-- wp:post-template -->
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
-                            <!-- /wp:post-template -->
-                        </div> <!-- /wp:query -->
-                    </div>
-                    <!-- Desserts  -->
-                    <div>
-                        <h3>Desserts</h3>
+        </div>
+    </section>
 
-                            <!-- wp:query {"queryId":16,"query":{"perPage":50,"postType":"dessert","order":"asc"}} -->
-                            <div class="wp-block-query"> <!-- wp:post-template -->
-                                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
-                                <!-- /wp:post-template -->
-                            </div> <!-- /wp:query -->
-                    </div>
-                    <!-- frozen retail -->
+    <!-- ----------------------- -->
+    <!-- Build Your Own                 -->
+    <!-- ----------------------- -->
+    <section class="build-your-own" id="build-your-own">
+        <div class="container">
+            <h2>Build Your Own</h2>
+            <p>Create your perfect bite, just the way you like it. Choose your bread, meats, veggies, cheeses, and
+                sauces, and we’ll craft it fresh to order.</p>
+            <div class="build-your-own-grid">
+                <!-- Meats -->
+                <div>
+                    <h3>Meats</h3>
+                    <!-- wp:query {"queryId":10,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"meat","compare":"="}],"sticky":"","parents":[],"format":[],"search":"meat"}} -->
+                    <div class="wp-block-query"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+                <!-- Vegan Meat -->
+                <div>
+                    <h3>Vegan Meat</h3>
+                    <!-- wp:query {"queryId":11,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"vegan_meat","compare":"="}],"sticky":"","parents":[],"format":[],"search":"meat vegan"}} -->
+                    <div class="wp-block-query"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+                <!-- Veggies -->
+                <div>
+                    <h3>Veggies</h3>
+                    <!-- wp:query {"queryId":12,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"veggies","compare":"="}],"sticky":"","parents":[],"format":[],"search":"veggies"}} -->
+                    <div class="wp-block-query"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+                <!-- Cheese -->
+                <div>
+                    <h3>Cheese</h3>
+                    <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"cheese"}} -->
+                    <div class="wp-block-query"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+                <!-- Sauces -->
+                <div>
+                    <h3>Sauces</h3>
+                    <!-- wp:query {"queryId":14,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"sauce","compare":"="}],"sticky":"","parents":[],"format":[],"search":"sauce"}} -->
+                    <div class="wp-block-query"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+                <!-- Salads -->
+                <div>
+                    <h3>Salads</h3>
+                    <!-- wp:query {"queryId":15,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"salads","compare":"="}],"sticky":"","parents":[],"format":[],"search":"salads"}} -->
+                    <div class="wp-block-query"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+                <!-- Desserts  -->
+                <div>
+                    <h3>Desserts</h3>
+
+                    <!-- wp:query {"queryId":16,"query":{"perPage":50,"postType":"dessert","order":"asc"}} -->
+                    <div class="wp-block-query"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+                <!-- frozen retail -->
+                <div>
+                    <h3>Frozen Retail</h3>
+                    <!-- wp:query {"queryId":17,"query":{"perPage":50,"postType":"frozen-retail","order":"asc"}} -->
+                    <div class="wp-block-query"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+                <!-- Drinks -->
+                <div>
+                    <h3>Drinks</h3>
+                    <p>paragpraph</p>
                     <div>
-                        <h3>Frozen Retail</h3>
-                        <!-- wp:query {"queryId":17,"query":{"perPage":50,"postType":"frozen-retail","order":"asc"}} -->
-                        <div class="wp-block-query"> <!-- wp:post-template -->
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"name_of_the_ingredient"} /-->
-                            <!-- /wp:post-template -->
-                        </div> <!-- /wp:query -->
-                    </div>
-                    <!-- Drinks -->
-                    <div>
-                        <h3>Drinks</h3>
-                        <p>paragpraph</p>
-                        <div>
-                            <h3>subheading</h3>
-                            <p>paragraph</p>
-                            <h3>subheading</h3>
-                            <p>paragraph</p>
-                            <h3>subheading</h3>
-                            <p>paragraph</p>
-                            </p>
-                        </div>
+                        <h3>subheading</h3>
+                        <p>paragraph</p>
+                        <h3>subheading</h3>
+                        <p>paragraph</p>
+                        <h3>subheading</h3>
+                        <p>paragraph</p>
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </section>
 </main>
 <footer>

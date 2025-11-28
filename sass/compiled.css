@@ -88,29 +88,14 @@ a {
   transition: all 0.3s ease;
 }
 
-.home-about,
-.home-menu,
-.home-toast,
-.home-catering,
-.home-merch {
-  padding: var(--spacing-md);
-  margin: var(--spacing-md) auto;
-  max-width: var(--max-width);
-}
-
-.home-toast,
-.home-catering,
-.home-merch,
-.home-testimonial {
-  text-align: center;
-}
-
 /* Container */
 .container {
   width: 100%;
   max-width: 80rem;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /* -------------------- */
@@ -129,7 +114,6 @@ h2 {
   font-size: var(--h2-size);
   line-height: 1.2;
   font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 h3 {
@@ -755,12 +739,9 @@ form textarea {
   gap: 1rem;
 }
 
-.home .container {
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-}
-
+/* -------------------- */
+/* Home Page          */
+/* -------------------- */
 /* --------------------------- */
 /* TOP NOTICE BAR (STICKY)     */
 /* --------------------------- */
@@ -793,7 +774,7 @@ form textarea {
 /* --------------------------- */
 /* Header Navigation           */
 /* --------------------------- */
-.home .header-navigation {
+.home.header-navigation {
   box-sizing: border-box;
   background-color: #fff;
   box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
@@ -807,7 +788,7 @@ form textarea {
   padding: 0;
 }
 
-.home .header-navigation .container {
+.home.header-navigation .container {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -844,16 +825,20 @@ form textarea {
 /* -------------------- */
 /* About                */
 /* -------------------- */
-.home .about {
+.home-about {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.home .about .underline {
+.home-about .container {
+  gap: 1.5rem;
+}
+
+.home-about .underline {
   width: 145px;
 }
 
-.home .about .polaroid-frame {
+.home-about .polaroid-frame {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -863,58 +848,74 @@ form textarea {
 /* -------------------- */
 /* Menu                 */
 /* -------------------- */
-.home .mfb-meta-field-block[data-field-name=menu_item_name] {
-  font-weight: bold;
-}
-
-.home .menu {
+.home-menu {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.home .menu .underline-2 {
+.home-menu .container {
+  gap: 1.5rem;
+}
+
+.home-menu .underline-2 {
   width: 225px;
+}
+
+.mfb-meta-field-block[data-field-name=menu_item_name] {
+  font-weight: bold;
 }
 
 /* -------------------- */
 /* Order                */
 /* -------------------- */
-.home .order {
+.home-order {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.home .order .underline {
+.home-order .container {
+  gap: 1.5rem;
+}
+
+.home-order .underline {
   width: 260px;
 }
 
 /* -------------------- */
 /* Catering             */
 /* -------------------- */
-.home .catering {
+.home-catering {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.home .catering .underline-2 {
+.home-catering .container {
+  gap: 1.5rem;
+}
+
+.home-catering .underline-2 {
   width: 140px;
 }
 
 /* -------------------- */
 /* Merch                */
 /* -------------------- */
-.home .merch {
+.home-merch {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.home .merch .underline {
+.home-merch .container {
+  gap: 1.5rem;
+}
+
+.home-merch .underline {
   width: 240px;
 }
 
-.home .woocommerce ul.products li.product .button {
+.woocommerce ul.products li.product .button {
   max-width: 0;
   max-height: 0;
   display: none;
@@ -923,69 +924,74 @@ form textarea {
 /* -------------------- */
 /* Testimonial          */
 /* -------------------- */
-.home .testimonial {
+.home-testimonials {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.home .testimonial .underline-2 {
+.home-testimonials .container {
+  gap: 1.5rem;
+}
+
+.home-testimonials .underline-2 {
   width: 310px;
 }
 
-.home .testimonial .polaroid-frame {
+.home-testimonials .polaroid-frame {
   color: var(--color-black);
 }
 
-.home .feedback-author ::before {
-  content: "- ";
-}
-
-/* -------------------- */
-/* ABOUT PAGE           */
-/* -------------------- */
-.about {
-  padding: var(--section-padding);
-}
-
-.about .container {
+.home-testimonials .polaroid-frame {
   display: flex;
-  gap: 2rem;
   flex-direction: column;
+  gap: 1rem;
 }
 
+.home-testimonials span {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* -------------------- */
+/* About Page          */
+/* -------------------- */
 /* -------------------- */
 /* Timeline            */
 /* -------------------- */
-.about.timeline {
+.timeline {
   background: var(--color-white-off);
+  padding: var(--section-padding);
 }
 
-.about.timeline .polaroid-frame {
+.timeline .container {
+  gap: 1.5rem;
+}
+
+.timeline .polaroid-frame {
   position: relative;
   max-width: 70%;
-  margin: 1rem 0;
   z-index: 1;
 }
 
 /* Left side items */
-.about.timeline .timeline-1,
-.about.timeline .timeline-3,
-.about.timeline .timeline-5 {
+.timeline .timeline-1,
+.timeline .timeline-3,
+.timeline .timeline-5 {
   margin-right: 30%;
   /* push them away from right side, toward left */
 }
 
 /* Right side items */
-.about.timeline .timeline-2,
-.about.timeline .timeline-4 {
+.timeline .timeline-2,
+.timeline .timeline-4 {
   margin-left: 30%;
   /* push them away from left side, toward right */
   margin-right: 0;
 }
 
 /* Arrow in the center of the section */
-.about.timeline .timeline-arrow {
+.timeline .timeline-arrow {
   position: absolute;
   top: 30px;
   left: 50%;
@@ -1000,93 +1006,183 @@ form textarea {
 /* -------------------- */
 /* Humble Beginnings           */
 /* -------------------- */
-.about.humble-beginnings {
+.humble-beginnings {
   background: var(--color-primary);
   color: var(--color-white-off);
+  padding: var(--section-padding);
+}
+
+.humble-beginnings .container {
+  gap: 1rem;
+}
+
+.humble-beginnings .polaroid-frame {
+  margin: 0.5rem 0;
 }
 
 /* -------------------- */
 /* Our Growth and Success in Jasper           */
 /* -------------------- */
-.about.growth-success {
+.growth-success {
   background: var(--color-white-off);
+  padding: var(--section-padding);
+}
+
+.growth-success .container {
+  gap: 1rem;
+}
+
+.growth-success .polaroid-frame {
+  margin: 0.5rem 0;
 }
 
 /* -------------------- */
 /* The Fire           */
 /* -------------------- */
-.about.fire {
+.fire {
   background: var(--color-primary);
   color: var(--color-white-off);
+  padding: var(--section-padding);
+}
+
+.fire .container {
+  gap: 1rem;
+}
+
+.fire .polaroid-frame {
+  margin: 0.5rem 0;
 }
 
 /* -------------------- */
 /* Why Edmonton           */
 /* -------------------- */
-.about.why-edmonton {
+.why-edmonton {
   background: var(--color-white-off);
+  padding: var(--section-padding);
+}
+
+.why-edmonton .container {
+  gap: 1rem;
+}
+
+.why-edmonton .polaroid-frame {
+  margin: 0.5rem 0;
 }
 
 /* -------------------- */
 /* The Next Generation: Dustin & Jaimie           */
 /* -------------------- */
-.about.next-generation {
+.next-generation {
   background: var(--color-primary);
   color: var(--color-white-off);
+  padding: var(--section-padding);
+}
+
+.next-generation .container {
+  gap: 1rem;
+}
+
+.next-generation .polaroid-frame {
+  margin: 0.5rem 0;
 }
 
 /* -------------------- */
 /* Meet Our Family           */
 /* -------------------- */
-.about.meet-our-family {
+.meet-our-family {
   background: var(--color-white-off);
+  padding: var(--section-padding);
+}
+
+.meet-our-family .container {
+  gap: 1.5rem;
+}
+
+.meet-our-family .family-members {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .meet-our-family .family-member {
   display: flex;
   gap: 1rem;
+  align-items: flex-start;
 }
 
 .meet-our-family .family-member-image {
-  width: 33%;
+  /* 1/3 of the width */
+  flex: 1;
+}
+
+.meet-our-family .polaroid-frame {
+  padding: 0.25rem;
+}
+
+.meet-our-family .family-member-description {
+  /* 2/3 of the width */
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.meet-our-family .family-member-description h3 {
+  margin: 0;
+}
+
+.meet-our-family .family-member-description span {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
 }
 
 /* -------------------- */
 /* Join Our Family           */
 /* -------------------- */
-.about.join-our-family {
+.join-our-family {
   background: var(--color-primary);
   color: var(--color-white-off);
+  padding: var(--section-padding);
+}
+
+.join-our-family .container {
+  gap: 1.5rem;
 }
 
 /* -------------------- */
 /* Testimonials           */
 /* -------------------- */
-.about.testimonials {
+.testimonials {
   background: var(--color-white-off);
+  padding: var(--section-padding);
+}
+
+.testimonials .container {
+  gap: 1.5rem;
+}
+
+.testimonials .polaroid-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.testimonials span {
+  color: var(--color-primary);
+  font-weight: bold;
 }
 
 /* -------------------- */
-/* Menu Page Styles     */
+/* Menu Page     */
 /* -------------------- */
-.menu-page {
-  margin: 0 auto;
-  /* Banner */
+.menu-page .container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
-.menu-page .banner {
-  background-color: var(--color-placeholder-grey);
-  color: var(--color-white-off);
-  text-align: center;
-  padding: var(--spacing-lg) 0;
-}
-.menu-page .banner h1 {
-  font-size: var(--h1-size);
-  margin: 0;
-}
-.menu-page {
-  /* Menu navigation links */
-}
-.menu-page .menu-links {
+
+/* Menu navigation links */
+.menu-links {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -1098,109 +1194,61 @@ form textarea {
   margin: var(--spacing-md) auto;
   width: 100%;
 }
-.menu-page .menu-links a {
+.menu-links a {
   font-family: var(--font-family-p);
   text-decoration: none;
   color: var(--color-dark);
   font-weight: 700;
   transition: color 0.3s ease, transform 0.2s ease;
 }
-.menu-page {
-  /* Order Now Button*/
-}
-.menu-page .order-now-btn {
+
+/* Order Now Button*/
+.menu-button-solid {
   position: fixed;
   bottom: var(--spacing-md);
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-primary);
-  color: var(--color-white-off);
-  font-family: var(--font-family-h3);
-  font-weight: var(--font-weight-bold);
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
-.menu-page .order-now-btn:hover {
-  background-color: var(--color-white-off);
-  color: var(--color-primary);
-  transform: translateX(-50%) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+/* -------------------- */
+/* Grab & Go     */
+/* -------------------- */
+.grab-and-go {
+  background: var(--color-white-off);
+  padding: var(--section-padding);
 }
-@media (max-width: 400px) {
-  .menu-page .order-now-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-.menu-page {
-  /* Section styling */
-}
-.menu-page section {
-  max-width: none;
-}
-.menu-page section h2 {
-  font-family: var(--font-family-h2);
-  font-size: var(--h2-size);
-  font-weight: 700;
-  margin-bottom: var(--spacing-sm);
-}
-.menu-page section p {
-  font-family: var(--font-family-p);
-  margin-bottom: var(--spacing-md);
-}
-.menu-page section {
-  /* Grab & Go items */
-}
-.menu-page section .grab-and-go {
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--spacing-sm);
-}
-.menu-page section .wp-block-query {
+
+.wp-block-query {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-md);
 }
-.menu-page section .wp-block-query .wp-block-group {
+.wp-block-query .wp-block-group {
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
 }
-.menu-page section .wp-block-query .wp-block-group .wp-block-group.alignwide {
+.wp-block-query .wp-block-group .wp-block-group.alignwide {
   display: flex;
   justify-content: space-between;
 }
-.menu-page section .wp-block-query .wp-block-group .wp-block-group.alignwide .wp-block-group {
+.wp-block-query .wp-block-group .wp-block-group.alignwide .wp-block-group {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
 }
-.menu-page section .wp-block-query .wp-block-group .wp-block-group.alignwide img {
+.wp-block-query .wp-block-group .wp-block-group.alignwide img {
   min-width: 100%;
   height: auto;
   border-radius: var(--border-radius);
 }
 
-.build-your-own-group {
-  background-color: var(--color-primary);
+.build-your-own {
+  background: var(--color-primary);
   color: var(--color-white-off);
   padding: var(--section-padding);
-  border-radius: var(--border-radius);
 }
-.build-your-own-group h2,
-.build-your-own-group p {
-  color: var(--color-white-off);
-  margin-bottom: var(--spacing-md);
-}
-.build-your-own-group .build-your-own-grid {
+.build-your-own .build-your-own-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--spacing-md);
@@ -1209,29 +1257,29 @@ form textarea {
   gap: var(--spacing-md);
   align-items: stretch;
 }
-.build-your-own-group .build-your-own-grid > div {
+.build-your-own .build-your-own-grid > div {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-.build-your-own-group .build-your-own-grid > div h3 {
+.build-your-own .build-your-own-grid > div h3 {
   font-family: var(--font-family-h3);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-sm);
   color: var(--color-white-off);
 }
-.build-your-own-group .build-your-own-grid > div .wp-block-query {
+.build-your-own .build-your-own-grid > div .wp-block-query {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
 }
-.build-your-own-group .build-your-own-grid > div .wp-block-query [data-field-name=name_of_the_ingredient] {
+.build-your-own .build-your-own-grid > div .wp-block-query [data-field-name=name_of_the_ingredient] {
   font-family: var(--font-family-p);
   font-size: var(--p-size);
   color: var(--color-white-off);
   margin: 0;
 }
-.build-your-own-group .build-your-own-grid > div:not(:last-child)::after {
+.build-your-own .build-your-own-grid > div:not(:last-child)::after {
   content: "";
   display: block;
   width: 100%;
@@ -1243,22 +1291,16 @@ form textarea {
   background-size: contain;
 }
 @media (max-width: 500px) {
-  .build-your-own-group .build-your-own-grid {
+  .build-your-own .build-your-own-grid {
     grid-template-columns: 1fr;
   }
 }
 
 /* -------------------- */
-/* Contact Page*/
+/* Catering Page*/
 /* -------------------- */
 .catering {
   padding: var(--section-padding);
-}
-
-.catering .container {
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
 }
 
 /* -------------------- */
@@ -1266,12 +1308,6 @@ form textarea {
 /* -------------------- */
 .contact {
   padding: var(--section-padding);
-}
-
-.contact .container {
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
 }
 
 /* -------------------- */

@@ -1,10 +1,8 @@
 // sass/pages/_front-page.scss
 
-.home .container {
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-}
+/* -------------------- */
+/* Home Page          */
+/* -------------------- */
 
 /* --------------------------- */
 /* TOP NOTICE BAR (STICKY)     */
@@ -41,7 +39,7 @@
 /* Header Navigation           */
 /* --------------------------- */
 
-.home .header-navigation {
+.home.header-navigation {
     box-sizing: border-box;
     background-color: #fff;
     box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
@@ -56,7 +54,7 @@
     padding: 0;
   }
 
-  .home .header-navigation .container {
+  .home.header-navigation .container {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -94,16 +92,20 @@
 /* -------------------- */
 /* About                */
 /* -------------------- */
-.home .about {
+.home-about {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.home .about .underline {
+.home-about .container{
+  gap: 1.5rem;
+}
+
+.home-about .underline {
   width: 145px;
 }
 
-.home .about .polaroid-frame{
+.home-about .polaroid-frame{
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -113,57 +115,74 @@
 /* -------------------- */
 /* Menu                 */
 /* -------------------- */
-.home .mfb-meta-field-block[data-field-name="menu_item_name"] {
-  font-weight: bold;
-}
 
-.home .menu {
+.home-menu {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.home .menu .underline-2 {
+.home-menu .container{
+  gap: 1.5rem;
+}
+
+.home-menu .underline-2 {
   width: 225px;
+}
+
+.mfb-meta-field-block[data-field-name="menu_item_name"] {
+  font-weight: bold;
 }
 
 /* -------------------- */
 /* Order                */
 /* -------------------- */
-.home .order {
+.home-order {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.home .order .underline {
+.home-order .container{
+  gap: 1.5rem;
+}
+
+.home-order .underline {
   width: 260px;
 }
 
 /* -------------------- */
 /* Catering             */
 /* -------------------- */
-.home .catering {
+.home-catering {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.home .catering .underline-2 {
+.home-catering .container{
+  gap: 1.5rem;
+}
+
+.home-catering .underline-2 {
   width: 140px;
 }
 
 /* -------------------- */
 /* Merch                */
 /* -------------------- */
-.home .merch {
+.home-merch {
   padding: var(--section-padding);
   background: var(--color-white-off);
 }
 
-.home .merch .underline {
+.home-merch .container{
+  gap: 1.5rem;
+}
+
+.home-merch .underline {
   width: 240px;
 }
-.home .woocommerce ul.products li.product .button{
+.woocommerce ul.products li.product .button{
   max-width: 0;
   max-height: 0;
   display: none;
@@ -172,25 +191,31 @@
 /* -------------------- */
 /* Testimonial          */
 /* -------------------- */
-.home .testimonial {
+.home-testimonials {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
 }
 
-.home .testimonial .underline-2 {
+.home-testimonials .container{
+  gap: 1.5rem;
+}
+
+.home-testimonials .underline-2 {
   width: 310px;
 }
 
-// .feedback-text,.feedback-author{
-//   color: var(--color-black)
-// }
-.home .testimonial .polaroid-frame {
+.home-testimonials .polaroid-frame {
   color: var(--color-black);
 }
 
-.home .feedback-author{
-  ::before{
-    content: "- ";
-  }
+.home-testimonials .polaroid-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.home-testimonials span {
+  color: var(--color-primary);
+  font-weight: bold;
 }
