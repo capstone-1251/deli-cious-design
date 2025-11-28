@@ -657,13 +657,6 @@ body.open {
     z-index: 10000;
     transition: all 0.3s ease;
   }
-  /* Scroll state */
-  body.scroll .header-navigation {
-    top: 0;
-    max-width: 100%;
-    padding: 0.5rem 1rem;
-    box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
-  }
   /* Layout inside container */
   .header-navigation .container {
     display: flex;
@@ -828,6 +821,11 @@ body.open {
   width: auto;
   margin: 0;
   padding: 0;
+  transition: top 0.3s ease;
+}
+
+body.scroll .home.header-navigation {
+  top: calc(4rem - 31px);
 }
 
 .home.header-navigation .container {
@@ -842,6 +840,9 @@ body.open {
 /* Header Navigation - Desktop           */
 /* -------------------- */
 @media only screen and (min-width: 64rem) {
+  body.open {
+    overflow: visible;
+  }
   .home.header-navigation {
     top: 4rem;
     left: 50%;

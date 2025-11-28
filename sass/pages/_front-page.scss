@@ -40,33 +40,44 @@
 /* --------------------------- */
 
 .home.header-navigation {
-    box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
-    position: fixed;
-    z-index: 10000;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
+  position: fixed;
+  z-index: 10000;
 
-    top: 3rem;
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    margin: 0;
-    padding: 0;
+  top: 3rem;
+  left: 1rem;
+  right: 1rem;
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+// move up when scrolled cause of alert
+    transition: top 0.3s ease;
+}
+
+body.scroll .home.header-navigation {
+    top: calc(4rem - 31px);
   }
 
-  .home.header-navigation .container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+.home.header-navigation .container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  /* -------------------- */
+/* -------------------- */
 /* Header Navigation - Desktop           */
 /* -------------------- */
 
 @media only screen and (min-width: 64rem) {
+body.open {
+    overflow: visible;
+  }
+
   .home.header-navigation {
     top: 4rem;
     left: 50%;
@@ -111,7 +122,7 @@
   background: var(--color-white-off);
 }
 
-.home-about .container{
+.home-about .container {
   gap: 1.5rem;
 }
 
@@ -119,7 +130,7 @@
   width: 145px;
 }
 
-.home-about .polaroid-frame{
+.home-about .polaroid-frame {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -136,7 +147,7 @@
   color: var(--color-white-off);
 }
 
-.home-menu .container{
+.home-menu .container {
   gap: 1.5rem;
 }
 
@@ -156,7 +167,7 @@
   background: var(--color-white-off);
 }
 
-.home-order .container{
+.home-order .container {
   gap: 1.5rem;
 }
 
@@ -173,7 +184,7 @@
   color: var(--color-white-off);
 }
 
-.home-catering .container{
+.home-catering .container {
   gap: 1.5rem;
 }
 
@@ -189,14 +200,15 @@
   background: var(--color-white-off);
 }
 
-.home-merch .container{
+.home-merch .container {
   gap: 1.5rem;
 }
 
 .home-merch .underline {
   width: 240px;
 }
-.woocommerce ul.products li.product .button{
+
+.woocommerce ul.products li.product .button {
   max-width: 0;
   max-height: 0;
   display: none;
@@ -211,7 +223,7 @@
   color: var(--color-white-off);
 }
 
-.home-testimonials .container{
+.home-testimonials .container {
   gap: 1.5rem;
 }
 

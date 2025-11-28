@@ -300,14 +300,6 @@ body.open {
     transition: all 0.3s ease;
   }
 
-  /* Scroll state */
-  body.scroll .header-navigation {
-    top: 0;
-    max-width: 100%;
-    padding: 0.5rem 1rem;
-    box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
-  }
-
   /* Layout inside container */
   .header-navigation .container {
     display: flex;
