@@ -53,13 +53,13 @@
   margin: 0;
   padding: 0;
 
-// move up when scrolled cause of alert
-    transition: top 0.3s ease;
+  // move up when scrolled cause of alert
+  transition: top 0.3s ease;
 }
 
 body.scroll .home.header-navigation {
-    top: calc(4rem - 31px);
-  }
+  top: calc(4rem - 31px);
+}
 
 .home.header-navigation .container {
   width: 100%;
@@ -74,7 +74,7 @@ body.scroll .home.header-navigation {
 /* -------------------- */
 
 @media only screen and (min-width: 64rem) {
-body.open {
+  body.open {
     overflow: visible;
   }
 
@@ -83,7 +83,7 @@ body.open {
     left: 50%;
     width: 100%;
     max-width: 80rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
   }
 }
 
@@ -112,6 +112,35 @@ body.open {
 .home-banner .buttons {
   display: flex;
   gap: 1rem;
+}
+
+/* -------------------- */
+/* Home Banner - Desktop           */
+/* -------------------- */
+
+@media only screen and (min-width: 64rem) {
+.home-banner {
+  padding-top: 12rem;
+}
+
+  .home-banner .container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .home-banner .container>div {
+    order: 0;
+    justify-content: flex-end;
+  }
+
+  .home-banner .container>img {
+    order: 1;
+    width: 856px;
+  }
+
+  .home-banner .polaroid-frame {
+    padding: 2rem;
+  }
 }
 
 /* -------------------- */

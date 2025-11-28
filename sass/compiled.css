@@ -648,7 +648,7 @@ body.open {
     transform: translateX(-50%);
     width: 100%;
     max-width: 80rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
     background: #fff;
     box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
     display: flex;
@@ -676,7 +676,7 @@ body.open {
   .header-navigation .logo img {
     height: 4rem;
     width: 4rem;
-    object-fit: contain;
+    margin-left: 2rem;
   }
   /* Navigation set to horizontal */
   .header-navigation .nav {
@@ -848,7 +848,7 @@ body.scroll .home.header-navigation {
     left: 50%;
     width: 100%;
     max-width: 80rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
   }
 }
 /* --------------------------- */
@@ -877,6 +877,29 @@ body.scroll .home.header-navigation {
   gap: 1rem;
 }
 
+/* -------------------- */
+/* Home Banner - Desktop           */
+/* -------------------- */
+@media only screen and (min-width: 64rem) {
+  .home-banner {
+    padding-top: 12rem;
+  }
+  .home-banner .container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .home-banner .container > div {
+    order: 0;
+    justify-content: flex-end;
+  }
+  .home-banner .container > img {
+    order: 1;
+    width: 856px;
+  }
+  .home-banner .polaroid-frame {
+    padding: 2rem;
+  }
+}
 /* -------------------- */
 /* About                */
 /* -------------------- */
