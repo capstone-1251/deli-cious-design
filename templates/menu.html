@@ -15,12 +15,14 @@
     <!-- ----------------------- -->
     <!-- Grab & Go                  -->
     <!-- ----------------------- -->
-    <nav class="menu-nav polaroid-frame"> 
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
-  <path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
-</svg>
+    <nav class="menu-nav polaroid-frame">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left"
+            viewBox="0 0 16 16">
+            <path
+                d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+        </svg>
         <ul>
-            <li><a href="#grab-and-go">Grab & Go</a></li>
+            <li><a href="#grab-and-go" id="scroll-to-top">Grab & Go</a></li>
             <li><a href="#build-your-own">Build Your Own</a></li>
             <li><a href="#meats">Meats</a></li>
             <li><a href="#veggies">Veggies</a></li>
@@ -29,6 +31,52 @@
             <li><a href="#desserts">Desserts</a></li>
         </ul>
     </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('.menu-nav a');
+            const topLink = document.getElementById("scroll-to-top");
+
+            topLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+
+                setActiveLink("#grab-and-go");
+            });
+
+            function setActiveLink(hash) {
+                links.forEach(link => {
+                    const linkHash = link.getAttribute('href');
+
+                    link.classList.remove('active');
+
+                    if (hash && hash === linkHash) {
+                        link.classList.add('active');
+                    }
+
+                    if (!hash && linkHash === "#grab-and-go") {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            setActiveLink(window.location.hash);
+
+            window.addEventListener("hashchange", () => {
+                setActiveLink(window.location.hash);
+            });
+
+            links.forEach(link => {
+                link.addEventListener("click", () => {
+                    const linkHash = link.getAttribute("href");
+                    setActiveLink(linkHash);
+                });
+            });
+        });
+
+        
+    </script>
+
 
     <a href="/order/" class="button-solid menu-button-solid">Order Now</a>
 

@@ -9,10 +9,21 @@
 /* -------------------- */
 
 .menu-nav {
-  position: relative;
+  position: sticky;
+  top: 7.5rem; // where it'll start and stop
   margin: 1rem 1rem 0;
+
+  left: 1rem;
+  right: 1rem;
+
+  z-index: 10;
+
   display: flex;
   gap: 1rem;
+  max-width: 80rem;
+  align-items: center;
+
+  transition: top 0.3s ease;
 }
 
 .menu-nav svg {
@@ -25,13 +36,65 @@
   display: flex;
   gap: 1rem;
   flex-wrap: nowrap;
-// scroll
+// horizontal scroll
   overflow-x: auto;
   white-space: nowrap;
 }
 
 .menu-nav::-webkit-scrollbar {
   display: none;
+}
+
+/* active state */
+.menu-nav a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-nav a:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width .3s;
+}
+
+.menu-nav a:hover:before {
+  width: 100%;
+}
+
+.menu-nav a.active:before {
+  width: 100%;
+}
+
+.menu-nav a.active {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+// 
+// Menu Nav - Desktop
+// 
+
+@media only screen and (min-width: 64rem) {
+  .menu-nav {
+  margin: 1rem auto 0;
+
+  top: 7.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80rem;
+}
+
+  body.scroll .menu-nav {
+    top: calc(7.5rem - 31px);
+  }
 }
 
 /* -------------------- */

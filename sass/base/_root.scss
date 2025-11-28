@@ -49,6 +49,8 @@ html,
 body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 11rem;
 }
 
 body {
@@ -201,7 +203,9 @@ p {
 }
 
 .button-solid:hover {
-    background: var(--color-placeholder-grey);
+    color: var(--color-white-off);
+    background: #C1121F;
+    border: 1px solid #C1121F;
 }
 
 .button-solid:active {
@@ -209,7 +213,9 @@ p {
 }
 
 .button-solid:focus-visible {
-    outline-color: var(--focus);
+    color: var(--color-white-off);
+    background: #C1121F;
+    border: 1px solid #C1121F;
 }
 
 .button-outline {
