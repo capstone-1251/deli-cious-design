@@ -119,9 +119,9 @@ body.scroll .home.header-navigation {
 /* -------------------- */
 
 @media only screen and (min-width: 64rem) {
-.home-banner {
-  padding-top: 12rem;
-}
+  .home-banner {
+    padding-top: 12rem;
+  }
 
   .home-banner .container {
     flex-direction: row;
@@ -166,6 +166,69 @@ body.scroll .home.header-navigation {
   align-items: flex-start;
 }
 
+.home-about .button-solid {
+  min-width: 17rem;
+}
+
+/* -------------------- */
+/* About - Desktop           */
+/* -------------------- */
+
+@media only screen and (min-width: 64rem) {
+  .home-about .container {
+    display: grid;
+    // image left content right
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+    align-items: center;
+  }
+
+  /* Image column (left) */
+  .home-about .container>.polaroid-frame {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    height: 20rem;
+  }
+
+  /* Text column (right) */
+  .home-about .container>h2,
+  .home-about .container>p,
+  .home-about .container>a.button-solid {
+    margin: 0;
+  }
+
+  .home-about .container>h2 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .home-about .container>p {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .home-about .container>a.button-solid {
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  .home-about .polaroid-frame img:first-of-type {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: 50% 15%;
+  }
+
+  .home-about .polaroid-frame img:last-of-type {
+    width: 30%;
+    height: auto;
+    margin-left: 5rem;
+  }
+}
+
 /* -------------------- */
 /* Menu                 */
 /* -------------------- */
@@ -188,6 +251,10 @@ body.scroll .home.header-navigation {
   font-weight: bold;
 }
 
+.home-menu .button-solid {
+  min-width: 17rem;
+}
+
 /* -------------------- */
 /* Order                */
 /* -------------------- */
@@ -202,6 +269,10 @@ body.scroll .home.header-navigation {
 
 .home-order .underline {
   width: 260px;
+}
+
+.home-order .button-solid {
+  min-width: 17rem;
 }
 
 /* -------------------- */
@@ -219,6 +290,10 @@ body.scroll .home.header-navigation {
 
 .home-catering .underline-2 {
   width: 140px;
+}
+
+.home-catering .button-solid {
+  min-width: 17rem;
 }
 
 /* -------------------- */
@@ -241,6 +316,24 @@ body.scroll .home.header-navigation {
   max-width: 0;
   max-height: 0;
   display: none;
+}
+
+.home-merch .button-solid {
+  min-width: 17rem;
+}
+
+/* -------------------- */
+/* Merch - Desktop           */
+/* -------------------- */
+
+@media only screen and (min-width: 64rem) {
+  .home-merch h2 {
+    text-align: center;
+  }
+
+  .home-merch .button-solid {
+    margin: 0 auto;
+  }
 }
 
 /* -------------------- */
@@ -268,9 +361,25 @@ body.scroll .home.header-navigation {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 44rem;
 }
 
 .home-testimonials span {
   color: var(--color-primary);
   font-weight: bold;
+}
+
+/* -------------------- */
+/* Testimonial - Desktop           */
+/* -------------------- */
+
+@media only screen and (min-width: 64rem) {
+  .home-testimonials h2 {
+    text-align: center;
+  }
+
+  .home-testimonials .polaroid-frame {
+    margin: 0 auto;
+    max-width: 44rem;
+  }
 }
