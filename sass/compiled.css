@@ -223,6 +223,11 @@ p {
   flex-direction: column;
 }
 
+@media only screen and (min-width: 64rem) {
+  .banner {
+    padding-top: 9.5rem;
+  }
+}
 /* --------------------------- */
 /* Frame                      */
 /* --------------------------- */
@@ -232,9 +237,22 @@ p {
   box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
 }
 
+.polaroid-frame img:first-of-type {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
 @media only screen and (min-width: 64rem) {
   .polaroid-frame {
     padding: 2rem;
+  }
+  .polaroid-frame img:last-of-type {
+    width: 30%;
+    height: auto;
+    margin-left: 5rem;
   }
 }
 /* --------------------------- */
@@ -633,9 +651,7 @@ body.open {
   }
   /* Show desktop order button */
   .header-navigation .button-solid {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    display: inline-flex;
   }
 }
 /* --------------------------- */
@@ -899,16 +915,7 @@ body.scroll .home.header-navigation {
     grid-row: 4;
   }
   .home-about .polaroid-frame img:first-of-type {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
     object-position: 50% 15%;
-  }
-  .home-about .polaroid-frame img:last-of-type {
-    width: 30%;
-    height: auto;
-    margin-left: 5rem;
   }
 }
 /* -------------------- */
@@ -1074,9 +1081,17 @@ body.scroll .home.header-navigation {
   gap: 1.5rem;
 }
 
+.timeline .timeline-img {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .timeline .polaroid-frame {
   position: relative;
   max-width: 70%;
+  width: 100%;
+  height: auto;
   z-index: 1;
 }
 
@@ -1109,6 +1124,59 @@ body.scroll .home.header-navigation {
   pointer-events: none;
 }
 
+/* -------------------- */
+/* Timeline - Desktop           */
+/* -------------------- */
+@media only screen and (min-width: 64rem) {
+  .timeline .container {
+    position: relative;
+    /* adjust depending on content */
+    min-height: 1600px;
+  }
+  .timeline-img {
+    align-items: center;
+    padding-top: 5rem;
+  }
+  .timeline .polaroid-frame {
+    width: 45%;
+    height: 25rem;
+    position: absolute;
+    padding-bottom: 4rem;
+  }
+  /* left */
+  .timeline .timeline-1,
+  .timeline .timeline-3,
+  .timeline .timeline-5 {
+    left: 0;
+    margin-right: 0;
+    transform: translateX(0);
+  }
+  /* right */
+  .timeline .timeline-2,
+  .timeline .timeline-4 {
+    right: 0;
+    margin-left: 0;
+    transform: translateX(0);
+  }
+  /* control gaps here */
+  /* left */
+  .timeline .timeline-1 {
+    top: 5rem;
+  }
+  .timeline .timeline-3 {
+    top: 40rem;
+  }
+  .timeline .timeline-5 {
+    top: 75rem;
+  }
+  .timeline .timeline-2 {
+    top: 22.5rem;
+  }
+  /* right */
+  .timeline .timeline-4 {
+    top: 57.5rem;
+  }
+}
 /* -------------------- */
 /* Humble Beginnings           */
 /* -------------------- */

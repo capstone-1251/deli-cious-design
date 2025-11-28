@@ -215,17 +215,7 @@ body.scroll .home.header-navigation {
   }
 
   .home-about .polaroid-frame img:first-of-type {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
     object-position: 50% 15%;
-  }
-
-  .home-about .polaroid-frame img:last-of-type {
-    width: 30%;
-    height: auto;
-    margin-left: 5rem;
   }
 }
 

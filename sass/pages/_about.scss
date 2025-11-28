@@ -12,13 +12,21 @@
   padding: var(--section-padding);
 }
 
-.timeline .container{
+.timeline .container {
+  gap: 1.5rem;
+}
+
+.timeline .timeline-img {
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
 .timeline .polaroid-frame {
   position: relative;
   max-width: 70%;
+  width: 100%;
+  height: auto;
   z-index: 1;
 }
 
@@ -52,6 +60,69 @@
 }
 
 /* -------------------- */
+/* Timeline - Desktop           */
+/* -------------------- */
+@media only screen and (min-width: 64rem) {
+  .timeline .container {
+    position: relative;
+    /* adjust depending on content */
+    min-height: 1600px;
+  }
+
+  .timeline-img {
+    align-items: center;
+    padding-top: 5rem;
+  }
+
+  .timeline .polaroid-frame {
+    width: 45%;
+    height: 25rem;
+    position: absolute;
+    padding-bottom: 4rem;
+  }
+
+  /* left */
+  .timeline .timeline-1,
+  .timeline .timeline-3,
+  .timeline .timeline-5 {
+    left: 0;
+    margin-right: 0;
+    transform: translateX(0);
+  }
+
+  /* right */
+  .timeline .timeline-2,
+  .timeline .timeline-4 {
+    right: 0;
+    margin-left: 0;
+    transform: translateX(0);
+  }
+
+  /* control gaps here */
+  /* left */
+  .timeline .timeline-1 {
+    top: 5rem;
+  }
+
+  .timeline .timeline-3 {
+    top: calc(5rem + 35rem);
+  }
+
+  .timeline .timeline-5 {
+    top: calc(5rem + 70rem);
+  }
+
+  .timeline .timeline-2 {
+    top: calc(5rem + (35rem / 2));
+  }
+
+  /* right */
+  .timeline .timeline-4 {
+    top: calc((5rem + 35rem) + (35rem / 2));
+  }
+}
+
+/* -------------------- */
 /* Humble Beginnings           */
 /* -------------------- */
 .humble-beginnings {
@@ -60,7 +131,7 @@
   padding: var(--section-padding);
 }
 
-.humble-beginnings .container{
+.humble-beginnings .container {
   gap: 1rem;
 }
 
@@ -76,7 +147,7 @@
   padding: var(--section-padding);
 }
 
-.growth-success .container{
+.growth-success .container {
   gap: 1rem;
 }
 
@@ -93,7 +164,7 @@
   padding: var(--section-padding);
 }
 
-.fire .container{
+.fire .container {
   gap: 1rem;
 }
 
@@ -109,7 +180,7 @@
   padding: var(--section-padding);
 }
 
-.why-edmonton .container{
+.why-edmonton .container {
   gap: 1rem;
 }
 
@@ -126,7 +197,7 @@
   padding: var(--section-padding);
 }
 
-.next-generation .container{
+.next-generation .container {
   gap: 1rem;
 }
 
@@ -142,7 +213,7 @@
   padding: var(--section-padding);
 }
 
-.meet-our-family .container{
+.meet-our-family .container {
   gap: 1.5rem;
 }
 
@@ -193,7 +264,7 @@
   padding: var(--section-padding);
 }
 
-.join-our-family .container{
+.join-our-family .container {
   gap: 1.5rem;
 }
 
@@ -205,7 +276,7 @@
   padding: var(--section-padding);
 }
 
-.testimonials .container{
+.testimonials .container {
   gap: 1.5rem;
 }
 
