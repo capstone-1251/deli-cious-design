@@ -143,7 +143,6 @@
   color: var(--color-white-off);
   padding: 0;
   .container{
-    max-width: 1000px;
     padding: var(--section-padding);
   }
  
@@ -156,7 +155,7 @@
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: var(--spacing-md);
     align-items: stretch;
-    padding: var(--spacing-md);
+    padding-top: 1.5rem;
 
     >div {
       display: flex;

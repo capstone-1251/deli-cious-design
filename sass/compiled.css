@@ -725,6 +725,13 @@ body.open {
     flex-direction: column;
     justify-content: flex-end;
   }
+  .footer .polaroid-frame img:last-of-type {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    display: block;
+  }
   .footer .footer-links {
     display: flex;
     gap: 2rem;
@@ -892,20 +899,18 @@ body.scroll .home.header-navigation {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
-    column-gap: 2rem;
+    column-gap: 4rem;
     row-gap: 1.5rem;
     align-items: center;
   }
-  /* Image column (left) */
+  /* left */
   .home-about .container > .polaroid-frame {
     grid-column: 1;
     grid-row: 1/span 5;
-    height: 40rem;
+    height: 20rem;
+    padding-bottom: 1rem;
   }
-  .polaroid-frame img:last-of-type {
-    min-width: 50% !important;
-  }
-  /* Text column (right) */
+  /* right */
   .home-about .container > h2,
   .home-about .container > p,
   .home-about .container > a.button-solid {
@@ -1121,6 +1126,8 @@ body.scroll .home.header-navigation {
     grid-column: 2;
     grid-row: 2;
     margin: 0;
+    height: 25rem;
+    padding-bottom: 3rem;
   }
 }
 /* -------------------- */
@@ -1190,7 +1197,7 @@ body.scroll .home.header-navigation {
     width: 45%;
     height: 25rem;
     position: absolute;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
   }
   /* left */
   .timeline .timeline-1,
@@ -1540,7 +1547,6 @@ body.scroll .home.header-navigation {
   padding: 0;
 }
 .build-your-own .container {
-  max-width: 1000px;
   padding: var(--section-padding);
 }
 .build-your-own .build-your-own-grid {
@@ -1551,7 +1557,7 @@ body.scroll .home.header-navigation {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--spacing-md);
   align-items: stretch;
-  padding: var(--spacing-md);
+  padding-top: 1.5rem;
 }
 .build-your-own .build-your-own-grid > div {
   display: flex;

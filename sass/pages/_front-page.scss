@@ -180,22 +180,20 @@ body.scroll .home.header-navigation {
     // image left content right
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
-    column-gap: 2rem;
+    column-gap: 4rem;
     row-gap: 1.5rem;
     align-items: center;
   }
 
-  /* Image column (left) */
+  /* left */
   .home-about .container>.polaroid-frame {
     grid-column: 1;
     grid-row: 1 / span 5;
-    height: 40rem;
-  }
-  .polaroid-frame img:last-of-type{
-    min-width: 50% !important; 
+    height: 20rem;
+    padding-bottom: 1rem;
   }
 
-  /* Text column (right) */
+  /* right */
   .home-about .container>h2,
   .home-about .container>p,
   .home-about .container>a.button-solid {

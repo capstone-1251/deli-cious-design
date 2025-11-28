@@ -69,6 +69,14 @@
     justify-content: flex-end;
   }
 
+  .footer .polaroid-frame img:last-of-type {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    display: block;
+  }
+
   .footer .footer-links {
     display: flex;
     gap: 2rem;
