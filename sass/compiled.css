@@ -1350,6 +1350,25 @@ body.scroll .home.header-navigation {
   font-size: 0.875rem;
 }
 
+@media only screen and (min-width: 64rem) {
+  .meet-our-family .family-members {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .meet-our-family .family-member {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .meet-our-family .polaroid-frame {
+    padding: 2rem;
+    padding-bottom: 3.5rem;
+  }
+  .meet-our-family .polaroid-frame img:last-of-type {
+    width: 50%;
+    height: auto;
+    margin-left: 2rem;
+  }
+}
 /* -------------------- */
 /* Join Our Family           */
 /* -------------------- */
