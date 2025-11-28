@@ -23,6 +23,12 @@
   margin-bottom: 1.5rem;
 }
 
+.footer .quick-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .footer .contact-information span {
   font-weight: bold;
   color: var(--color-primary);

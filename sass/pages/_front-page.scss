@@ -62,6 +62,20 @@
     align-items: center;
   }
 
+  /* -------------------- */
+/* Header Navigation - Desktop           */
+/* -------------------- */
+
+@media only screen and (min-width: 64rem) {
+  .home.header-navigation {
+    top: 4rem;
+    left: 50%;
+    width: 100%;
+    max-width: 80rem;
+    padding-right: 1rem;
+  }
+}
+
 /* --------------------------- */
 /* Home Banner                 */
 /* --------------------------- */

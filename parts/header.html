@@ -26,7 +26,7 @@
             <div class="ul-wrapper">
                 <ul id="expanded" class="ul">
                     <li class="li">
-                        <a href="/" class="li-link active">Home</a>
+                        <a href="/" class="li-link">Home</a>
                     </li>
                     <li class="li">
                         <a href="/about/" class="li-link">About</a>
@@ -56,6 +56,7 @@
 <!-- /wp:group -->
 
 <script>
+    // menu toggle
     document.addEventListener('DOMContentLoaded', function () {
         const body = document.body;
         const navigation = document.querySelector('.header-navigation');
@@ -76,4 +77,27 @@
             });
         });
     });
+
+    // active state
+    document.addEventListener('DOMContentLoaded', function () {
+
+    const currentPath = window.location.pathname.replace(/\/$/, ""); 
+    const links = document.querySelectorAll('.header-navigation .li-link');
+
+    links.forEach(link => {
+        let linkPath = link.getAttribute('href').replace(/\/$/, "");
+
+        // Special case: homepage
+        if (linkPath === "" || linkPath === "/") {
+            if (currentPath === "" || currentPath === "/") {
+                link.classList.add('active');
+            }
+        } else {
+            if (currentPath === linkPath) {
+                link.classList.add('active');
+            }
+        }
+    });
+});
+
 </script>
