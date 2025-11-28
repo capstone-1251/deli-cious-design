@@ -9,7 +9,7 @@
 /* -------------------- */
 
 .menu-nav {
-  position: sticky;
+ position: sticky;
   top: 7.5rem; // where it'll start and stop
   margin: 1rem 1rem 0;
 
@@ -96,7 +96,6 @@
     top: calc(7.5rem - 31px);
   }
 }
-
 /* -------------------- */
 /* Order Button     */
 /* -------------------- */
@@ -150,7 +149,12 @@
 .build-your-own {
   background: var(--color-primary);
   color: var(--color-white-off);
-  padding: var(--section-padding);
+  padding: 0;
+  .container{
+    max-width: 1000px;
+    padding: var(--section-padding);
+  }
+ 
 
   .build-your-own-grid {
     display: grid;
@@ -159,18 +163,21 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: var(--spacing-md);
-    align-items: stretch; // ensure all items in the row have same height
+    align-items: stretch;
+    padding: var(--spacing-md);
 
     >div {
       display: flex;
+      width: 200px;
       flex-direction: column;
-      height: 100%; // stretch to row height
+      min-height: 100%; // stretch to row height
     }
 
     >div {
       h3 {
-        font-family: var(--font-family-h3);
+        font-family: var(--font-family-h1);
         font-weight: var(--font-weight-bold);
+        font-size: var(--h3-size);
         margin-bottom: var(--spacing-sm);
         color: var(--color-white-off);
       }
@@ -197,7 +204,7 @@
         margin: var(--spacing-md) 0;
         background-image: url('https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/heading-chalk-secondary.svg');
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: bottom center;
         background-size: contain;
       }
     }

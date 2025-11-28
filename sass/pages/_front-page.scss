@@ -58,6 +58,7 @@
 }
 
 body.scroll .home.header-navigation {
+  top: calc(4rem - 31px);
   top: calc(3rem - 31px);
 }
 
@@ -85,7 +86,6 @@ body.scroll .home.header-navigation {
     max-width: 80rem;
     padding-right: 2rem;
   }
-
   body.scroll .home.header-navigation {
   top: calc(3.5rem - 31px);
 }
@@ -193,7 +193,10 @@ body.scroll .home.header-navigation {
   .home-about .container>.polaroid-frame {
     grid-column: 1;
     grid-row: 1 / span 5;
-    height: 20rem;
+    height: 40rem;
+  }
+  .polaroid-frame img:last-of-type{
+    min-width: 50% !important; 
   }
 
   /* Text column (right) */
