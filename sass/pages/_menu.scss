@@ -33,7 +33,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: nowrap;
-// horizontal scroll
+  // horizontal scroll
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -81,11 +81,11 @@
 
 @media only screen and (min-width: 64rem) {
   .menu-nav {
-  margin: 1rem auto 0;
+    margin: 1rem auto 0;
 
-  top: 9.5rem;
+    top: 9.5rem;
     max-width: 80rem;
-}
+  }
 }
 
 /* -------------------- */
@@ -142,32 +142,40 @@
   background: var(--color-primary);
   color: var(--color-white-off);
   padding: 0;
-  .container{
+  font-weight: bold;
+  margin: var(--spacing-md) 0;
+
+  .container {
     padding: var(--section-padding);
   }
- 
+
 
   .build-your-own-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--spacing-md);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
     align-items: stretch;
     padding-top: 1.5rem;
+
+
+
 
     >div {
       display: flex;
       width: 200px;
       flex-direction: column;
       min-height: 100%; // stretch to row height
+
+      >svg {
+        padding: var(--spacing-sm) 0;
+        height: max-content;
+      }
     }
 
     >div {
       h3 {
-        font-family: var(--font-family-h1);
-        font-weight: var(--font-weight-bold);
+        font-family: var(--font-family-h3);
+        font-weight: bolder;
         font-size: var(--h3-size);
         margin-bottom: var(--spacing-sm);
         color: var(--color-white-off);
@@ -186,22 +194,34 @@
         }
       }
 
-      // SVG divider after each category except the last one
-      &:not(:last-child)::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 24px; // adjust as needed
-        margin: var(--spacing-md) 0;
-        background-image: url('https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/heading-chalk-secondary.svg');
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        background-size: contain;
+      // menu ingredient description styles
+      >div .menu-ingredient-description div {
+        font-family: var(--font-family-p);
+        font-size: var(--p-size);
+        color: var(--color-white-off);
+        margin: 0 0 var(--spacing-sm) 0;
+        font-weight: normal;
       }
+
+      // SVG divider after each category except the last one
+      // &:not(:last-child)::after {
+      //   content: '';
+      //   display: block;
+      //   width: 100%;
+      //   height: 24px; // adjust as needed
+      //   margin: var(--spacing-md) 0;
+      //   background-image: url('https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/heading-chalk-secondary.svg');
+      //   background-repeat: no-repeat;
+      //   background-position: bottom center;
+      //   background-size: contain;
+      // }
     }
 
-    @media (max-width: 500px) {
-      grid-template-columns: 1fr;
+    @media (min-width: 600px) {
+      > div{
+        width: unset;
+      }
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

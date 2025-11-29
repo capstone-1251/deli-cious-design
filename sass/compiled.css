@@ -18,7 +18,7 @@
   /* Typography sizes */
   --h1-size: clamp(2rem, 4vw, 3rem);
   --h2-size: 2.5rem;
-  --h3-size: 1.25rem;
+  --h3-size: 1.5rem;
   --h4-size: 1rem;
   --p-size: 1rem;
   /* Typography fonts */
@@ -1545,16 +1545,15 @@ body.scroll .home.header-navigation {
   background: var(--color-primary);
   color: var(--color-white-off);
   padding: 0;
+  font-weight: bold;
+  margin: var(--spacing-md) 0;
 }
 .build-your-own .container {
   padding: var(--section-padding);
 }
 .build-your-own .build-your-own-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-md);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--spacing-md);
   align-items: stretch;
   padding-top: 1.5rem;
@@ -1565,9 +1564,13 @@ body.scroll .home.header-navigation {
   flex-direction: column;
   min-height: 100%;
 }
+.build-your-own .build-your-own-grid > div > svg {
+  padding: var(--spacing-sm) 0;
+  height: max-content;
+}
 .build-your-own .build-your-own-grid > div h3 {
-  font-family: var(--font-family-h1);
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-h3);
+  font-weight: bolder;
   font-size: var(--h3-size);
   margin-bottom: var(--spacing-sm);
   color: var(--color-white-off);
@@ -1583,20 +1586,19 @@ body.scroll .home.header-navigation {
   color: var(--color-white-off);
   margin: 0;
 }
-.build-your-own .build-your-own-grid > div:not(:last-child)::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 24px;
-  margin: var(--spacing-md) 0;
-  background-image: url("https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/heading-chalk-secondary.svg");
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: contain;
+.build-your-own .build-your-own-grid > div > div .menu-ingredient-description div {
+  font-family: var(--font-family-p);
+  font-size: var(--p-size);
+  color: var(--color-white-off);
+  margin: 0 0 var(--spacing-sm) 0;
+  font-weight: normal;
 }
-@media (max-width: 500px) {
+@media (min-width: 600px) {
+  .build-your-own .build-your-own-grid > div {
+    width: unset;
+  }
   .build-your-own .build-your-own-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
