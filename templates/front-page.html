@@ -106,7 +106,7 @@
             class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
           </svg><a href="https://www.google.com/maps?q=10567+111+Street" target="_blank">10567 111 Street</a>
-</span>
+        </span>
         <span class="notice-right"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-telephone-fill" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
@@ -250,61 +250,90 @@
   <!-- ----------------------- -->
 
   <section class="home-testimonials">
-  <div class="container">
-    <h2>Featured Testimonial</h2>
-    <div class="polaroid-frame">
-      <p id="testimonial-text"></p>
-      <span id="testimonial-author"></span>
+    <div class="container">
+      <h2>Featured Testimonial</h2>
+      <div class="polaroid-frame">
+        <p id="testimonial-text"></p>
+        <span id="testimonial-author"></span>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- testimonail randomizer -->
   <script>
-  const testimonials = [
-    {
-      text: "To once again walk into your shop and smell the delicious chickens roasting, chat with friendly staff, and leave with the perfect sandwich to fuel a day of adventuring.",
-      author: "Jessica | Kickstarter Backer"
-    },
-    {
-      text: "Being from Hinton, every time we stopped in Jasper either for soccer and as kids were going up to pyramid lake for a picnic, we'd grab a sandwich from the Deli! Our favourite sandwich shop since we were young!",
-      author: "Destin | Kickstarter Backer"
-    },
-    {
-      text: "We visited the deli every day during our trip to Jasper last summer, which was the week before the wildfires. We loved the deli – the wall, and the chit chat, and the food of course! We were heartbroken for you and the many others in Jasper who lost homes and businesses. We wish you every success in rebuilding and hope we might get to visit again someday.",
-      author: "Helen | Kickstarter Backer"
-    },
-    {
-      text: "Met Glen at a Happy Hour at the Atha-B in 2014. He made a very positive impression. I visited the deli every visit to Jasper til moving back to Ontario. Looking forward to seeing your new digs next visit to eTown :)",
-      author: "Steve"
-    },
-    {
-      text: "We chose to support the PSD because every time you get an amazing sammie, it isn't just about the sammie. It's about the energy that exists within the walls of the PSD, the “how are you, where are you from, what are you up to” and the general kindness you are served alongside and amazing sammie. Your sandwiches have been enjoyed by us in the Maccarib Pass, at Summit Lakes, at Christine Lake, the trail head of Fiddle Pass and so many other places in JNP. Your sammies are not just sammies, they are part of our experiences in Jasper, and we promise that they will still be part of our JNP adventures as well as the many places we adventure in and around Edmonton.",
-      author: "Tyler S | Kickstarter Backer"
-    },
-    {
-      text: "My husband is obsessed with your sandwiches. Once our van broke down in Jasper and we had to take a rental back to Edmonton, then return a week later… the only thing we did in town (aside from get our van) was get sandwiches at the deli.",
-      author: "Heather W | Kickstarter Backer"
-    },
-    {
-      text: "We have family in Prince George and your deli was a must-stop for my dad for years, and later for us as we visited Jasper with our kids. Food was always great but I had no hesitation supporting people like yourselves who go above and beyond to make the world a better place through the simple act of treating ALL humans with dignity, kindness, and love. You are truly salt on this earth and I'm so happy to celebrate this next step with you!",
-      author: "Benjamin C | Kickstarter Backer"
-    },
-    {
-      text: "After experiencing your deli in Jasper the first time, my wife and I knew we had to come back again. And since Jasper is a favorite destination for our family, we would stop by every time we were in town. You make the best sandwiches! So when I heard that you were setting up a new shop in Edmonton, I had to throw my support behind it. I wish you all the best and can't wait to see the new location and have a delicious sandwich once again!",
-      author: "Robert T | Kickstarter Backer"
-    },
-    {
-      text: "I've loved the deli since the first time I tried it. The food, the atmosphere, the people, always so loving and welcoming. You can tell the care and thought put into every sandwich. Rebuilding is going to be such a huge step!",
-      author: "Annik | Kickstarter Backer"
-    }
-  ];
+    const testimonials = [
+      {
+        text: "To once again walk into your shop and smell the delicious chickens roasting, chat with friendly staff, and leave with the perfect sandwich to fuel a day of adventuring.",
+        author: "Jessica | Kickstarter Backer"
+      },
+      {
+        text: "Being from Hinton, every time we stopped in Jasper either for soccer and as kids were going up to pyramid lake for a picnic, we'd grab a sandwich from the Deli! Our favourite sandwich shop since we were young!",
+        author: "Destin | Kickstarter Backer"
+      },
+      {
+        text: "We visited the deli every day during our trip to Jasper last summer, which was the week before the wildfires. We loved the deli – the wall, and the chit chat, and the food of course! We were heartbroken for you and the many others in Jasper who lost homes and businesses. We wish you every success in rebuilding and hope we might get to visit again someday.",
+        author: "Helen | Kickstarter Backer"
+      },
+      {
+        text: "Met Glen at a Happy Hour at the Atha-B in 2014. He made a very positive impression. I visited the deli every visit to Jasper til moving back to Ontario. Looking forward to seeing your new digs next visit to eTown :)",
+        author: "Steve"
+      },
+      {
+        text: "We chose to support the PSD because every time you get an amazing sammie, it isn't just about the sammie. It's about the energy that exists within the walls of the PSD, the “how are you, where are you from, what are you up to” and the general kindness you are served alongside and amazing sammie. Your sandwiches have been enjoyed by us in the Maccarib Pass, at Summit Lakes, at Christine Lake, the trail head of Fiddle Pass and so many other places in JNP. Your sammies are not just sammies, they are part of our experiences in Jasper, and we promise that they will still be part of our JNP adventures as well as the many places we adventure in and around Edmonton.",
+        author: "Tyler S | Kickstarter Backer"
+      },
+      {
+        text: "My husband is obsessed with your sandwiches. Once our van broke down in Jasper and we had to take a rental back to Edmonton, then return a week later… the only thing we did in town (aside from get our van) was get sandwiches at the deli.",
+        author: "Heather W | Kickstarter Backer"
+      },
+      {
+        text: "We have family in Prince George and your deli was a must-stop for my dad for years, and later for us as we visited Jasper with our kids. Food was always great but I had no hesitation supporting people like yourselves who go above and beyond to make the world a better place through the simple act of treating ALL humans with dignity, kindness, and love. You are truly salt on this earth and I'm so happy to celebrate this next step with you!",
+        author: "Benjamin C | Kickstarter Backer"
+      },
+      {
+        text: "After experiencing your deli in Jasper the first time, my wife and I knew we had to come back again. And since Jasper is a favorite destination for our family, we would stop by every time we were in town. You make the best sandwiches! So when I heard that you were setting up a new shop in Edmonton, I had to throw my support behind it. I wish you all the best and can't wait to see the new location and have a delicious sandwich once again!",
+        author: "Robert T | Kickstarter Backer"
+      },
+      {
+        text: "I've loved the deli since the first time I tried it. The food, the atmosphere, the people, always so loving and welcoming. You can tell the care and thought put into every sandwich. Rebuilding is going to be such a huge step!",
+        author: "Annik | Kickstarter Backer"
+      }
+    ];
 
-  const random = testimonials[Math.floor(Math.random() * testimonials.length)];
+    const random = testimonials[Math.floor(Math.random() * testimonials.length)];
 
-  document.getElementById("testimonial-text").textContent = random.text;
-  document.getElementById("testimonial-author").textContent = random.author;
-</script>
+    document.getElementById("testimonial-text").textContent = random.text;
+    document.getElementById("testimonial-author").textContent = random.author;
+  </script>
+
+  <!-- ----------------------- -->
+  <!-- Back to top button      -->
+  <!-- ----------------------- -->
+
+  <button id="backToTop" class="backToTop polaroid-frame"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+      fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z" />
+      <path fill-rule="evenodd"
+        d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
+    </svg></button>
+
+  <script>
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+  </script>
 
 </main>
 

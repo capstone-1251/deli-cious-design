@@ -294,6 +294,25 @@ form textarea {
   font-family: var(--font-family-p);
 }
 
+/* --------------------------- */
+/* Back to top button                     */
+/* --------------------------- */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  cursor: pointer;
+  display: none;
+  /* Hidden by default */
+  z-index: 999;
+}
+
+@media only screen and (min-width: 64rem) {
+  .backToTop.polaroid-frame {
+    padding: 1rem;
+  }
+}
 /* -------------------- */
 /* Navigation           */
 /* -------------------- */
