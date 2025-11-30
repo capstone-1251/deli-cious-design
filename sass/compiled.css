@@ -1734,7 +1734,7 @@ body.scroll .home.header-navigation {
   color: var(--color-white-off);
   margin: 0;
 }
-.build-your-own .build-your-own-grid > div > div .menu-ingredient-description div {
+.build-your-own .build-your-own-grid > div div .menu-ingredient-description div {
   font-family: var(--font-family-p);
   font-size: var(--p-size);
   color: var(--color-white-off);
@@ -1823,6 +1823,92 @@ body.scroll .home.header-navigation {
   .contact .contact-information,
   .contact .contact-form {
     flex: 1 1 50%;
+  }
+}
+.merch-page section.container p {
+  padding: var(--spacing-sm);
+  font-weight: bold;
+}
+
+.merch-heading {
+  font-size: 4rem;
+  margin: 2rem 0;
+  padding: var(--spacing-sm);
+  font-weight: bolder;
+  position: relative;
+}
+
+.merch-heading .underline {
+  width: 250px;
+  padding: 2rem;
+  position: absolute;
+  top: 165px;
+  left: 0;
+}
+
+.merch-page .woocommerce ul.products {
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-sm);
+  list-style: none;
+}
+
+.merch-page .woocommerce ul.products li.product {
+  flex: 1 1 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: var(--spacing-sm);
+  margin: var(--spacing-lg);
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* added shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.merch-page .woocommerce ul.products li.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.merch-page .woocommerce ul.products li.product img {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--spacing-sm);
+  object-fit: cover;
+}
+
+.merch-page .woocommerce ul.products li.product .woocommerce-loop-product__title,
+.merch-page .woocommerce ul.products li.product .price {
+  display: inline-block;
+  margin: 0 var(--spacing-lg) 0 0;
+  text-align: right;
+}
+
+.merch-page .woocommerce ul.products li.product .product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+@media (min-width: 600px) {
+  .merch-page .woocommerce ul.products li.product {
+    flex: 1 1 calc(50% - var(--spacing-sm));
+  }
+}
+@media (min-width: 900px) {
+  .merch-page .woocommerce ul.products li.product {
+    flex: 1 1 calc(33.333% - var(--spacing-sm));
+  }
+}
+@media (min-width: 1200px) {
+  .merch-page .woocommerce ul.products li.product {
+    flex: 1 1 calc(25% - var(--spacing-sm));
   }
 }
 
