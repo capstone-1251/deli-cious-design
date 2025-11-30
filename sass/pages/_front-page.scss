@@ -20,7 +20,7 @@
   z-index: 9999;
 
   .top-notice-content {
-    max-width: 780px; // align with header content
+    max-width: 80rem;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -31,7 +31,16 @@
 
   .notice-left,
   .notice-right {
-    display: inline-block;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .top-notice .top-notice-content {
+    justify-content: flex-start;
+    gap: 3rem;
   }
 }
 
