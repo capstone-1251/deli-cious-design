@@ -23,35 +23,35 @@
 
       <div class="timeline-img">
         <!-- left -->
-        <div class="timeline-1 polaroid-frame">
+        <div class="timeline-1 polaroid-frame" data-scrollto="section-1">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about.png"
             alt="Glen and Wendy Leitch together inside the old patricia street deli store in jasper">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about-text.png"
             alt="Text that says Wendy and Glen with a smily face next to it">
         </div>
         <!-- right -->
-        <div class="timeline-2 polaroid-frame">
+        <div class="timeline-2 polaroid-frame" data-scrollto="section-2">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about.png"
             alt="Glen and Wendy Leitch together inside the old patricia street deli store in jasper">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about-text.png"
             alt="Text that says Wendy and Glen with a smily face next to it">
         </div>
         <!-- left -->
-        <div class="timeline-3 polaroid-frame">
+        <div class="timeline-3 polaroid-frame" data-scrollto="section-3">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about.png"
             alt="Glen and Wendy Leitch together inside the old patricia street deli store in jasper">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about-text.png"
             alt="Text that says Wendy and Glen with a smily face next to it">
         </div>
         <!-- right -->
-        <div class="timeline-4 polaroid-frame">
+        <div class="timeline-4 polaroid-frame" data-scrollto="section-4">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about.png"
             alt="Glen and Wendy Leitch together inside the old patricia street deli store in jasper">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about-text.png"
             alt="Text that says Wendy and Glen with a smily face next to it">
         </div>
         <!-- left -->
-        <div class="timeline-5 polaroid-frame">
+        <div class="timeline-5 polaroid-frame" data-scrollto="section-5">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about.png"
             alt="Glen and Wendy Leitch together inside the old patricia street deli store in jasper">
           <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/img/home-about-text.png"
@@ -65,13 +65,25 @@
     </div>
   </section>
 
+  <script>
+document.querySelectorAll('.timeline-img .polaroid-frame').forEach(item => {
+    item.addEventListener('click', () => {
+        const targetId = item.getAttribute('data-scrollto');
+        const targetEl = document.getElementById(targetId);
+
+        if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
 
 
   <!-- ----------------------- -->
   <!-- Humble Beginnings       -->
   <!-- ----------------------- -->
 
-  <section class="humble-beginnings">
+  <section class="humble-beginnings" id="section-1">
     <div class="container">
       <h2>Humble Beginnings</h2>
       <div class="polaroid-frame">
@@ -107,7 +119,7 @@
   <!-- Our Growth and Success in Jasper                  -->
   <!-- ----------------------- -->
 
-  <section class="growth-success">
+  <section class="growth-success" id="section-2">
     <div class="container">
       <h2>Our Growth and Success in Jasper</h2>
       <div class="polaroid-frame">
@@ -141,7 +153,7 @@
   <!-- The Fire       -->
   <!-- ----------------------- -->
 
-  <section class="fire">
+  <section class="fire" id="section-3">
     <div class="container">
       <h2>The Fire</h2>
       <div class="polaroid-frame">
@@ -176,7 +188,7 @@
   <!-- Why Edmonton       -->
   <!-- ----------------------- -->
 
-  <section class="why-edmonton">
+  <section class="why-edmonton" id="section-4">
     <div class="container">
       <h2>Why Edmonton</h2>
       <div class="polaroid-frame">
@@ -208,7 +220,7 @@
   <!-- The Next Generation: Dustin & Jaimie       -->
   <!-- ----------------------- -->
 
-  <section class="next-generation">
+  <section class="next-generation" id="section-5">
     <div class="container">
       <h2>The Next Generation: Dustin & Jaimie</h2>
       <div class="polaroid-frame">
@@ -318,16 +330,168 @@
   <!-- Testimonials       -->
   <!-- ----------------------- -->
 
-  <section class="testimonials">
-    <div class="container">
-      <h2>Testimonials</h2>
-      <div class="polaroid-frame">
-        <p>To once again walk into your shop and smell the delicious chickens roasting, chat with friendly staff, and
-          leave with the perfect sandwich to fuel a day of adventuring.</p>
-        <span>Jessica | Kickstarter Backer</span>
+ <section class="testimonials">
+  <div class="container">
+    <h2>Testimonials</h2>
+
+    <div class="testimonials-slider">
+      <button class="testimonials-btn prev" aria-label="Previous testimonial">
+        &#10094;
+      </button>
+
+      <div class="testimonials-track-wrapper">
+        <div class="testimonials-track">
+          <!-- Slides will be injected here by JS -->
+        </div>
       </div>
+
+      <button class="testimonials-btn next" aria-label="Next testimonial">
+        &#10095;
+      </button>
     </div>
-  </section>
+
+    <div class="testimonials-dots">
+      <!-- Dots injected by JS -->
+    </div>
+  </div>
+</section>
+
+  <!-- scroll -->
+  <script>
+  const testimonials = [
+    {
+      text: "To once again walk into your shop and smell the delicious chickens roasting, chat with friendly staff, and leave with the perfect sandwich to fuel a day of adventuring.",
+      author: "Jessica | Kickstarter Backer"
+    },
+    {
+      text: "Being from Hinton, every time we stopped in Jasper either for soccer and as kids were going up to pyramid lake for a picnic, we'd grab a sandwich from the Deli! Our favourite sandwich shop since we were young!",
+      author: "Destin | Kickstarter Backer"
+    },
+    {
+      text: "We visited the deli every day during our trip to Jasper last summer, which was the week before the wildfires. We loved the deli – the wall, and the chit chat, and the food of course! We were heartbroken for you and the many others in Jasper who lost homes and businesses. We wish you every success in rebuilding and hope we might get to visit again someday.",
+      author: "Helen | Kickstarter Backer"
+    },
+    {
+      text: "Met Glen at a Happy Hour at the Atha-B in 2014. He made a very positive impression. I visited the deli every visit to Jasper til moving back to Ontario. Looking forward to seeing your new digs next visit to eTown :)",
+      author: "Steve"
+    },
+    {
+      text: "We chose to support the PSD because every time you get an amazing sammie, it isn't just about the sammie. It's about the energy that exists within the walls of the PSD, the “how are you, where are you from, what are you up to” and the general kindness you are served alongside and amazing sammie. Your sandwiches have been enjoyed by us in the Maccarib Pass, at Summit Lakes, at Christine Lake, the trail head of Fiddle Pass and so many other places in JNP. Your sammies are not just sammies, they are part of our experiences in Jasper, and we promise that they will still be part of our JNP adventures as well as the many places we adventure in and around Edmonton.",
+      author: "Tyler S | Kickstarter Backer"
+    },
+    {
+      text: "My husband is obsessed with your sandwiches. Once our van broke down in Jasper and we had to take a rental back to Edmonton, then return a week later… the only thing we did in town (aside from get our van) was get sandwiches at the deli.",
+      author: "Heather W | Kickstarter Backer"
+    },
+    {
+      text: "We have family in Prince George and your deli was a must-stop for my dad for years, and later for us as we visited Jasper with our kids. Food was always great but I had no hesitation supporting people like yourselves who go above and beyond to make the world a better place through the simple act of treating ALL humans with dignity, kindness, and love. You are truly salt on this earth and I'm so happy to celebrate this next step with you!",
+      author: "Benjamin C | Kickstarter Backer"
+    },
+    {
+      text: "After experiencing your deli in Jasper the first time, my wife and I knew we had to come back again. And since Jasper is a favorite destination for our family, we would stop by every time we were in town. You make the best sandwiches! So when I heard that you were setting up a new shop in Edmonton, I had to throw my support behind it. I wish you all the best and can't wait to see the new location and have a delicious sandwich once again!",
+      author: "Robert T | Kickstarter Backer"
+    },
+    {
+      text: "I've loved the deli since the first time I tried it. The food, the atmosphere, the people, always so loving and welcoming. You can tell the care and thought put into every sandwich. Rebuilding is going to be such a huge step!",
+      author: "Annik | Kickstarter Backer"
+    }
+  ];
+
+  // === Carousel Logic ===
+  const track = document.querySelector(".testimonials-track");
+  const dotsContainer = document.querySelector(".testimonials-dots");
+  const prevBtn = document.querySelector(".testimonials-btn.prev");
+  const nextBtn = document.querySelector(".testimonials-btn.next");
+
+  let currentIndex = 0;
+
+  // Build slides
+  testimonials.forEach((item, index) => {
+    const slide = document.createElement("article");
+    slide.className = "polaroid-frame testimonial-slide";
+    slide.innerHTML = `
+      <p>${item.text}</p>
+      <span>${item.author}</span>
+    `;
+    track.appendChild(slide);
+
+    // dots
+    const dot = document.createElement("button");
+    dot.className = "testimonial-dot" + (index === 0 ? " active" : "");
+    dot.setAttribute("aria-label", `Go to testimonial ${index + 1}`);
+    dot.addEventListener("click", () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  const slides = Array.from(document.querySelectorAll(".testimonial-slide"));
+  const dots = Array.from(document.querySelectorAll(".testimonial-dot"));
+
+  function updateCarousel() {
+    const offset = -currentIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
+  }
+
+  function goToSlide(index) {
+    currentIndex = (index + testimonials.length) % testimonials.length; // infinite wrap
+    updateCarousel();
+  }
+
+  function showNext() {
+    goToSlide(currentIndex + 1);
+  }
+
+  function showPrev() {
+    goToSlide(currentIndex - 1);
+  }
+
+  prevBtn.addEventListener("click", showPrev);
+  nextBtn.addEventListener("click", showNext);
+
+  // Swipe / touch support
+  let startX = 0;
+  let isTouching = false;
+
+  const wrapper = document.querySelector(".testimonials-track-wrapper");
+
+  wrapper.addEventListener("touchstart", (e) => {
+    isTouching = true;
+    startX = e.touches[0].clientX;
+  });
+
+  wrapper.addEventListener("touchmove", (e) => {
+    if (!isTouching) return;
+    const diffX = e.touches[0].clientX - startX;
+    // visual drag could go here
+  });
+
+  wrapper.addEventListener("touchend", (e) => {
+    if (!isTouching) return;
+    isTouching = false;
+    const endX = e.changedTouches[0].clientX;
+    const diffX = endX - startX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX < 0) {
+        showNext(); // swipe left
+      } else {
+        showPrev(); // swipe right
+      }
+    }
+  });
+
+  // Optional: keyboard arrows
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") showNext();
+    if (e.key === "ArrowLeft") showPrev();
+  });
+
+  // initial position
+  updateCarousel();
+</script>
 
 </main>
 
