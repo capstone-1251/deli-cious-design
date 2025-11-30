@@ -32,7 +32,7 @@
   .notice-left,
   .notice-right {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
   }
 }
@@ -100,8 +100,9 @@ body.scroll .home.header-navigation {
 /* Home Banner                 */
 /* --------------------------- */
 .home-banner {
-  background: url('../assets/svg/banner-bulletin-board.svg') repeat center center;
-  background-size: cover;
+  background: url('../assets/svg/banner-bulletin-board.svg') repeat;
+    background-size: 390px 247px;
+    background-position: center;
   padding: var(--section-padding);
   // how far it pushes it below the nav bar
   padding-top: 9.5rem;

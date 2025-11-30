@@ -4,8 +4,9 @@
 /* Footer                      */
 /* --------------------------- */
 .footer {
-  background: url('../assets/svg/banner-bulletin-board.svg') repeat center center;
-  background-size: cover;
+  background: url('../assets/svg/banner-bulletin-board.svg') repeat;
+  background-size: 390px 247px;
+  background-position: center;
   padding: var(--section-padding);
 }
 
@@ -44,13 +45,16 @@
   color: var(--color-primary);
 }
 
-.footer .contact-information .footer-phone, .footer .contact-information .footer-email, .footer .social-media {
+.footer .contact-information .footer-phone, .footer .contact-information .footer-email {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
 .footer .social-media{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
   margin-top: 1.5rem;
 }
 
