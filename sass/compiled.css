@@ -1779,37 +1779,60 @@ body.scroll .home.header-navigation {
 }
 
 /* -------------------- */
-/* Grab & Go     */
+/* Menu Items           */
 /* -------------------- */
-.grab-and-go {
-  background: var(--color-white-off);
-  padding: var(--section-padding);
-}
-
-.wp-block-query {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-md);
-}
-.wp-block-query .wp-block-group {
-  border-radius: var(--border-radius);
-  padding: var(--spacing-md);
-}
-.wp-block-query .wp-block-group .wp-block-group.alignwide {
-  display: flex;
-  justify-content: space-between;
-}
-.wp-block-query .wp-block-group .wp-block-group.alignwide .wp-block-group {
+.menu-items .wp-block-post-template {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
 }
-.wp-block-query .wp-block-group .wp-block-group.alignwide img {
-  min-width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
+.menu-items .menu-item {
+  padding: 1rem 0;
+}
+.menu-items .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  margin-left: 0 !important;
+}
+.menu-items .menu-header {
+  display: flex;
+  align-items: center;
+}
+.menu-items .menu-header strong {
+  font-weight: 700;
+  color: var(--color-black);
+}
+.menu-items .menu-header .menu-price {
+  font-weight: 700;
+  color: var(--color-black);
+}
+.menu-items .menu-desc {
+  margin-top: 0.35rem;
+  line-height: 1.4;
+  color: var(--color-black);
 }
 
+/* -------------------- */
+/* Desktop Menu Items       */
+/* -------------------- */
+@media only screen and (min-width: 64rem) {
+  .menu-items .menu-flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    max-width: fit-content;
+  }
+  .menu-items .menu-flex-row > div {
+    flex: 1;
+  }
+  .menu-items .container > div:last-of-type .wp-block-post-template {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: fit-content;
+  }
+  .menu-items .container > div:last-of-type .menu-item {
+    width: 100%;
+    padding: 1rem 0;
+  }
+}
 .build-your-own {
   background: var(--color-primary);
   color: var(--color-white-off);
