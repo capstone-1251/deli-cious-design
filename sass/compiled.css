@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* -------------------- */
 /* Global Styles        */
 /* -------------------- */
@@ -987,23 +988,74 @@ body.scroll .home.header-navigation {
   background: var(--color-primary);
   color: var(--color-white-off);
 }
-
 .home-menu .container {
   gap: 1.5rem;
 }
-
 .home-menu .underline-2 {
   width: 225px;
 }
-
-.mfb-meta-field-block[data-field-name=menu_item_name] {
-  font-weight: bold;
-}
-
 .home-menu .button-solid {
   min-width: 17rem;
 }
 
+/* Menu item name bold */
+.mfb-meta-field-block[data-field-name=menu_item_name] {
+  font-weight: bold;
+}
+
+/* -------------------- */
+/* Home Menu – Items    */
+/* -------------------- */
+.home-menu .wp-block-post-template {
+  display: flex;
+  flex-direction: column;
+}
+.home-menu .menu-item {
+  padding: 1rem 0;
+}
+.home-menu .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  margin-left: 0 !important;
+}
+.home-menu .menu-header {
+  display: flex;
+  align-items: center;
+}
+.home-menu .menu-header strong {
+  font-weight: 700;
+  color: var(--color-white-off);
+}
+.home-menu .menu-header .menu-price {
+  font-weight: 700;
+  color: var(--color-white-off);
+}
+.home-menu .menu-desc {
+  margin-top: 0.35rem;
+  line-height: 1.4;
+  color: var(--color-white-off);
+}
+
+/* -------------------- */
+/* Home Menu – Desktop  */
+/* -------------------- */
+@media only screen and (min-width: 64rem) {
+  /* FLEX the first two categories ONLY */
+  .home-menu .menu-flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  /* Mains + Desserts take equal width */
+  .home-menu .menu-flex-row > div {
+    flex: 1;
+  }
+  /* Beverages stays full-width (no changes needed) */
+  /* Menu item loop: 2-column layout */
+  .home-menu .wp-block-post-template {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
 /* -------------------- */
 /* Order                */
 /* -------------------- */

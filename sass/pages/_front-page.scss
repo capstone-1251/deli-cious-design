@@ -238,23 +238,96 @@ body.scroll .home.header-navigation {
   padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
+  .container {
+    gap: 1.5rem;
+  }
+
+  .underline-2 {
+    width: 225px;
+  }
+
+  .button-solid {
+    min-width: 17rem;
+  }
 }
 
-.home-menu .container {
-  gap: 1.5rem;
-}
-
-.home-menu .underline-2 {
-  width: 225px;
-}
-
+/* Menu item name bold */
 .mfb-meta-field-block[data-field-name="menu_item_name"] {
   font-weight: bold;
 }
 
-.home-menu .button-solid {
-  min-width: 17rem;
+/* -------------------- */
+/* Home Menu – Items    */
+/* -------------------- */
+
+.home-menu {
+
+  .wp-block-post-template {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-item {
+    padding: 1rem 0;
+  }
+
+  .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    margin-left: 0 !important;
+  }
+
+  .menu-header {
+    display: flex;
+    align-items: center;
+
+    strong {
+      font-weight: 700;
+      color: var(--color-white-off);
+    }
+
+    .menu-price {
+      font-weight: 700;
+      color: var(--color-white-off);
+    }
+  }
+
+  .menu-desc {
+    margin-top: 0.35rem;
+    line-height: 1.4;
+    color: var(--color-white-off);
+  }
+
 }
+
+/* -------------------- */
+/* Home Menu – Desktop  */
+/* -------------------- */
+
+@media only screen and (min-width: 64rem) {
+
+  /* FLEX the first two categories ONLY */
+  .home-menu .menu-flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  /* Mains + Desserts take equal width */
+  .home-menu .menu-flex-row > div {
+    flex: 1;
+  }
+
+  /* Beverages stays full-width (no changes needed) */
+
+  /* Menu item loop: 2-column layout */
+  .home-menu {
+    .wp-block-post-template {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
+}
+
 
 /* -------------------- */
 /* Order                */
