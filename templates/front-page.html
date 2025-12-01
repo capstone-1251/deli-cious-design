@@ -167,7 +167,7 @@
         <div>
           <h3>Mains</h3>
           <p>Hearty, satisfying, and made to hit the spot.</p>
-          <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"menu-item","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug","terms":["grab-and-go"]},"category":[7]}},"layout":{"type":"constrained"}} -->
+          <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"menu-item","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
           <div class="wp-block-query">
             <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
             <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
@@ -196,11 +196,61 @@
         <div>
           <h3>Desserts</h3>
           <p>Sweet, simple treats to round things out.</p>
+          <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"dessert","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+            <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
+            <div class="menu-item">
+              <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
+              <div class="menu-header">
+                <strong>
+                  <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
+                </strong>
+                <span class="menu-price">
+                  <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
+                </span>
+              </div>
+              <!-- /wp:group -->
+              <!-- Description under -->
+              <div class="menu-desc">
+                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+              </div>
+              <!-- REMOVED IMAGE BLOCK -->
+            </div>
+            <!-- /wp:group -->
+            <!-- /wp:post-template -->
+          </div>
+          <!-- /wp:query -->
         </div>
       </div>
       <div>
         <h3>Beverages</h3>
         <p>Refreshing, fizzy, or hydrating, something for every thirst.</p>
+        <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"beverage","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
+          <div class="wp-block-query">
+            <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+            <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
+            <div class="menu-item">
+              <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
+              <div class="menu-header">
+                <strong>
+                  <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
+                </strong>
+                <span class="menu-price">
+                  <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
+                </span>
+              </div>
+              <!-- /wp:group -->
+              <!-- Description under -->
+              <div class="menu-desc">
+                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+              </div>
+              <!-- REMOVED IMAGE BLOCK -->
+            </div>
+            <!-- /wp:group -->
+            <!-- /wp:post-template -->
+          </div>
+          <!-- /wp:query -->
       </div>
       <a href="https://patriciastreetdeli.ca/dev/team1/menu/" class="button-solid button-outline" data-type="page"
         data-id="361">View Full Menu</a>
