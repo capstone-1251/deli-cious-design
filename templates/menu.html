@@ -16,67 +16,128 @@
     <!-- Main Menu Items         -->
     <!-- ----------------------- -->
     <nav class="menu-nav polaroid-frame">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left"
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left"
             viewBox="0 0 16 16">
             <path
                 d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
-        </svg>
+        </svg> -->
         <ul>
-            <li><a href="#main-menu-items" id="scroll-to-top">Main Menu Items</a></li>
+            <li><a href="#what-were-serving" id="scroll-to-top">What We're Serving</a></li>
+            |
+            <li><a href="#mains">Mains</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#beverages">Beverages</a></li>
+            |
             <li><a href="#build-your-own">Build Your Own</a></li>
-            <li><a href="#breads">Bread</a></li>
+            |
+            <li><a href="#bread">Bread</a></li>
             <li><a href="#meats">Meats</a></li>
             <li><a href="#veggies">Veggies</a></li>
-            <li><a href="#mayo">Mayo</a></li>
+            <li><a href="#cheeses">Cheeses</a></li>
             <li><a href="#sauces">Sauces</a></li>
-            <li><a href="#mustards">Mustards</a></li>
             <li><a href="#spreads">Spreads</a></li>
-            <li><a href="#cheese">Cheeses</a></li>
+            <li><a href="#mayo">Mayo</a></li>
+            <li><a href="#mustards">Mustards</a></li>
+
+
         </ul>
     </nav>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const links = document.querySelectorAll('.menu-nav a');
-            const topLink = document.getElementById("scroll-to-top");
+document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.querySelector(".menu-nav");
+    const list = nav.querySelector("ul");
+    const links = list.querySelectorAll("a[href^='#']");
 
-            topLink.addEventListener("click", function (e) {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
+    const sections = Array.from(links)
+        .map(link => {
+            const hash = link.getAttribute("href");
+            const section = document.querySelector(hash);
+            return section ? { hash, link, section } : null;
+        })
+        .filter(Boolean);
 
-                setActiveLink("#grab-and-go");
-            });
+    function setActiveLink(hash) {
+        links.forEach(link => {
+            const isActive = link.getAttribute("href") === hash;
+            link.classList.toggle("active", isActive);
 
-            function setActiveLink(hash) {
-                links.forEach(link => {
-                    const linkHash = link.getAttribute('href');
-
-                    link.classList.remove('active');
-
-                    if (hash && hash === linkHash) {
-                        link.classList.add('active');
-                    }
-
-                    if (!hash && linkHash === "#grab-and-go") {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            setActiveLink(window.location.hash);
-
-            window.addEventListener("hashchange", () => {
-                setActiveLink(window.location.hash);
-            });
-
-            links.forEach(link => {
-                link.addEventListener("click", () => {
-                    const linkHash = link.getAttribute("href");
-                    setActiveLink(linkHash);
-                });
-            });
+            if (isActive) scrollNavToLink(link); // <-- ensure visible horizontally
         });
-    </script>
+    }
+
+    // Smooth scroll when clicking a link
+    links.forEach(link => {
+    link.addEventListener("click", function (e) {
+        const hash = this.getAttribute("href");
+        const target = document.querySelector(hash);
+        if (!target) return;
+
+        e.preventDefault();
+
+        const isMobile = window.matchMedia("(max-width: 64rem)").matches;
+        const mobileOffset = 147;
+        const desktopOffset = 180;
+
+        const EXTRA_OFFSET = isMobile ? mobileOffset : desktopOffset;
+
+        const navHeight = nav.offsetHeight;
+        const targetY = target.getBoundingClientRect().top + window.scrollY;
+        const offsetY = targetY - navHeight - EXTRA_OFFSET;
+
+        window.scrollTo({
+            top: offsetY,
+            behavior: "smooth"
+        });
+
+        setActiveLink(hash);
+        history.replaceState(null, "", hash);
+    });
+});
+
+
+    // IntersectionObserver - updates active link on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = "#" + entry.target.id;
+                setActiveLink(id);
+                history.replaceState(null, "", id);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "-45% 0px -55% 0px",
+        threshold: 0,
+    });
+
+    sections.forEach(({ section }) => observer.observe(section));
+
+    // 🟦 Auto horizontal scroll to keep active link visible
+    function scrollNavToLink(link) {
+        const linkRect = link.getBoundingClientRect();
+        const listRect = list.getBoundingClientRect();
+
+        const offset = (listRect.width / 2) - (linkRect.width / 2);
+        const scrollPosition =
+            link.offsetLeft - offset;
+
+        list.scrollTo({
+            left: scrollPosition,
+            behavior: "smooth"
+        });
+    }
+
+    // Initial highlight
+    if (window.location.hash) {
+        setActiveLink(window.location.hash);
+    } else if (sections[0]) {
+        setActiveLink(sections[0].hash);
+    }
+});
+</script>
+
+
 
     <!-- ----------------------- -->
     <!-- Floating order button                 -->
@@ -88,93 +149,102 @@
     <!-- What We're Serving                 -->
     <!-- ----------------------- -->
 
-    <section class="what-were-serving" id="main-menu-items">
+    <section class="what-were-serving" id="what-were-serving">
         <div class="container">
             <!-- <h2>Featured Menu<span class="underline-2"></span></h2> -->
-            <h2>Featured Menu</h2>
-            <div class="menu-top-row">
-                <div class="mains">
-                    <h3 class="menu-category-name">Mains</h3>
-                    <p class="menu-category-description">Hearty, satisfying, and made to hit the spot.</p>
-                    <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"menu-item","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
-                    <div class="menu-category-items">
-                        <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
-                        <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
-                        <div class="menu-item">
-                            <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
-                            <div class="menu-item-name">
-                                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
-                                <span class="menu-item-price">
-                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
-                                </span>
+            <h2>What We're Serving</h2>
+            <div class="menu">
+
+                <div class="menu-top-row">
+                    <div class="mains" id="mains">
+                        <h3 class="menu-category-name">Mains</h3>
+                        <p class="menu-category-description">Hearty, satisfying, and made to hit the spot.</p>
+                        <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"menu-item","order":"asc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
+                        <div class="menu-category-items">
+                            <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+                            <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
+                            <div class="menu-item">
+                                <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
+                                <div class="menu-item-name">
+                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
+                                    <span class="menu-item-price">
+                                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
+                                    </span>
+                                </div>
+                                <!-- /wp:group -->
+                                <!-- Description under -->
+                                <div class="menu-item-description">
+                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+                                </div>
+                                <!-- REMOVED IMAGE BLOCK -->
                             </div>
                             <!-- /wp:group -->
-                            <!-- Description under -->
-                            <div class="menu-item-description">
-                                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
-                            </div>
-                            <!-- REMOVED IMAGE BLOCK -->
+                            <!-- /wp:post-template -->
                         </div>
-                        <!-- /wp:group -->
-                        <!-- /wp:post-template -->
+                        <!-- /wp:query -->
                     </div>
-                    <!-- /wp:query -->
-                </div>
-                <div class="desserts">
-                    <h3 class="menu-category-name">Desserts</h3>
-                    <p class="menu-category-description">Sweet, simple treats to round things out.</p>
-                    <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"dessert","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
-                    <div class="menu-category-items">
-                        <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
-                        <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
-                        <div class="menu-item">
-                            <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
-                            <div class="menu-item-name">
-                                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
-                                <span class="menu-item-price">
-                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
-                                </span>
+                    <div class="desserts" id="desserts">
+                        <h3 class="menu-category-name">Desserts</h3>
+                        <p class="menu-category-description">Sweet, simple treats to round things out.</p>
+                        <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"dessert","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
+                        <div class="menu-category-items">
+                            <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+                            <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
+                            <div class="menu-item">
+                                <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
+                                <div class="menu-item-name">
+                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
+                                    <span class="menu-item-price">
+                                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
+                                    </span>
+                                </div>
+                                <!-- /wp:group -->
+                                <!-- Description under -->
+                                <div class="menu-item-description">
+                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+                                </div>
+                                <!-- REMOVED IMAGE BLOCK -->
                             </div>
                             <!-- /wp:group -->
-                            <!-- Description under -->
-                            <div class="menu-item-description">
-                                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+                            <!-- /wp:post-template -->
+                        </div>
+                        <!-- /wp:query -->
+                    </div>
+                </div>
+
+                <div class="menu-bottom-row">
+                    <div class="beverages" id="beverages">
+                        <h3 class="menu-category-name">Beverages</h3>
+                        <p class="menu-category-description">Refreshing, fizzy, or hydrating, something for every
+                            thirst.</p>
+                        <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"beverage","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
+                        <div class="menu-category-items">
+                            <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+                            <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
+                            <div class="menu-item">
+                                <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
+                                <div class="menu-item-name">
+                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
+                                    <span class="menu-item-price">
+                                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
+                                    </span>
+                                </div>
+                                <!-- /wp:group -->
+                                <!-- Description under -->
+                                <div class="menu-item-description">
+                                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+                                </div>
+                                <!-- REMOVED IMAGE BLOCK -->
                             </div>
-                            <!-- REMOVED IMAGE BLOCK -->
+                            <!-- /wp:group -->
+                            <!-- /wp:post-template -->
                         </div>
-                        <!-- /wp:group -->
-                        <!-- /wp:post-template -->
+                        <!-- /wp:query -->
                     </div>
-                    <!-- /wp:query -->
                 </div>
+
             </div>
-            <div class="menu-bottom-row">
-                <h3 class="menu-category-name">Beverages</h3>
-                <p class="menu-category-description">Refreshing, fizzy, or hydrating, something for every thirst.</p>
-                <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"beverage","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
-                <div class="menu-category-items">
-                    <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
-                    <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
-                    <div class="menu-item">
-                        <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
-                        <div class="menu-item-name">
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
-                            <span class="menu-item-price">
-                                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
-                            </span>
-                        </div>
-                        <!-- /wp:group -->
-                        <!-- Description under -->
-                        <div class="menu-item-description">
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
-                        </div>
-                        <!-- REMOVED IMAGE BLOCK -->
-                    </div>
-                    <!-- /wp:group -->
-                    <!-- /wp:post-template -->
-                </div>
-                <!-- /wp:query -->
-            </div>
+
         </div>
     </section>
 
@@ -186,9 +256,10 @@
             <h2>Build Your Own<span class="underline-2"></span></h2>
             <p>Create your perfect bite, just the way you like it. Choose your bread, meats, veggies, cheeses, and
                 sauces, and we’ll craft it fresh to order.</p>
-            <div class="build-your-own-grid">
+            <div class="ingredients">
+
                 <!-- Bread -->
-                <div id="breads">
+                <div id="bread">
                     <h3 class="menu-category-name">Bread</h3>
                     <p class="menu-category-description">The perfect base for building your ideal bite.</p>
                     <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"bread"}} -->
@@ -229,11 +300,11 @@
                     </div> <!-- /wp:query -->
                 </div>
 
-                <!-- Mayo -->
-                <div id="mayo">
-                    <h3 class="menu-category-name">Mayo</h3>
-                    <p class="menu-category-description">Creamy spreads with personality.</p>
-                    <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"mayo"}} -->
+                <!-- Cheese -->
+                <div id="cheeses">
+                    <h3 class="menu-category-name">Cheeses</h3>
+                    <p class="menu-category-description">Creamy, bold, and layered for the perfect melt.</p>
+                    <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"cheese"}} -->
                     <div class="menu-category-items"> <!-- wp:post-template -->
                         <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"ingredient_name"} /-->
                         <div class="menu-item-description">
@@ -257,20 +328,6 @@
                     </div> <!-- /wp:query -->
                 </div>
 
-                <!-- Mustards -->
-                <div id="mustards">
-                    <h3 class="menu-category-name">Mustards</h3>
-                    <p class="menu-category-description">Sharp, sweet, or bold for the perfect accent.</p>
-                    <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"mustards"}} -->
-                    <div class="menu-category-items"> <!-- wp:post-template -->
-                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"ingredient_name"} /-->
-                        <div class="menu-item-description">
-                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"description"} /-->
-                        </div>
-                        <!-- /wp:post-template -->
-                    </div> <!-- /wp:query -->
-                </div>
-
                 <!-- Spreads  -->
                 <div id="spreads">
                     <h3 class="menu-category-name">Spreads</h3>
@@ -285,11 +342,11 @@
                     </div> <!-- /wp:query -->
                 </div>
 
-                <!-- Cheese -->
-                <div id="cheese">
-                    <h3 class="menu-category-name">Cheese</h3>
-                    <p class="menu-category-description">Creamy, bold, and layered for the perfect melt.</p>
-                    <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"cheese"}} -->
+                <!-- Mayo -->
+                <div id="mayo">
+                    <h3 class="menu-category-name">Mayo</h3>
+                    <p class="menu-category-description">Creamy spreads with personality.</p>
+                    <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"mayo"}} -->
                     <div class="menu-category-items"> <!-- wp:post-template -->
                         <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"ingredient_name"} /-->
                         <div class="menu-item-description">
@@ -298,6 +355,21 @@
                         <!-- /wp:post-template -->
                     </div> <!-- /wp:query -->
                 </div>
+
+                <!-- Mustards -->
+                <div id="mustards">
+                    <h3 class="menu-category-name">Mustards</h3>
+                    <p class="menu-category-description">Sharp, sweet, or bold for the perfect accent.</p>
+                    <!-- wp:query {"queryId":13,"query":{"perPage":50,"postType":"build-your-own","order":"asc","metaQuery":[{"key":"ingredient_type","value":"cheese","compare":"="}],"sticky":"","parents":[],"format":[],"search":"mustards"}} -->
+                    <div class="menu-category-items"> <!-- wp:post-template -->
+                        <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"ingredient_name"} /-->
+                        <div class="menu-item-description">
+                            <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"description"} /-->
+                        </div>
+                        <!-- /wp:post-template -->
+                    </div> <!-- /wp:query -->
+                </div>
+
             </div>
     </section>
 

@@ -21,6 +21,8 @@
   align-items: center;
 
   transition: top 0.3s ease;
+
+  padding: 0 1rem;
 }
 
 .menu-nav svg {
@@ -36,10 +38,18 @@
   // horizontal scroll
   overflow-x: auto;
   white-space: nowrap;
+  padding: 1.25rem 0;
 }
 
-.menu-nav::-webkit-scrollbar {
+/* Hide horizontal scrollbar (Chrome, Safari, Edge) */
+.menu-nav ul::-webkit-scrollbar {
   display: none;
+}
+
+/* Hide scrollbar (Firefox) */
+.menu-nav ul {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/Edge (old) */
 }
 
 /* active state */
@@ -100,18 +110,27 @@
   border: 1px solid #fff;
 }
 
+/* -------------------- */
+/* Menu     */
+/* -------------------- */
+
 .menu-page .menu-category-name {
   margin: 1.5rem 0 0.5rem;
 }
 
 .menu-page .menu-category-description {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .menu-page .menu-category-items ul {
 display: flex;
 flex-direction: column;
 gap: 1rem;
+}
+
+.menu-page .menu-item-name {
+  margin-bottom: 0.375rem;
+  line-height: 1.5;
 }
 
 .menu-page .menu-item-name>.is-acf-field>.value {
@@ -125,6 +144,9 @@ gap: 1rem;
 .menu-page .menu-item-description {
   font-size: 0.875rem;
   margin-top: 0.375rem;
+  border-bottom: 1px solid #FFFDFA33;
+  padding-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
 .menu-page .button-solid {
@@ -145,6 +167,24 @@ gap: 1rem;
   max-width: 100%;
 }
 
+.what-were-serving .menu-item-description {
+  border-bottom: 1px solid #000D0A33;
+}
+
+@media only screen and (min-width: 64rem) {
+.what-were-serving .menu-top-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+}  
+
+.what-were-serving .menu-bottom-row ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+}  
+}
+
 /* -------------------- */
 /* Build Your Own           */
 /* -------------------- */
@@ -158,4 +198,12 @@ gap: 1rem;
 .build-your-own li {
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (min-width: 64rem)  {
+  .build-your-own .ingredients ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem;
+  }
 }

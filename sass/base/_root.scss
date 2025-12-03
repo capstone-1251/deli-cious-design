@@ -19,7 +19,7 @@
     --section-padding: clamp(4rem, 8vw, 7rem) 1rem;
 
     /* Typography sizes */
-    --h1-size: clamp(2rem, 4vw, 3rem);
+    --h1-size: clamp(3rem, 4vw, 6rem);
     --h2-size: 2.5rem;
     --h3-size: 1.5rem;
     --h4-size: 1rem;
@@ -50,7 +50,6 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    scroll-padding-top: 11rem;
 }
 
 body {
@@ -117,23 +116,23 @@ a {
 h1 {
     font-family: var(--font-family-h1);
     font-size: var(--h1-size);
-    line-height: 1.2;
-    font-weight: 600;
+    line-height: 1.5;
+    font-weight: 700;
     max-width: 20ch;
 }
 
 h2 {
     font-family: var(--font-family-h2);
     font-size: var(--h2-size);
-    line-height: 1.2;
-    font-weight: 600;
+    line-height: 1.5;
+    font-weight: 700;
 }
 
 h3 {
     font-family: var(--font-family-h3);
     font-size: var(--h3-size);
-    line-height: 1.2;
-    font-weight: 600;
+    line-height: 1.5;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
@@ -141,7 +140,7 @@ h4 {
     font-family: var(--font-family-h4);
     font-size: var(--h4-size);
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 p {

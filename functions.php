@@ -49,7 +49,7 @@ add_action('wp_enqueue_scripts', function () {
     // Load main theme JS file
     wp_enqueue_script(
         'deli-theme-js',
-        get_template_directory_uri() . '/js/main.js',
+        get_template_directory_uri() . '/assets/js/main.js',
         array(),       // dependencies (e.g., array('jquery'))
         '1.0',
         true           // load in footer
