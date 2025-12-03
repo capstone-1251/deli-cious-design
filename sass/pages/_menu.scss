@@ -100,159 +100,62 @@
   border: 1px solid #fff;
 }
 
-/* -------------------- */
-/* Menu Items           */
-/* -------------------- */
+.menu-page .menu-category-name {
+  margin: 1.5rem 0 0.5rem;
+}
 
-.menu-items {
+.menu-page .menu-category-description {
+  margin-bottom: 1rem;
+}
 
-  .wp-block-post-template {
-    display: flex;
-    flex-direction: column;
-  }
+.menu-page .menu-category-items ul {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
 
-  .menu-item {
-    padding: 1rem 0;
-  }
+.menu-page .menu-item-name>.is-acf-field>.value {
+  font-weight: bold;
+}
 
-  .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-    margin-left: 0 !important;
-  }
+.menu-page .menu-item-price .prefix {
+  display: none;
+}
 
-  .menu-header {
-    display: flex;
-    align-items: center;
+.menu-page .menu-item-description {
+  font-size: 0.875rem;
+  margin-top: 0.375rem;
+}
 
-    strong {
-      font-weight: 700;
-      color: var(--color-black);
-    }
-
-    .menu-price {
-      font-weight: 700;
-      color: var(--color-black);
-    }
-  }
-  .menu-desc {
-    margin-top: 0.35rem;
-    line-height: 1.4;
-    color: var(--color-black);
-  }
+.menu-page .button-solid {
+  margin-top: 2rem;
+  min-width: 17rem;
 }
 
 /* -------------------- */
-/* Desktop Menu Items       */
+/* What We're Serving           */
 /* -------------------- */
-@media only screen and (min-width: 64rem) {
 
-  .menu-items .menu-flex-row {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    max-width: fit-content;
-  }
-  .menu-items .menu-flex-row > div {
-    flex: 1;
-  }
-
-  .menu-items .container > div:last-of-type .wp-block-post-template {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: fit-content;
-  }
-
-  .menu-items .container > div:last-of-type .menu-item {
-    width: 100%;
-    padding: 1rem 0;
-  }
+.what-were-serving {
+  padding: var(--section-padding);
+  background: var(--color-white-off);
 }
 
+.what-were-serving .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: 100%;
+}
+
+/* -------------------- */
+/* Build Your Own           */
+/* -------------------- */
 
 .build-your-own {
+  padding: var(--section-padding);
   background: var(--color-primary);
   color: var(--color-white-off);
+}
+
+.build-your-own li {
+  margin: 0;
   padding: 0;
-  font-weight: bold;
-  margin: var(--spacing-md) 0;
-
-  .container {
-    padding: var(--section-padding);
-  }
-
-
-  .build-your-own-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-    align-items: stretch;
-    padding-top: 1.5rem;
-
-
-
-
-    >div {
-      display: flex;
-      width: 200px;
-      flex-direction: column;
-      min-height: 100%; // stretch to row height
-
-      >svg {
-        padding: var(--spacing-sm) 0;
-        height: max-content;
-      }
-    }
-
-    >div {
-      h3 {
-        font-family: var(--font-family-h3);
-        font-weight: bolder;
-        font-size: var(--h3-size);
-        margin-bottom: var(--spacing-sm);
-        color: var(--color-white-off);
-      }
-
-      .wp-block-query {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
-
-        [data-field-name="name_of_the_ingredient"] {
-          font-family: var(--font-family-p);
-          font-size: var(--p-size);
-          color: var(--color-white-off);
-          margin: 0;
-        }
-      }
-
-      // menu ingredient description styles
-      div .menu-ingredient-description div {
-        font-family: var(--font-family-p);
-        font-size: var(--p-size);
-        color: var(--color-white-off);
-        margin: 0 0 var(--spacing-sm) 0;
-        font-weight: normal;
-      }
-
-      // SVG divider after each category except the last one
-      // &:not(:last-child)::after {
-      //   content: '';
-      //   display: block;
-      //   width: 100%;
-      //   height: 24px; // adjust as needed
-      //   margin: var(--spacing-md) 0;
-      //   background-image: url('https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/heading-chalk-secondary.svg');
-      //   background-repeat: no-repeat;
-      //   background-position: bottom center;
-      //   background-size: contain;
-      // }
-    }
-
-    @media (min-width: 600px) {
-      > div{
-        width: unset;
-      }
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
 }
