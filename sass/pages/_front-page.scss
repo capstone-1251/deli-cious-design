@@ -359,6 +359,33 @@ gap: 1rem;
   width: 240px;
 }
 
+.home-merch .polaroid-frame {
+  max-width: 30rem;
+  text-align: center;
+}
+
+.home-merch .polaroid-frame h2 {
+  font-family: var(--font-family-p);
+}
+
+.home-merch .polaroid-frame img:first-of-type {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.home-merch .woocommerce ul.products[class*="columns-"] li.product, .woocommerce-page ul.products[class*="columns-"] li.product {
+  width: 100%;
+  float: none;
+  margin: 0;
+}
+
+.home-merch .woocommerce ul.products {
+margin: 0;
+}
+
 .home-merch .button {
   display: none !important;
 }
@@ -376,6 +403,10 @@ gap: 1rem;
   .home-merch h2 {
     text-align: center;
   }
+
+  .home-merch .polaroid-frame {
+  margin: 0 auto;
+}
 
   .home-merch .button-solid {
     margin: 3rem auto 0;
