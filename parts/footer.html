@@ -30,47 +30,45 @@
             <a href="https://patriciastreetdeli.ca/dev/team1/contact/" class="li-link">Contact</a>
           </li>
           <li class="li order-link">
-            <a href="https://patriciastreetdeli.ca/dev/team1/" class="li-link">Order</a>
+            <a href="https://patriciastreetdeli.ca/dev/team1/" class="li-link no-active">Order</a>
           </li>
         </ul>
       </div>
 
       <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    const basePath = "/dev/team1"; // ignore this part of the URL
-    const currentPath = window.location.pathname
-        .replace(basePath, "")
-        .replace(/\/$/, "") || "/";
+        document.addEventListener("DOMContentLoaded", () => {
+          const basePath = "/dev/team1";
 
-    const footerLinks = document.querySelectorAll(".footer-links .quick-links .li-link");
+          const normalize = path =>
+            path.replace(basePath, "").replace(/\/$/, "") || "/";
 
-    footerLinks.forEach(link => {
-        let linkPath = new URL(link.href).pathname
-            .replace(basePath, "")
-            .replace(/\/$/, "") || "/";
+          const currentPath = normalize(window.location.pathname);
 
-        if (linkPath === currentPath) {
-            link.classList.add("active");
-        }
-    });
-});
-
+          document.querySelectorAll(".footer-links .quick-links .li-link")
+            .forEach(link => {
+              if (link.classList.contains("no-active")) return;
+              const linkPath = normalize(new URL(link.href).pathname);
+              if (linkPath === currentPath) {
+                link.classList.add("active");
+              }
+            });
+        });
       </script>
 
       <!-- Contact Information -->
       <div class="contact-information">
         <h3>Contact Information</h3>
-        
+
         <ul class="footer-hours">
-          <li><span class="hours">Mon - Wed: </span>7 AM - 7 PM</li>
-          <li><span class="hours">Thu - Fri: </span>7 AM - 11 PM</li>
-          <li><span class="hours">Sat: </span>9 AM - 11 PM</li>
-          <li><span class="hours">Sun: </span>10 AM - 5 PM</li>
+          <li><span class="hours">Mon–Wed: </span>7 AM to 7 PM</li>
+          <li><span class="hours">Thu–Fri: </span>7 AM to 11 PM</li>
+          <li><span class="hours">Sat: </span>9 AM to 11 PM</li>
+          <li><span class="hours">Sun: </span>10 AM to 5 PM</li>
         </ul>
 
         <p class="footer-address">
           <a href="https://www.google.com/maps?q=10567+111+Street" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
               <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
             </svg>
@@ -101,7 +99,7 @@
           </a>
         </p>
 
-<!-- socials -->
+        <!-- socials -->
         <ul class="social-media">
           <li>
             <a href="https://www.facebook.com/patriciastreetdeli/" target="_blank">

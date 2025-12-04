@@ -347,7 +347,7 @@
       <p>If you’re passionate about good food, community, and genuine hospitality, we’d love to meet you. Join a team
         built on resilience, warmth, and shared purpose, and help us continue the story that began over twenty years
         ago.</p>
-      <a href="/contact/" class="button-solid button-outline">Apply Now</a>
+      <a href="https://patriciastreetdeli.ca/dev/team1/contact/" class="button-solid button-outline">Apply Now</a>
     </div>
   </section>
 
@@ -356,30 +356,29 @@
   <!-- ----------------------- -->
 
   <section class="testimonials">
-    <div class="container">
+  <div class="container">
+
+    <div class="testimonials-header">
       <h2>Testimonials</h2>
 
-      <div class="testimonials-slider">
-        <button class="testimonials-btn prev" aria-label="Previous testimonial">
-          &#10094;
+      <div class="testimonial-controls">
+        <button class="testimonial-nav testimonial-prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+  <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+</svg>
         </button>
-
-        <div class="testimonials-track-wrapper">
-          <div class="testimonials-track">
-            <!-- Slides will be injected here by JS -->
-          </div>
-        </div>
-
-        <button class="testimonials-btn next" aria-label="Next testimonial">
-          &#10095;
+        <button class="testimonial-nav testimonial-next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg>
         </button>
-      </div>
-
-      <div class="testimonials-dots">
-        <!-- Dots injected by JS -->
       </div>
     </div>
-  </section>
+
+    <div class="testimonials-track"></div>
+  </div>
+</section>
+
 
   <!-- scroll -->
   <script>
@@ -422,100 +421,85 @@
       }
     ];
 
-    // === Carousel Logic ===
-    const track = document.querySelector(".testimonials-track");
-    const dotsContainer = document.querySelector(".testimonials-dots");
-    const prevBtn = document.querySelector(".testimonials-btn.prev");
-    const nextBtn = document.querySelector(".testimonials-btn.next");
+    // ==== BUILD TRACK ====
+const track = document.querySelector(".testimonials-track");
 
-    let currentIndex = 0;
-
-    // Build slides
-    testimonials.forEach((item, index) => {
-      const slide = document.createElement("article");
-      slide.className = "polaroid-frame testimonial-slide";
-      slide.innerHTML = `
-      <p>${item.text}</p>
-      <span>${item.author}</span>
+// Duplicate slides (before & after) to create infinite effect
+const buildSlides = () => {
+  const slides = [...testimonials, ...testimonials, ...testimonials];
+  slides.forEach(t => {
+    const div = document.createElement("div");
+    div.className = "testimonial";
+    div.innerHTML = `
+      <p>${t.text}</p>
+      <div class="author">${t.author}</div>
     `;
-      track.appendChild(slide);
+    track.appendChild(div);
+  });
+};
+buildSlides();
 
-      // dots
-      const dot = document.createElement("button");
-      dot.className = "testimonial-dot" + (index === 0 ? " active" : "");
-      dot.setAttribute("aria-label", `Go to testimonial ${index + 1}`);
-      dot.addEventListener("click", () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
+const prevBtn = document.querySelector(".testimonial-prev");
+const nextBtn = document.querySelector(".testimonial-next");
 
-    const slides = Array.from(document.querySelectorAll(".testimonial-slide"));
-    const dots = Array.from(document.querySelectorAll(".testimonial-dot"));
 
-    function updateCarousel() {
-      const offset = -currentIndex * 100;
-      track.style.transform = `translateX(${offset}%)`;
+// ==== INFINITE SCROLL LOGIC ====
+let slideWidth;
+let firstSetStart;
+let middleSetStart;
+let lastSetStart;
+let totalSlides;
 
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentIndex);
-      });
-    }
+const setupInfiniteScroll = () => {
+  const items = document.querySelectorAll(".testimonial");
+  totalSlides = testimonials.length;
 
-    function goToSlide(index) {
-      currentIndex = (index + testimonials.length) % testimonials.length; // infinite wrap
-      updateCarousel();
-    }
+  const style = window.getComputedStyle(track);
+  const gap = parseInt(style.columnGap || style.gap || 16);
 
-    function showNext() {
-      goToSlide(currentIndex + 1);
-    }
+  slideWidth = items[0].offsetWidth + gap;
 
-    function showPrev() {
-      goToSlide(currentIndex - 1);
-    }
+  firstSetStart = 0;
+  middleSetStart = slideWidth * totalSlides;
+  lastSetStart = slideWidth * totalSlides * 2;
 
-    prevBtn.addEventListener("click", showPrev);
-    nextBtn.addEventListener("click", showNext);
+  // CENTER first item on desktop
+  if (window.innerWidth >= 1024) {
+    track.scrollLeft = middleSetStart - (window.innerWidth / 2 - items[0].offsetWidth / 2);
+  } else {
+    track.scrollLeft = middleSetStart;
+  }
+};
 
-    // Swipe / touch support
-    let startX = 0;
-    let isTouching = false;
+window.addEventListener("load", setupInfiniteScroll);
+window.addEventListener("resize", setupInfiniteScroll);
 
-    const wrapper = document.querySelector(".testimonials-track-wrapper");
+track.addEventListener("scroll", () => {
+  if (track.scrollLeft <= firstSetStart + slideWidth) {
+    track.scrollLeft += slideWidth * totalSlides;
+  } else if (track.scrollLeft >= lastSetStart) {
+    track.scrollLeft -= slideWidth * totalSlides;
+  }
+});
 
-    wrapper.addEventListener("touchstart", (e) => {
-      isTouching = true;
-      startX = e.touches[0].clientX;
-    });
+// ==== BUTTON LOGIC ====
+const scrollNext = () => {
+  track.scrollTo({
+    left: track.scrollLeft + slideWidth,
+    behavior: "smooth"
+  });
+};
 
-    wrapper.addEventListener("touchmove", (e) => {
-      if (!isTouching) return;
-      const diffX = e.touches[0].clientX - startX;
-      // visual drag could go here
-    });
+const scrollPrev = () => {
+  track.scrollTo({
+    left: track.scrollLeft - slideWidth,
+    behavior: "smooth"
+  });
+};
 
-    wrapper.addEventListener("touchend", (e) => {
-      if (!isTouching) return;
-      isTouching = false;
-      const endX = e.changedTouches[0].clientX;
-      const diffX = endX - startX;
+nextBtn.addEventListener("click", scrollNext);
+prevBtn.addEventListener("click", scrollPrev);
 
-      if (Math.abs(diffX) > 50) {
-        if (diffX < 0) {
-          showNext(); // swipe left
-        } else {
-          showPrev(); // swipe right
-        }
-      }
-    });
-
-    // Optional: keyboard arrows
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") showNext();
-      if (e.key === "ArrowLeft") showPrev();
-    });
-
-    // initial position
-    updateCarousel();
   </script>
 
   <!-- ----------------------- -->

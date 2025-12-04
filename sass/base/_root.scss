@@ -20,17 +20,17 @@
 
     /* Typography sizes */
     --h1-size: clamp(3rem, 4vw, 6rem);
-    --h2-size: 2.5rem;
-    --h3-size: 1.5rem;
+    --h2-size: 2rem;
+    --h3-size: 1.25rem;
     --h4-size: 1rem;
     --p-size: 1rem;
 
     /* Typography fonts */
     --font-family-base: 'Arial', sans-serif;
-    --font-family-h1: 'PlayFair Display', serif;
-    --font-family-h2: 'Caveat', sans-serif;
-    --font-family-h3: 'Lato', sans-serif;
-    --font-family-h4: 'Arial', sans-serif;
+    --font-family-h1: 'Caveat', sans-serif;
+    --font-family-h2: 'PlayFair Display', serif;
+    --font-family-h3: 'PlayFair Display', serif;
+    --font-family-h4: 'Lato', sans-serif;
     --font-family-p: 'Lato', sans-serif;
     --font-weight-bold: '700';
 }

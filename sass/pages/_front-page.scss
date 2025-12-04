@@ -144,10 +144,19 @@ body.scroll .home.header-navigation {
   gap: 1.5rem;
 }
 
+.home-banner h1 {
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  line-height: 1;
+  margin-top: 1rem;
+}
+
+.home-banner .text {
+  margin: 1.5rem 0;
+}
+
 .home-banner .polaroid-frame {
   padding: 1.5rem 1rem 1rem;
   display: flex;
-  gap: 1.5rem;
   flex-direction: column;
 }
 
@@ -360,6 +369,13 @@ body.scroll .home.header-navigation {
   min-width: 17rem;
 }
 
+@media only screen and (min-width: 64rem) {
+  .home-order .container {
+  align-items: center;
+  text-align: center;
+}
+}
+
 /* -------------------- */
 /* Catering             */
 /* -------------------- */
@@ -379,6 +395,13 @@ body.scroll .home.header-navigation {
 
 .home-catering .button-solid {
   min-width: 17rem;
+}
+
+@media only screen and (min-width: 64rem) {
+  .home-catering .container {
+  align-items: center;
+  text-align: center;
+}
 }
 
 /* -------------------- */

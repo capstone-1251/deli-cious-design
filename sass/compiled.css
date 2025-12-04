@@ -17,16 +17,16 @@
   --section-padding: clamp(4rem, 8vw, 7rem) 1rem;
   /* Typography sizes */
   --h1-size: clamp(3rem, 4vw, 6rem);
-  --h2-size: 2.5rem;
-  --h3-size: 1.5rem;
+  --h2-size: 2rem;
+  --h3-size: 1.25rem;
   --h4-size: 1rem;
   --p-size: 1rem;
   /* Typography fonts */
   --font-family-base: 'Arial', sans-serif;
-  --font-family-h1: 'PlayFair Display', serif;
-  --font-family-h2: 'Caveat', sans-serif;
-  --font-family-h3: 'Lato', sans-serif;
-  --font-family-h4: 'Arial', sans-serif;
+  --font-family-h1: 'Caveat', sans-serif;
+  --font-family-h2: 'PlayFair Display', serif;
+  --font-family-h3: 'PlayFair Display', serif;
+  --font-family-h4: 'Lato', sans-serif;
   --font-family-p: 'Lato', sans-serif;
   --font-weight-bold: '700';
 }
@@ -731,10 +731,6 @@ body.open {
   gap: 1.5rem;
 }
 
-.footer h3 {
-  font-family: var(--font-family-h1);
-}
-
 .footer .quick-links,
 .footer .contact-information ul {
   margin-bottom: 1.5rem;
@@ -1013,10 +1009,19 @@ body.scroll .home.header-navigation {
   gap: 1.5rem;
 }
 
+.home-banner h1 {
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  line-height: 1;
+  margin-top: 1rem;
+}
+
+.home-banner .text {
+  margin: 1.5rem 0;
+}
+
 .home-banner .polaroid-frame {
   padding: 1.5rem 1rem 1rem;
   display: flex;
-  gap: 1.5rem;
   flex-direction: column;
 }
 
@@ -1210,6 +1215,12 @@ body.scroll .home.header-navigation {
   min-width: 17rem;
 }
 
+@media only screen and (min-width: 64rem) {
+  .home-order .container {
+    align-items: center;
+    text-align: center;
+  }
+}
 /* -------------------- */
 /* Catering             */
 /* -------------------- */
@@ -1231,6 +1242,12 @@ body.scroll .home.header-navigation {
   min-width: 17rem;
 }
 
+@media only screen and (min-width: 64rem) {
+  .home-catering .container {
+    align-items: center;
+    text-align: center;
+  }
+}
 /* -------------------- */
 /* Merch                */
 /* -------------------- */
@@ -1733,153 +1750,99 @@ body.scroll .home.header-navigation {
   gap: 1.5rem;
 }
 
+.join-our-family .button-solid {
+  min-width: 17rem;
+}
+
+@media only screen and (min-width: 64rem) {
+  .join-our-family .container {
+    align-items: center;
+    text-align: center;
+  }
+}
 /* -------------------- */
 /* Testimonials           */
 /* -------------------- */
 .testimonials {
   background: var(--color-white-off);
   padding: var(--section-padding);
-}
-
-/* Mobile-first: stack content */
-.testimonials .container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.testimonials h2 {
-  text-align: center;
-}
-
-/* Slider - mobile-first layout */
-.testimonials-slider {
-  position: relative;
-  width: 100%;
-}
-
-/* Track wrapper takes full width on mobile */
-.testimonials-track-wrapper {
   overflow: hidden;
-  width: 100%;
 }
 
-/* Horizontal track; slides are full-width */
+/* Track */
 .testimonials-track {
   display: flex;
-  transition: transform 0.4s ease;
-  will-change: transform;
+  gap: 1.5rem;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 1rem;
 }
 
-/* Polaroid-style slide content */
-.testimonials .polaroid-frame {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* Each slide: 100% width viewport on mobile & desktop */
-.testimonial-slide {
-  flex: 0 0 100%;
-  box-sizing: border-box;
-}
-
-/* Optional basic typography tweaks for readability on phones */
-.testimonial-slide p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Buttons: overlaid on left/right for mobile */
-.testimonials-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: 1px solid var(--color-primary);
-  border-radius: 999px;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.testimonials-btn.prev {
+.testimonials-track::-webkit-scrollbar {
   display: none;
 }
 
-.testimonials-btn.next {
-  display: none;
+/* Frame */
+.testimonial {
+  flex: 0 0 85%;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
+  scroll-snap-align: start;
+  max-width: 44rem;
 }
 
-.testimonials-btn:hover {
-  background: var(--color-primary);
-  color: #fff;
+.testimonial p {
+  margin-bottom: 1rem;
 }
 
-/* Dots */
-.testimonials-dots {
-  margin: 1rem auto 0 auto;
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.testimonial-dot {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  padding: 0;
-}
-
-.testimonial-dot.active {
-  background: var(--color-primary);
-}
-
-/* Author text */
-.testimonials span {
-  color: var(--color-primary);
+.testimonial .author {
   font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-primary);
 }
 
-/* === Desktop & large screens (your media query) === */
+/* header row */
+.testimonials-header {
+  margin-bottom: 1.5rem;
+}
+
+/* hide buttons by default */
+.testimonial-nav {
+  display: none;
+}
+
 @media only screen and (min-width: 64rem) {
-  /* Constrain width of content and center */
-  .testimonials .testimonials-track-wrapper {
-    max-width: 44rem;
-    margin: 0 auto;
-  }
-  .testimonials-slider {
-    max-width: 48rem;
-    margin: 0 auto;
-  }
-  /* Let container be nicely centered (if your global .container sets width) */
-  .testimonials .container {
+  .testimonials-header {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
   }
-  /* Make arrows larger and sit just outside the card */
-  .testimonials-btn {
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.8rem;
+  /* show buttons on desktop and place in row */
+  .testimonial-controls {
+    display: flex;
+    gap: 1rem;
   }
-  .testimonials-btn.prev {
-    left: -3.5rem;
+  .testimonial-nav {
+    display: block;
+    transform: none;
+    background: var(--color-primary);
+    color: var(--color-white-off);
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease, transform 0.06s ease, box-shadow 0.2s ease;
   }
-  .testimonials-btn.next {
-    right: -3.5rem;
+  .testimonials button:hover {
+    color: var(--color-white-off);
+    background: #C1121F;
   }
-  /* Slightly larger body text on big screens */
-  .testimonial-slide p {
-    font-size: 1.05rem;
+  .testimonials button:active {
+    transform: translateY(1px) scale(0.99);
   }
 }
 /* -------------------- */
@@ -2121,13 +2084,78 @@ body.scroll .home.header-navigation {
 /* -------------------- */
 /* Contact Info */
 /* -------------------- */
-.contact .address {
-  margin-bottom: 1rem;
+.contact .contact-information h3,
+.contact .contact-information .contact-hours,
+.contact .contact-information .contact-email {
+  margin-bottom: 1.5rem;
 }
 
-.contact .contact-information span {
+.contact .contact-information .hours {
   font-weight: bold;
   color: var(--color-primary);
+}
+
+.contact .contact-information .contact-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact .contact-information svg {
+  color: var(--color-primary);
+  margin-top: 6px;
+  width: 15px;
+  height: 15px;
+}
+
+.contact .contact-information .contact-phone svg {
+  width: 14px;
+  height: 14px;
+}
+
+.contact .contact-information a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 2px;
+  transition: background-color 0.2s ease, transform 0.06s ease, box-shadow 0.2s ease;
+}
+
+.contact .contact-information a:hover {
+  font-weight: bold;
+  color: #C1121F;
+}
+
+.contact .contact-information a:hover svg {
+  fill: #C1121F;
+}
+
+.contact .contact-information a:active {
+  font-weight: bold;
+  color: #C1121F;
+}
+
+.contact .contact-information a:active svg {
+  fill: #C1121F;
+}
+
+.contact .contact-information .contact-phone,
+.contact .contact-information .contact-email {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.contact .social-media {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact .social-media svg {
+  width: 17px;
+  height: 17px;
 }
 
 @media only screen and (min-width: 64rem) {

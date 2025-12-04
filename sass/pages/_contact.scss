@@ -20,13 +20,81 @@
 /* Contact Info */
 /* -------------------- */
 
-.contact .address {
-  margin-bottom: 1rem;
+.contact .contact-information h3,
+.contact .contact-information .contact-hours,
+.contact .contact-information .contact-email {
+  margin-bottom: 1.5rem;
 }
 
-.contact .contact-information span {
+
+
+.contact .contact-information .hours {
   font-weight: bold;
   color: var(--color-primary);
+}
+
+.contact .contact-information .contact-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact .contact-information svg {
+  color: var(--color-primary);
+  margin-top: 6px;
+  width: 15px;
+  height: 15px;
+}
+
+.contact .contact-information .contact-phone svg {
+  width: 14px;
+  height: 14px;
+}
+
+.contact .contact-information a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 2px;
+
+  transition: background-color .2s ease, transform .06s ease, box-shadow .2s ease;
+}
+
+.contact .contact-information a:hover {
+  font-weight: bold;
+  color: #C1121F;
+}
+
+.contact .contact-information a:hover svg {
+  fill: #C1121F;
+}
+
+.contact .contact-information a:active {
+  font-weight: bold;
+  color: #C1121F;
+}
+
+.contact .contact-information a:active svg {
+  fill: #C1121F;
+}
+
+.contact .contact-information .contact-phone,
+.contact .contact-information .contact-email {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.contact .social-media {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact .social-media svg {
+  width: 17px;
+  height: 17px;
 }
 
 // 
