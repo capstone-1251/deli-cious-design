@@ -176,6 +176,12 @@ body.scroll .home.header-navigation {
   align-items: flex-start;
 }
 
+.home-about .polaroid-frame img:last-of-type {
+        width: 30%;
+        height: auto;
+        margin-left: 5rem;
+    }
+
 .home-about .button-solid {
   min-width: 17rem;
 }
@@ -360,7 +366,7 @@ gap: 1rem;
 }
 
 .home-merch .polaroid-frame {
-  max-width: 30rem;
+  width: 30rem;
   text-align: center;
 }
 

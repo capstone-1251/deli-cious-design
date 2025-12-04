@@ -255,11 +255,6 @@ p {
   .polaroid-frame {
     padding: 2rem;
   }
-  .polaroid-frame img:last-of-type {
-    width: 30%;
-    height: auto;
-    margin-left: 5rem;
-  }
 }
 /* --------------------------- */
 /* Forms                      */
@@ -933,6 +928,12 @@ body.scroll .home.header-navigation {
   align-items: flex-start;
 }
 
+.home-about .polaroid-frame img:last-of-type {
+  width: 30%;
+  height: auto;
+  margin-left: 5rem;
+}
+
 .home-about .button-solid {
   min-width: 17rem;
 }
@@ -1104,7 +1105,7 @@ body.scroll .home.header-navigation {
 }
 
 .home-merch .polaroid-frame {
-  max-width: 30rem;
+  width: 30rem;
   text-align: center;
 }
 
@@ -1450,11 +1451,12 @@ body.scroll .home.header-navigation {
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 
 .meet-our-family .family-member {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
 }
@@ -1462,10 +1464,6 @@ body.scroll .home.header-navigation {
 .meet-our-family .family-member-image {
   /* 1/3 of the width */
   flex: 1;
-}
-
-.meet-our-family .polaroid-frame {
-  padding: 0.25rem;
 }
 
 .meet-our-family .family-member-description {
@@ -1493,14 +1491,21 @@ body.scroll .home.header-navigation {
     flex-direction: column;
     gap: 1.5rem;
   }
+  .meet-our-family .family-member-description {
+    flex: 0;
+  }
   .meet-our-family .polaroid-frame {
     padding: 2rem;
     padding-bottom: 3.5rem;
+    width: 100%;
+    max-width: 406px;
+    height: 330px;
   }
-  .meet-our-family .polaroid-frame img:last-of-type {
-    width: 50%;
-    height: auto;
-    margin-left: 2rem;
+  .meet-our-family .polaroid-frame img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-position: 25%;
   }
 }
 /* -------------------- */
