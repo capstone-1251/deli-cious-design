@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* -------------------- */
 /* Global Styles        */
 /* -------------------- */
@@ -1030,6 +1031,10 @@ body.scroll .home.header-navigation {
   gap: 1rem;
 }
 
+.home-banner .doodle {
+  display: none !important;
+}
+
 /* -------------------- */
 /* Home Banner - Desktop           */
 /* -------------------- */
@@ -1051,6 +1056,12 @@ body.scroll .home.header-navigation {
   }
   .home-banner .polaroid-frame {
     padding: 2rem;
+  }
+  .home-banner .doodle {
+    display: block !important;
+    object-fit: unset !important;
+    margin: 0 auto !important;
+    transform: rotate(-6deg);
   }
 }
 /* -------------------- */
@@ -1102,7 +1113,6 @@ body.scroll .home.header-navigation {
   .home-about .container > .polaroid-frame {
     grid-column: 1;
     grid-row: 1/span 5;
-    height: 20rem;
     padding-bottom: 1rem;
   }
   /* right */
@@ -1132,8 +1142,8 @@ body.scroll .home.header-navigation {
 /* -------------------- */
 .home-menu {
   padding: var(--section-padding);
-  background: var(--color-primary);
   color: var(--color-white-off);
+  background: var(--color-primary);
 }
 
 .home-menu .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
@@ -1215,7 +1225,66 @@ body.scroll .home.header-navigation {
   min-width: 17rem;
 }
 
+.home-order .doodle {
+  display: none;
+}
+
 @media only screen and (min-width: 64rem) {
+  .home-order .container {
+    align-items: center;
+    text-align: center;
+  }
+}
+.home-order {
+  position: relative;
+  padding: var(--section-padding);
+  background: var(--color-white-off);
+  overflow: hidden; /* keeps doodles from causing scrollbars */
+}
+
+/* Shared doodle styling */
+.home-order .doodle {
+  position: absolute;
+  top: 1%;
+  transform: translateY(-50%);
+  width: 18rem;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Left doodle */
+.home-order .doodle-left {
+  left: 4rem; /* push off-screen slightly */
+}
+
+/* Right doodle */
+.home-order .doodle-right {
+  right: 8rem;
+}
+
+.home-order .container {
+  position: relative;
+  z-index: 1; /* ensure text sits over the doodles */
+  gap: 1.5rem;
+}
+
+/* Larger screens — adjust for better aesthetics */
+@media (min-width: 64rem) {
+  .home-order .doodle {
+    display: block;
+  }
+  .home-order .doodle {
+    width: 22rem;
+    transform: rotate(2deg);
+  }
+  .home-order .doodle-left {
+    left: 4rem;
+    transform: rotate(-2deg);
+  }
+  .home-order .doodle-right {
+    right: 8rem;
+  }
   .home-order .container {
     align-items: center;
     text-align: center;
@@ -1340,6 +1409,71 @@ body.scroll .home.header-navigation {
   margin-top: 0.75rem;
 }
 
+.home-merch .doodle {
+  display: none;
+}
+
+@media only screen and (min-width: 64rem) {
+  .home-merch .container {
+    align-items: center;
+    text-align: center;
+  }
+}
+.home-merch {
+  position: relative;
+  padding: var(--section-padding);
+  background: var(--color-white-off);
+  overflow: hidden; /* keeps doodles from causing scrollbars */
+}
+
+/* Shared doodle styling */
+.home-merch .doodle {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 18rem;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Left doodle */
+.home-merch .doodle-left {
+  left: 4rem; /* push off-screen slightly */
+}
+
+/* Right doodle */
+.home-merch .doodle-right {
+  right: 8rem;
+}
+
+.home-merch .container {
+  position: relative;
+  z-index: 1; /* ensure text sits over the doodles */
+  gap: 1.5rem;
+}
+
+/* Larger screens — adjust for better aesthetics */
+@media (min-width: 64rem) {
+  .home-merch .doodle {
+    display: block;
+  }
+  .home-merch .doodle {
+    width: 22rem;
+    transform: rotate(6deg);
+  }
+  .home-merch .doodle-left {
+    left: 4rem;
+    transform: rotate(-2deg);
+  }
+  .home-merch .doodle-right {
+    right: 8rem;
+  }
+  .home-merch .container {
+    align-items: center;
+    text-align: center;
+  }
+}
 /* -------------------- */
 /* Merch - Desktop           */
 /* -------------------- */
