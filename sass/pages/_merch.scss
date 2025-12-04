@@ -11,15 +11,15 @@
   width: 240px;
 }
 
-.merch .merch-items {
+.merch .merch-item {
     margin-top: 1.5rem;
 }
 
-.merch .merch-items h2 {
+.merch .merch-item h2 {
   font-family: var(--font-family-p);
 }
 
-.merch .merch-items img:first-of-type {
+.merch .merch-item img:first-of-type {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -129,6 +129,17 @@ margin: 0;
     padding: 1rem !important;
     box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
     max-width: 30rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.merch li:hover {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+}
+
+.merch li:active {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
 }
 
 .merch li img:first-of-type {

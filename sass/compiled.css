@@ -291,22 +291,44 @@ form textarea {
 /* --------------------------- */
 /* Back to top button                     */
 /* --------------------------- */
-#backToTop {
+.backToTop {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25%;
+  right: 16px;
   border: none;
   cursor: pointer;
   display: none;
   /* Hidden by default */
   z-index: 999;
+  background: var(--color-primary);
+  color: var(--color-white-off);
+  padding: 0.375rem;
+  border: 1px solid var(--color-white-off);
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.06s ease, box-shadow 0.2s ease;
 }
 
-@media only screen and (min-width: 64rem) {
-  .backToTop.polaroid-frame {
-    padding: 1rem;
-  }
+.backToTop svg {
+  width: 24px;
+  height: 24px;
 }
+
+.backToTop:hover {
+  color: var(--color-white-off);
+  background: #C1121F;
+  border: 1px solid #C1121F;
+}
+
+.backToTop:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.backToTop:focus-visible {
+  color: var(--color-white-off);
+  background: #C1121F;
+  border: 1px solid #C1121F;
+}
+
 /* -------------------- */
 /* Navigation           */
 /* -------------------- */
@@ -379,6 +401,25 @@ body.open {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header-navigation .cart svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+  transition: background-color 0.2s ease, transform 0.06s ease, box-shadow 0.2s ease;
+}
+
+.header-navigation .cart svg:hover {
+  color: #C1121F;
+}
+
+.header-navigation .cart svg:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.header-navigation .cart svg:focus-visible {
+  color: #C1121F;
 }
 
 .header-navigation .toggle {
@@ -694,7 +735,8 @@ body.open {
   font-family: var(--font-family-h1);
 }
 
-.footer .footer-address, .footer .quick-links, .footer .contact-information ul {
+.footer .quick-links,
+.footer .contact-information ul {
   margin-bottom: 1.5rem;
 }
 
@@ -704,7 +746,40 @@ body.open {
   gap: 1rem;
 }
 
-.footer .contact-information span {
+.footer .quick-links a {
+  position: relative;
+  display: inline-block; /* keeps the underline only as wide as the text */
+  padding-bottom: 4px;
+}
+
+/* underline element */
+.footer .quick-links a::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+/* grow underline on hover */
+.footer .quick-links a:hover::before {
+  width: 100%;
+}
+
+/* active link styling */
+.footer .quick-links a.active::before {
+  width: 100%;
+}
+
+.footer .quick-links a.active {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.footer .contact-information .hours {
   font-weight: bold;
   color: var(--color-primary);
 }
@@ -717,9 +792,45 @@ body.open {
 
 .footer .contact-information svg {
   color: var(--color-primary);
+  margin-top: 6px;
+  width: 15px;
+  height: 15px;
 }
 
-.footer .contact-information .footer-phone, .footer .contact-information .footer-email {
+.footer .contact-information .footer-phone svg {
+  width: 14px;
+  height: 14px;
+}
+
+.footer .contact-information a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 2px;
+  transition: background-color 0.2s ease, transform 0.06s ease, box-shadow 0.2s ease;
+}
+
+.footer .contact-information a:hover {
+  font-weight: bold;
+  color: #C1121F;
+}
+
+.footer .contact-information a:hover svg {
+  fill: #C1121F;
+}
+
+.footer .contact-information a:active {
+  font-weight: bold;
+  color: #C1121F;
+}
+
+.footer .contact-information a:active svg {
+  fill: #C1121F;
+}
+
+.footer .contact-information .footer-phone,
+.footer .contact-information .footer-email {
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -730,6 +841,11 @@ body.open {
   gap: 1rem;
   align-items: center;
   margin-top: 1.5rem;
+}
+
+.footer .social-media svg {
+  width: 17px;
+  height: 17px;
 }
 
 .footer-map iframe {
@@ -797,11 +913,38 @@ body.open {
   align-items: center;
   flex-wrap: nowrap;
 }
-.top-notice .notice-left,
-.top-notice .notice-right {
+.top-notice svg {
+  width: 14px;
+  height: 14px;
+}
+.top-notice a {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  position: relative;
+  padding-bottom: 2px;
+}
+.top-notice a:hover:before {
+  width: 100%;
+}
+.top-notice a.active:before {
+  width: 100%;
+}
+.top-notice a:before {
+  content: "";
+  width: 0;
+  height: 1px;
+  background: var(--color-white-off);
+  opacity: 1;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+.top-notice a.active {
+  font-weight: bold;
+  color: var(--color-white-off);
 }
 
 @media only screen and (min-width: 64rem) {
@@ -1104,16 +1247,18 @@ body.scroll .home.header-navigation {
   width: 240px;
 }
 
-.home-merch .polaroid-frame {
-  width: 30rem;
+.home-merch .merch-item {
+  width: 100%;
+  max-width: 30rem;
   text-align: center;
+  margin: 0 auto;
 }
 
-.home-merch .polaroid-frame h2 {
+.home-merch .merch-item h2 {
   font-family: var(--font-family-p);
 }
 
-.home-merch .polaroid-frame img:first-of-type {
+.home-merch .merch-item img:first-of-type {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -1121,7 +1266,8 @@ body.scroll .home.header-navigation {
   margin-bottom: 0.5rem !important;
 }
 
-.home-merch .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+.home-merch .woocommerce ul.products[class*=columns-] li.product,
+.woocommerce-page ul.products[class*=columns-] li.product {
   width: 100%;
   float: none;
   margin: 0;
@@ -1131,6 +1277,43 @@ body.scroll .home.header-navigation {
   margin: 0;
 }
 
+.home-merch li {
+  background-color: #fff;
+  padding: 1rem !important;
+  box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
+  max-width: 30rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-merch li:hover {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+}
+
+.home-merch li:active {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+}
+
+.home-merch li img:first-of-type {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 64rem) {
+  .home-merch li {
+    margin: 0;
+    padding: 2rem;
+  }
+  .home-merch li img:last-of-type {
+    width: 30%;
+    height: auto;
+    margin-left: 5rem;
+  }
+}
 .home-merch .button {
   display: none !important;
 }
@@ -1147,7 +1330,7 @@ body.scroll .home.header-navigation {
   .home-merch h2 {
     text-align: center;
   }
-  .home-merch .polaroid-frame {
+  .home-merch .merch-item {
     margin: 0 auto;
   }
   .home-merch .button-solid {
@@ -1317,6 +1500,7 @@ body.scroll .home.header-navigation {
     height: 25rem;
     position: absolute;
     padding-bottom: 3rem;
+    cursor: pointer;
   }
   /* left */
   .timeline .timeline-1,
@@ -1325,6 +1509,7 @@ body.scroll .home.header-navigation {
     left: 0;
     margin-right: 0;
     transform: translateX(0);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   /* right */
   .timeline .timeline-2,
@@ -1332,6 +1517,33 @@ body.scroll .home.header-navigation {
     right: 0;
     margin-left: 0;
     transform: translateX(0);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  /* left hovers */
+  .timeline .timeline-1:hover,
+  .timeline .timeline-3:hover,
+  .timeline .timeline-5:hover {
+    transform: translateY(-10px) rotate(-2deg);
+    box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+  }
+  /* right hovers */
+  .timeline .timeline-2:hover,
+  .timeline .timeline-4:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+  }
+  /* left actives */
+  .timeline .timeline-1:active,
+  .timeline .timeline-3:active,
+  .timeline .timeline-5:active {
+    transform: translateY(-10px) rotate(-2deg);
+    box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+  }
+  /* right actives */
+  .timeline .timeline-2:active,
+  .timeline .timeline-4:active {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
   }
   /* control gaps here */
   /* left */
@@ -1946,15 +2158,15 @@ body.scroll .home.header-navigation {
   width: 240px;
 }
 
-.merch .merch-items {
+.merch .merch-item {
   margin-top: 1.5rem;
 }
 
-.merch .merch-items h2 {
+.merch .merch-item h2 {
   font-family: var(--font-family-p);
 }
 
-.merch .merch-items img:first-of-type {
+.merch .merch-item img:first-of-type {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -2049,6 +2261,17 @@ body.scroll .home.header-navigation {
   padding: 1rem !important;
   box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
   max-width: 30rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.merch li:hover {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+}
+
+.merch li:active {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
 }
 
 .merch li img:first-of-type {

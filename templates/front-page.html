@@ -5,7 +5,7 @@
 <header class="home header-navigation">
   <div class="container">
     <!--Nav Logo-->
-    <a href="/" class="logo">
+    <a href="https://patriciastreetdeli.ca/dev/team1/" class="logo">
       <img src="https://patriciastreetdeli.ca/dev/team1/wp-content/uploads/2025/09/deli-logo.png" alt="PSD Logo"
         decoding="async">
     </a>
@@ -14,38 +14,40 @@
       <div class="ul-wrapper">
         <ul id="expanded" class="ul">
           <li class="li">
-            <a href="/" class="li-link active">Home</a>
+            <a href="https://patriciastreetdeli.ca/dev/team1/" class="li-link">Home</a>
           </li>
           <li class="li">
-            <a href="/about/" class="li-link">About</a>
+            <a href="https://patriciastreetdeli.ca/dev/team1/about/" class="li-link">About</a>
           </li>
           <li class="li">
-            <a href="/menu/" class="li-link">Menu</a>
+            <a href="https://patriciastreetdeli.ca/dev/team1/menu/" class="li-link">Menu</a>
           </li>
           <li class="li">
-            <a href="/catering/" class="li-link">Catering</a>
+            <a href="https://patriciastreetdeli.ca/dev/team1/catering/" class="li-link">Catering</a>
           </li>
           <li class="li">
-            <a href="/merch/" class="li-link">Merch</a>
+            <a href="https://patriciastreetdeli.ca/dev/team1/merch/" class="li-link">Merch</a>
           </li>
           <li class="li">
-            <a href="/contact/" class="li-link">Contact</a>
+            <a href="https://patriciastreetdeli.ca/dev/team1/contact/" class="li-link">Contact</a>
           </li>
           <li class="li order-link">
-            <a href="/" class="li-link">Order</a>
+            <a href="https://patriciastreetdeli.ca/dev/team1/" class="li-link">Order</a>
           </li>
         </ul>
       </div>
 
       <!--Cart Nav Toggle-->
       <button class="cart">
-        <a href="/cart/"><img
-            src="https://patriciastreetdeli.ca/dev/team1/wp-content/themes/style/assets/svg/icon-cart.svg"
-            alt="Cart icon"></a>
+        <a href="https://patriciastreetdeli.ca/dev/team1/cart/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+</svg>
+          </a>
       </button>
 
       <!-- Order CTA -->
-      <a href="/" class="button-solid nav-button">Order</a>
+      <a href="https://patriciastreetdeli.ca/dev/team1/" class="button-solid nav-button">Order</a>
 
       <!--Mobile Nav Toggle-->
       <button class="toggle">
@@ -61,8 +63,10 @@
   </div>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
 </header>
 
 <script>
@@ -94,6 +98,23 @@
       document.body.classList.remove("scroll");
     }
   });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const basePath = "/dev/team1";  // <-- ignore everything before this
+    const currentPath = window.location.pathname.replace(basePath, "").replace(/\/$/, "") || "/";
+
+    const menuLinks = document.querySelectorAll(".header-navigation .li-link");
+
+    menuLinks.forEach(link => {
+        let linkPath = new URL(link.href).pathname.replace(basePath, "").replace(/\/$/, "") || "/";
+
+        if (linkPath === currentPath) {
+            link.classList.add("active");
+        }
+    });
+});
+
+
 </script>
 
 <main class="home">
@@ -107,16 +128,26 @@
     <!-- Top Notice Bar -->
     <div class="top-notice">
       <div class="top-notice-content">
-        <span class="notice-left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-          </svg><a href="https://www.google.com/maps?q=10567+111+Street" target="_blank">10567 111 Street</a>
+        <span class="notice-left">
+          <a href="https://www.google.com/maps?q=10567+111+Street" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+            </svg>
+            <span class="link">10567 111 Street</span>
+          </a>
         </span>
-        <span class="notice-right"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-telephone-fill" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
-          </svg><a href="tel: 587-525-8907">587-525-8907</a></span>
+
+        <span class="notice-right">
+          <a href="tel: 587-525-8907">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-telephone-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+            </svg>
+            <span class="link">587-525-8907</span>
+          </a>
+        </span>
       </div>
     </div>
 
@@ -156,7 +187,8 @@
         the Jasper community, until the July 2024 wildfires took our home. Thanks to the generosity of our loyal
         customers
         and Kickstarter supporters, we’re now rebuilding in Edmonton.</p>
-      <a href="https://patriciastreetdeli.ca/dev/team1/about/" class="button-solid" data-type="page" data-id="17">Read
+      <a href="https://patriciastreetdeli.ca/dev/team1/about/#meet-our-family" class="button-solid" data-type="page"
+        data-id="17">Read
         More About Our Family</a>
     </div>
   </section>
@@ -227,36 +259,36 @@
             <!-- /wp:query -->
           </div>
         </div>
-      
-      <div class="menu-bottom-row">
-        <div class="beverages">
-          <h3 class="menu-category-name">Beverages</h3>
-          <p class="menu-category-description">Refreshing, fizzy, or hydrating, something for every thirst.</p>
-          <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"beverage","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
-          <div class="menu-category-items">
-            <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
-            <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
-            <div class="menu-item">
-              <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
-              <div class="menu-item-name">
-                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
-                <span class="menu-item-price">
-                  <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
-                </span>
+
+        <div class="menu-bottom-row">
+          <div class="beverages">
+            <h3 class="menu-category-name">Beverages</h3>
+            <p class="menu-category-description">Refreshing, fizzy, or hydrating, something for every thirst.</p>
+            <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"beverage","order":"desc","orderBy":"date","taxQuery":{"0":{"taxonomy":"post_tag","field":"slug"}}},"layout":{"type":"constrained"}} -->
+            <div class="menu-category-items">
+              <!-- wp:post-template {"layout":{"type":"default","columnCount":3}} -->
+              <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}},"radius":"10px"}} -->
+              <div class="menu-item">
+                <!-- wp:group {"layout":{"type":"flex","justifyContent":"start"}} -->
+                <div class="menu-item-name">
+                  <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_name","prefix":""} /-->
+                  <span class="menu-item-price">
+                    <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"price","prefix":"$","displayLayout":"inline-block"} /-->
+                  </span>
+                </div>
+                <!-- /wp:group -->
+                <!-- Description under -->
+                <div class="menu-item-description">
+                  <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
+                </div>
+                <!-- REMOVED IMAGE BLOCK -->
               </div>
               <!-- /wp:group -->
-              <!-- Description under -->
-              <div class="menu-item-description">
-                <!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"menu_item_description","prefix":""} /-->
-              </div>
-              <!-- REMOVED IMAGE BLOCK -->
+              <!-- /wp:post-template -->
             </div>
-            <!-- /wp:group -->
-            <!-- /wp:post-template -->
+            <!-- /wp:query -->
           </div>
-          <!-- /wp:query -->
         </div>
-      </div>
 
       </div>
       <a href="https://patriciastreetdeli.ca/dev/team1/menu/" class="button-solid button-outline" data-type="page"
@@ -273,7 +305,7 @@
     <div class="container">
       <h2>Order With Toast<span class="underline"></span></h2>
       <p>Use Toast to order online for quick pickup or delivery, and enjoy Patricia Street Deli anywhere.</p>
-      <a href="https://patriciastreetdeli.ca/dev/team1/order/" class="button-solid" data-type="page" data-id="25">Order
+      <a href="https://patriciastreetdeli.ca/dev/team1/" class="button-solid" data-type="page" data-id="25">Order
         Now</a>
     </div>
   </section>
@@ -299,7 +331,7 @@
   <section class="home-merch">
     <div class="container">
       <h2>Featured Merch<span class="underline"></span></h2>
-      <div class="polaroid-frame">[products limit="1" columns="1" orderby="date" order="DESC"]</div>
+      <div class="merch-item">[products limit="1" columns="1" orderby="date" order="DESC"]</div>
       <a href="https://patriciastreetdeli.ca/dev/team1/merch/" class="button-solid">View All Merch</a>
     </div>
   </section>
@@ -369,13 +401,13 @@
   <!-- Back to top button      -->
   <!-- ----------------------- -->
 
-  <button id="backToTop" class="backToTop polaroid-frame"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-      fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+  <button id="backToTop" class="backToTop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke-width="3" fill="currentColor"
+      class="bi bi-arrow-up-short" viewBox="0 0 16 16">
       <path fill-rule="evenodd"
-        d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z" />
-      <path fill-rule="evenodd"
-        d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
-    </svg></button>
+        d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
+    </svg>
+  </button>
 
   <script>
     const btn = document.getElementById("backToTop");

@@ -20,7 +20,8 @@
   font-family: var(--font-family-h1);
 }
 
-.footer .footer-address, .footer .quick-links, .footer .contact-information ul {
+.footer .quick-links,
+.footer .contact-information ul {
   margin-bottom: 1.5rem;
 }
 
@@ -30,7 +31,40 @@
   gap: 1rem;
 }
 
-.footer .contact-information span {
+.footer .quick-links a {
+  position: relative;
+  display: inline-block; /* keeps the underline only as wide as the text */
+  padding-bottom: 4px;
+}
+
+/* underline element */
+.footer .quick-links a::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width .3s;
+}
+
+/* grow underline on hover */
+.footer .quick-links a:hover::before {
+  width: 100%;
+}
+
+/* active link styling */
+.footer .quick-links a.active::before {
+  width: 100%;
+}
+
+.footer .quick-links a.active {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.footer .contact-information .hours {
   font-weight: bold;
   color: var(--color-primary);
 }
@@ -43,19 +77,61 @@
 
 .footer .contact-information svg {
   color: var(--color-primary);
+  margin-top: 6px;
+  width: 15px;
+  height: 15px;
 }
 
-.footer .contact-information .footer-phone, .footer .contact-information .footer-email {
+.footer .contact-information .footer-phone svg {
+  width: 14px;
+  height: 14px;
+}
+
+.footer .contact-information a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 2px;
+
+  transition: background-color .2s ease, transform .06s ease, box-shadow .2s ease;
+}
+
+.footer .contact-information a:hover {
+  font-weight: bold;
+  color: #C1121F;
+}
+
+.footer .contact-information a:hover svg {
+  fill: #C1121F;
+}
+
+.footer .contact-information a:active {
+  font-weight: bold;
+  color: #C1121F;
+}
+
+.footer .contact-information a:active svg {
+  fill: #C1121F;
+}
+
+.footer .contact-information .footer-phone,
+.footer .contact-information .footer-email {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
 
-.footer .social-media{
+.footer .social-media {
   display: flex;
   gap: 1rem;
   align-items: center;
   margin-top: 1.5rem;
+}
+
+.footer .social-media svg {
+  width: 17px;
+  height: 17px;
 }
 
 .footer-map iframe {
@@ -77,7 +153,7 @@
     max-width: 80rem;
   }
 
-  .footer .footer-container > .polaroid-frame {
+  .footer .footer-container>.polaroid-frame {
     flex: 1 1 0;
   }
 

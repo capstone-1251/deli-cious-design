@@ -29,11 +29,43 @@
     flex-wrap: nowrap;
   }
 
-  .notice-left,
-  .notice-right {
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  a {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  a:hover:before {
+    width: 100%;
+  }
+
+  a.active:before {
+    width: 100%;
+  }
+
+  a:before {
+    content: '';
+    width: 0;
+    height: 1px;
+    background: var(--color-white-off);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    transition: width .3s;
+  }
+
+  a.active {
+    font-weight: bold;
+    color: var(--color-white-off);
   }
 }
 
@@ -101,8 +133,8 @@ body.scroll .home.header-navigation {
 /* --------------------------- */
 .home-banner {
   background: url('../assets/svg/banner-bulletin-board.svg') repeat;
-    background-size: 390px 247px;
-    background-position: center;
+  background-size: 390px 247px;
+  background-position: center;
   padding: var(--section-padding);
   // how far it pushes it below the nav bar
   padding-top: 9.5rem;
@@ -177,10 +209,10 @@ body.scroll .home.header-navigation {
 }
 
 .home-about .polaroid-frame img:last-of-type {
-        width: 30%;
-        height: auto;
-        margin-left: 5rem;
-    }
+  width: 30%;
+  height: auto;
+  margin-left: 5rem;
+}
 
 .home-about .button-solid {
   min-width: 17rem;
@@ -246,7 +278,7 @@ body.scroll .home.header-navigation {
   color: var(--color-white-off);
 }
 
-.home-menu .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+.home-menu .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
   max-width: 100%;
 }
 
@@ -259,9 +291,9 @@ body.scroll .home.header-navigation {
 }
 
 .home-menu .menu-category-items ul {
-display: flex;
-flex-direction: column;
-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .home-menu .menu-item-name {
@@ -295,17 +327,17 @@ gap: 1rem;
 /* -------------------- */
 
 @media only screen and (min-width: 64rem) {
-.home-menu .menu-top-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 4rem;
-}  
+  .home-menu .menu-top-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem;
+  }
 
-.home-menu .menu-bottom-row ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 4rem;
-}  
+  .home-menu .menu-bottom-row ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem;
+  }
 }
 
 /* -------------------- */
@@ -365,16 +397,18 @@ gap: 1rem;
   width: 240px;
 }
 
-.home-merch .polaroid-frame {
-  width: 30rem;
+.home-merch .merch-item {
+  width: 100%;
+  max-width: 30rem;
   text-align: center;
+  margin: 0 auto;
 }
 
-.home-merch .polaroid-frame h2 {
+.home-merch .merch-item h2 {
   font-family: var(--font-family-p);
 }
 
-.home-merch .polaroid-frame img:first-of-type {
+.home-merch .merch-item img:first-of-type {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -382,14 +416,55 @@ gap: 1rem;
   margin-bottom: 0.5rem !important;
 }
 
-.home-merch .woocommerce ul.products[class*="columns-"] li.product, .woocommerce-page ul.products[class*="columns-"] li.product {
+.home-merch .woocommerce ul.products[class*="columns-"] li.product,
+.woocommerce-page ul.products[class*="columns-"] li.product {
   width: 100%;
   float: none;
   margin: 0;
 }
 
 .home-merch .woocommerce ul.products {
-margin: 0;
+  margin: 0;
+}
+
+.home-merch li {
+  background-color: #fff;
+  padding: 1rem !important;
+  box-shadow: rgba(10, 0, 0, 0.55) 0px 4px 8px;
+  max-width: 30rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.home-merch li:hover {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+}
+
+.home-merch li:active {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: rgba(10, 0, 0, 0.45) 0px 12px 20px;
+}
+
+.home-merch li img:first-of-type {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+// Desktop
+@media only screen and (min-width: 64rem) {
+  .home-merch li {
+    margin: 0;
+    padding: 2rem;
+  }
+
+  .home-merch li img:last-of-type {
+    width: 30%;
+    height: auto;
+    margin-left: 5rem;
+  }
 }
 
 .home-merch .button {
@@ -410,7 +485,7 @@ margin: 0;
     text-align: center;
   }
 
-  .home-merch .polaroid-frame {
+  .home-merch .merch-item {
   margin: 0 auto;
 }
 

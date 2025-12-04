@@ -309,10 +309,10 @@ form textarea {
 /* Back to top button                     */
 /* --------------------------- */
 
-#backToTop {
+.backToTop {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25%;
+    right: 16px;
 
     border: none;
 
@@ -320,11 +320,34 @@ form textarea {
     display: none;
     /* Hidden by default */
     z-index: 999;
+    
+    background: var(--color-primary);
+    color: var(--color-white-off);
+    padding: 0.375rem;
+
+    border: 1px solid var(--color-white-off);
+    border-radius: 6px;
+
+    transition: background-color .2s ease, transform .06s ease, box-shadow .2s ease;
 }
 
-// Desktop
-@media only screen and (min-width: 64rem) {
-    .backToTop.polaroid-frame {
-        padding: 1rem;
-    }
+.backToTop svg {
+    width: 24px;
+    height: 24px;
+}
+
+.backToTop:hover {
+    color: var(--color-white-off);
+    background: #C1121F;
+    border: 1px solid #C1121F;
+}
+
+.backToTop:active {
+    transform: translateY(1px) scale(.99);
+}
+
+.backToTop:focus-visible {
+    color: var(--color-white-off);
+    background: #C1121F;
+    border: 1px solid #C1121F;
 }
